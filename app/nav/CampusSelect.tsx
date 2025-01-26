@@ -12,6 +12,7 @@ function CampusSelect() {
     <div>
       <select
         name="campus-name"
+        aria-label="Campus Select"
         value={chosenCampus}
         onChange={handleCampusChange}
       >

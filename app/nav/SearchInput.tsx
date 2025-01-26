@@ -19,6 +19,7 @@ function SearchInput() {
         <input
           type="text"
           placeholder="Search any products or services"
+          aria-label="Search Product or Services"
           value={searchValue}
           onChange={handleSearchChange}
         />
