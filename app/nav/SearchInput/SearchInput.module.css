@@ -3,11 +3,13 @@
 
   display: flex;
   align-items: center;
+  flex: 1;
+  max-width: 30rem;
 }
 
 .form input,
 .form button {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: black;
   height: 2.3rem;
   padding: 0 0.5rem;
@@ -19,6 +21,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  flex: 1;
 }
 
 .form button {
