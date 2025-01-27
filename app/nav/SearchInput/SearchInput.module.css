@@ -1,0 +1,26 @@
+.form {
+  display: flex;
+}
+
+.form input,
+.form button {
+  font-size: 1.1rem;
+  color: black;
+  height: 2.3rem;
+  padding: 0 0.5rem;
+}
+
+.form input {
+  background: rgb(235, 235, 235);
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.form button {
+  background: rgb(255, 225, 0);
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
