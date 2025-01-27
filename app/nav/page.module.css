@@ -1,0 +1,24 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: black;
+  color: white;
+}
+
+.primary,
+.secondary,
+.inputsBox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logoBox h1 {
+  font-size: 2rem;
+}
+
+.secondary a {
+  font-size: 1.1rem;
+}
