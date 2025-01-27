@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import styles from "./SearchInput.module.css";
 
 function SearchInput() {
   const [searchValue, setSearchValue] = useState("");
@@ -15,7 +16,7 @@ function SearchInput() {
 
   return (
     <>
-      <form onSubmit={handleSearch}>
+      <form onSubmit={handleSearch} className={styles.form}>
         <input
           type="text"
           placeholder="Search any products or services"
