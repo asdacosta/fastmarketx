@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import styles from "./CampusSelect.module.css";
 
 function CampusSelect() {
   const [chosenCampus, setChosenCampus] = useState("");
@@ -9,7 +10,7 @@ function CampusSelect() {
   };
 
   return (
-    <div>
+    <div className={styles.selectBox}>
       <select
         name="campus-name"
         aria-label="Campus Select"
