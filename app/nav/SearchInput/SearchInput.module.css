@@ -1,5 +1,8 @@
 .form {
+  --radius: 0.4rem;
+
   display: flex;
+  align-items: center;
 }
 
 .form input,
@@ -12,8 +15,7 @@
 
 .form input {
   background: rgb(235, 235, 235);
-  border-top-left-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
+  border-radius: var(--radius) 0 0 var(--radius);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -21,6 +23,5 @@
 
 .form button {
   background: rgb(255, 225, 0);
-  border-top-right-radius: 0.5rem;
-  border-bottom-right-radius: 0.5rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
 }
