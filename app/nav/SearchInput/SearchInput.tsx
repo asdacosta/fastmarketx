@@ -19,7 +19,7 @@ function SearchInput() {
       <form onSubmit={handleSearch} className={styles.form}>
         <input
           type="text"
-          placeholder="Search any products or services"
+          placeholder="Search products or services"
           aria-label="Search Product or Services"
           value={searchValue}
           onChange={handleSearchChange}
