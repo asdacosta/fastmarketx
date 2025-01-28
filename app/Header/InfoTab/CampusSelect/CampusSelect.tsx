@@ -10,7 +10,7 @@ function CampusSelect() {
   };
 
   return (
-    <div className={styles.selectBox}>
+    <section className={styles.selectBox}>
       <select
         name="campus-name"
         aria-label="Campus Select"
@@ -23,7 +23,7 @@ function CampusSelect() {
         <option value="legon">Legon</option>
         <option value="knust">KNUST</option>
       </select>
-    </div>
+    </section>
   );
 }
 
