@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { SearchInput } from "./SearchInput/SearchInput";
+import SearchInput from "./SearchInput/SearchInput";
 import styles from "./Nav.module.css";
 
 function Nav() {
@@ -41,4 +41,4 @@ function Nav() {
   );
 }
 
-export { Nav };
+export default Nav;
