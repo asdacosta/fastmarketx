@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./InfoTab.module.css";
 import Link from "next/link";
-import { CampusSelect } from "./CampusSelect/CampusSelect";
+import CampusSelect from "./CampusSelect/CampusSelect";
 
 function InfoTab() {
   return (
@@ -87,4 +87,4 @@ function InfoTab() {
   );
 }
 
-export { InfoTab };
+export default InfoTab;
