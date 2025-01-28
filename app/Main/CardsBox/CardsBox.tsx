@@ -45,4 +45,4 @@ function CardsBox() {
   );
 }
 
-export { CardsBox };
+export default CardsBox;
