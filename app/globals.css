@@ -1,11 +1,18 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
   --dark-gold: rgba(232, 205, 4, 0.9);
   --dark-color: rgb(225, 225, 225);
-  --radius: 0.4rem;
-  letter-spacing: 0.02rem;
+  --dark-bg: rgb(28, 29, 30);
+  --dark-violet: rgba(146, 44, 218, 0.85);
+  --dark-blue: rgba(49, 123, 220, 0.85);
+  --dark-green: rgba(43, 224, 169, 0.85);
+  --dark-orange: rgba(229, 126, 29, 0.85);
 
+  --radius: 0.4rem;
+
+  letter-spacing: 0.02rem;
   font-size: 1rem;
 }
 
