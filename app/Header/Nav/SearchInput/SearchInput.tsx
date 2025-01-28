@@ -55,4 +55,4 @@ function SearchInput() {
   );
 }
 
-export { SearchInput };
+export default SearchInput;
