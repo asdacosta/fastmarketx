@@ -1,0 +1,113 @@
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  color: var(--dark-color);
+  background: black;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  height: fit-content;
+}
+
+.categories > section {
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.categories ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.categories h3 {
+  font-size: 0.9rem;
+  align-self: stretch;
+  text-align: center;
+  /* color: rgb(160, 160, 160); */
+  color: transparent;
+  animation: gradient-animation 3s linear infinite reverse;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 100%;
+  }
+}
+
+.categories > section:first-child h3 {
+  background: linear-gradient(
+    120deg,
+    rgb(150, 150, 150) 0%,
+    rgb(150, 150, 150) 35%,
+    rgba(49, 123, 220, 0.85) 50%,
+    rgb(150, 150, 150) 65%,
+    rgb(150, 150, 150) 100%
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+}
+
+.categories > section:first-child svg {
+  fill: rgba(49, 123, 220, 0.75);
+}
+
+.categories > section:nth-child(2) h3 {
+  background: linear-gradient(
+    120deg,
+    rgb(150, 150, 150) 0%,
+    rgb(150, 150, 150) 35%,
+    rgba(43, 224, 169, 0.85) 50%,
+    rgb(150, 150, 150) 65%,
+    rgb(150, 150, 150) 100%
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+}
+
+.categories > section:nth-child(2) svg {
+  fill: rgba(43, 224, 169, 0.75);
+}
+
+.categories > section:last-child h3 {
+  background: linear-gradient(
+    120deg,
+    rgb(150, 150, 150) 0%,
+    rgb(150, 150, 150) 35%,
+    rgba(229, 126, 29, 0.85) 50%,
+    rgb(150, 150, 150) 65%,
+    rgb(150, 150, 150) 100%
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+}
+
+.categories > section:last-child svg {
+  fill: rgba(229, 126, 29, 0.75);
+}
+
+.categories .item {
+  transition: opacity 0.1s ease-in-out;
+}
+
+.categories > section > div:hover .item {
+  opacity: 0.8;
+}
+
+.categories > section > div {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.categories svg {
+  height: 1.2rem;
+  width: 1.2rem;
+}
