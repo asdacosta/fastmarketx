@@ -249,4 +249,4 @@ function Categories() {
   );
 }
 
-export { Categories };
+export default Categories;
