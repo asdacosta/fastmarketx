@@ -1,0 +1,5 @@
+.infoBox {
+  height: 2rem;
+  border-top: 0.05rem solid var(--dark-gold);
+  background: black;
+}
