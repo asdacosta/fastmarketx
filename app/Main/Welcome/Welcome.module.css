@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  background: rgb(28, 29, 30);
+  background: var(--dark-bg);
   padding: 0.7rem 2rem;
 }
 
