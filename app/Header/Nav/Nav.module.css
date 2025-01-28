@@ -1,0 +1,29 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: black;
+  color: var(--dark-color);
+}
+
+.primary,
+.secondary,
+.inputsBox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.primary,
+.inputsBox {
+  flex: 1;
+}
+
+.logoBox h1 {
+  font-size: 1.8rem;
+}
+
+.secondary a {
+  font-size: 1.1rem;
+}
