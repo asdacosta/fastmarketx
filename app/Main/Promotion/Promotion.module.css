@@ -1,0 +1,28 @@
+.promotion {
+  color: var(--dark-color);
+  background: black;
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+}
+
+.promotion > section {
+  display: flex;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.promotion > section > svg:last-child {
+  transform: rotateY(180deg);
+}
+
+.promotion h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.promotion svg {
+  width: 1.2rem;
+  fill: var(--dark-gold);
+}
