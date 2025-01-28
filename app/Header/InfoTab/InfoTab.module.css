@@ -17,6 +17,9 @@
 .infoTab > section {
   display: flex;
   align-items: center;
+}
+
+.primary {
   gap: 1.5rem;
 }
 
@@ -28,4 +31,17 @@
 
 .infoTab span {
   font-size: 0.9rem;
+}
+
+.tertiary {
+  gap: 1rem;
+}
+
+.textSlide {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.textSlide span:nth-child(odd) {
+  color: var(--dark-gold);
 }
