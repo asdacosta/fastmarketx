@@ -11,4 +11,4 @@ function Bot() {
   );
 }
 
-export { Bot };
+export default Bot;
