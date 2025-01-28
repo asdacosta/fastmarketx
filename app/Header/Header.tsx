@@ -1,6 +1,6 @@
 import React from "react";
-import { Nav } from "./Nav/Nav";
-import { InfoTab } from "./InfoTab/InfoTab";
+import Nav from "./Nav/Nav";
+import InfoTab from "./InfoTab/InfoTab";
 
 function Header() {
   return (
@@ -11,4 +11,4 @@ function Header() {
   );
 }
 
-export { Header };
+export default Header;
