@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./Main.module.css";
-import { Categories } from "./Categories/Categories";
-import { Extras } from "./Extras/Extras";
-import { Promotion } from "./Promotion/Promotion";
-import { CardsBox } from "./CardsBox/CardsBox";
+import Categories from "./Categories/Categories";
+import Extras from "./Extras/Extras";
+import Promotion from "./Promotion/Promotion";
+import CardsBox from "./CardsBox/CardsBox";
 
 function Main() {
   return (
