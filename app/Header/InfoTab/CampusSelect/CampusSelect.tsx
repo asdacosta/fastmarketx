@@ -27,4 +27,4 @@ function CampusSelect() {
   );
 }
 
-export { CampusSelect };
+export default CampusSelect;
