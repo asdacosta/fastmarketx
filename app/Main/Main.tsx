@@ -15,8 +15,7 @@ function Main() {
           <Image
             src="/mainImgs/store.avif"
             alt="Store"
-            layout="fill"
-            objectFit="fill"
+            fill
             className={styles.img}
           />
           <span>Set up a store</span>
@@ -25,8 +24,7 @@ function Main() {
           <Image
             src="/mainImgs/products.avif"
             alt="Store"
-            layout="fill"
-            objectFit="fill"
+            fill
             className={styles.img}
           />
           <span>Explore services</span>
@@ -35,8 +33,7 @@ function Main() {
           <Image
             src="/mainImgs/services.avif"
             alt="Store"
-            layout="fill"
-            objectFit="fill"
+            fill
             className={styles.img}
           />
           <span>Discover Services</span>
@@ -45,8 +42,7 @@ function Main() {
           <Image
             src="/mainImgs/foods.avif"
             alt="Store"
-            layout="fill"
-            objectFit="fill"
+            fill
             className={styles.img}
           />
           <span>Order meals</span>
