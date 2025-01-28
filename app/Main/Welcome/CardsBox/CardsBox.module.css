@@ -3,7 +3,7 @@
 
   display: grid;
   justify-content: center;
-  grid-template: repeat(2, 17rem) / repeat(2, minmax(10, 25rem));
+  grid-template: repeat(2, 18rem) / repeat(2, minmax(10, 28rem));
   flex: 4;
   max-width: 50rem;
   gap: 2rem;
@@ -47,20 +47,20 @@
 
 .card:first-child {
   box-shadow: calc(-1 * var(--shadow)) var(--shadow) var(--shadow)
-    rgba(146, 44, 218, 0.85);
+    var(--dark-violet);
 }
 
 .card:nth-child(2) {
-  box-shadow: var(--shadow) var(--shadow) var(--shadow) rgba(49, 123, 220, 0.85);
+  box-shadow: var(--shadow) var(--shadow) var(--shadow) var(--dark-blue);
 }
 
 .card:nth-child(3) {
   box-shadow: calc(-1 * var(--shadow)) var(--shadow) var(--shadow)
-    rgba(43, 224, 169, 0.85);
+    var(--dark-green);
 }
 
 .card:last-child {
-  box-shadow: var(--shadow) var(--shadow) var(--shadow) rgba(229, 126, 29, 0.85);
+  box-shadow: var(--shadow) var(--shadow) var(--shadow) var(--dark-orange);
 }
 
 .card > span {
