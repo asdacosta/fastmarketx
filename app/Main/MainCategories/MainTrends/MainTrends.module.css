@@ -1,0 +1,50 @@
+.mainTrends {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  background: var(--dark-gold);
+  color: black;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.header > div {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.header svg {
+  width: 1.2rem;
+  fill: black;
+}
+
+.trendItems {
+  display: grid;
+  justify-content: center;
+  grid-template: repeat(2, 13rem) / repeat(auto-fit, minmax(11rem, 12rem));
+  gap: 0.5rem;
+  background: black;
+  padding: 1rem 1.5rem;
+}
+
+.trendItems > section {
+  display: flex;
+  justify-content: center;
+  background: black;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.img {
+  object-fit: cover;
+}
