@@ -1,8 +1,7 @@
-import Image from "next/image";
 import styles from "./page.module.css";
-import { Header } from "./Header/Header";
+import Header from "./Header/Header";
 import Main from "./Main/Main";
-import { Bot } from "./Bot/Bot";
+import Bot from "./Bot/Bot";
 
 export default function Home() {
   return (
