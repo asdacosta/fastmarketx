@@ -27,3 +27,19 @@
 .secondary a {
   font-size: 1.05rem;
 }
+
+.secondary svg {
+  width: 1.5rem;
+  fill: var(--dark-color);
+}
+
+.account,
+.cart {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.cart {
+  gap: 0.2rem;
+}
