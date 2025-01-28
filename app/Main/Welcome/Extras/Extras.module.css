@@ -58,3 +58,10 @@
   display: flex;
   flex-direction: column;
 }
+
+.extrasBox {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

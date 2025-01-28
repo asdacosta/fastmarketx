@@ -1,4 +1,6 @@
 .cardsBox {
+  --shadow: 0.2rem;
+
   display: grid;
   justify-content: center;
   grid-template: repeat(2, 17rem) / repeat(2, minmax(10, 25rem));
@@ -77,4 +79,8 @@
 
 .card:hover > span {
   margin-bottom: 0.5rem;
+}
+
+.img {
+  object-fit: cover;
 }
