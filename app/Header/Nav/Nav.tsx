@@ -1,11 +1,28 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SearchInput from "./SearchInput/SearchInput";
 import styles from "./Nav.module.css";
 
 function Nav() {
+  const [isHidden, setIsHidden] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      currentScrollY > lastScrollY ? setIsHidden(true) : setIsHidden(false);
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
-    <nav className={styles.nav}>
+    <nav className={`${styles.nav} ${isHidden ? styles.hidden : ""}`}>
       <section className={styles.primary}>
         <section className={styles.logoBox}>
           <Link href="/">
