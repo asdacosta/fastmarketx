@@ -1,0 +1,38 @@
+.mainProducts {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  background: var(--dark-blue);
+  color: white;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.productItems {
+  display: grid;
+  justify-content: center;
+  grid-template: 15rem / repeat(5, minmax(12rem, 18rem));
+  gap: 0.5rem;
+  background: black;
+  padding: 1rem 1.5rem;
+}
+
+.productItems > section {
+  display: flex;
+  justify-content: center;
+  background: black;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.img {
+  object-fit: cover;
+}
