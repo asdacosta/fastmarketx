@@ -83,7 +83,7 @@
 
 .card > span {
   /* flex: 1; */
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--dark-color);
   background: rgba(0, 0, 0, 0.75);
   height: fit-content;

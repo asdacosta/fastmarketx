@@ -10,7 +10,7 @@
 }
 
 .categories > section {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
@@ -23,7 +23,7 @@
 }
 
 .categories h3 {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   align-self: stretch;
   text-align: center;
   /* color: rgb(160, 160, 160); */
