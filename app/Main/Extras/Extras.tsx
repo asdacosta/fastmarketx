@@ -54,4 +54,4 @@ function Extras() {
   );
 }
 
-export { Extras };
+export default Extras;
