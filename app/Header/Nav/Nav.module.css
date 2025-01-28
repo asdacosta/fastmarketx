@@ -46,8 +46,21 @@
   fill: var(--dark-color);
 }
 
+.cart {
+  position: relative;
+}
+
+.cartNum {
+  font-size: 0.85rem;
+  position: absolute;
+  left: 0.7rem;
+  color: var(--dark-color);
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
 .cart svg {
-  width: 2.2rem;
+  width: 2.3rem;
   fill: var(--dark-gold);
 }
 
@@ -55,7 +68,7 @@
   font-size: 1.05rem;
 }
 
-.cart span {
+.cart span:last-child {
   font-size: 0.8rem;
   align-self: flex-end;
 }
