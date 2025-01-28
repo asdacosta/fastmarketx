@@ -1,5 +1,31 @@
-.infoBox {
-  height: 2rem;
+.infoTab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 2.2rem;
+  padding: 0 2rem;
   border-top: 0.05rem solid var(--dark-gold);
   background: black;
+  color: var(--dark-color);
+}
+
+.infoTab svg {
+  width: 1.3rem;
+  fill: var(--dark-color);
+}
+
+.infoTab > section {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.primary > * {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.infoTab span {
+  font-size: 0.9rem;
 }
