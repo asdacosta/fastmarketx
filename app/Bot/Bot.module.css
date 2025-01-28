@@ -1,0 +1,11 @@
+.bot {
+  position: fixed;
+  right: 2rem;
+  bottom: 1rem;
+  background: black;
+}
+
+.bot svg {
+  fill: var(--dark-gold);
+  width: 2.5rem;
+}
