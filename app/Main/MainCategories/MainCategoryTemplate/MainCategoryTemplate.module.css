@@ -43,6 +43,11 @@
   position: relative;
   cursor: pointer;
   height: 95%;
+  transition: transform 0.15s ease-in-out;
+}
+
+.item:hover {
+  transform: scale(1.02);
 }
 
 .cardName {
