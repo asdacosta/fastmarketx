@@ -54,6 +54,9 @@ function MainCategoryTemplate({ categoryName }: MainCategoryTemplateProps) {
               <SwiperSlide key={index}>
                 <section className={styles.item}>
                   <Image
+                    quality={80}
+                    placeholder="blur"
+                    blurDataURL="/mainImgs/stores.avif"
                     draggable="false"
                     src="/mainImgs/products.avif"
                     alt="Store"
