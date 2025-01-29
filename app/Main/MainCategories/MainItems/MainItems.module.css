@@ -59,6 +59,14 @@
   flex: 1;
 }
 
+.imgBox svg {
+  fill: var(--dark-blue);
+  width: 1.1rem;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+}
+
 .productInfo {
   display: flex;
   flex-direction: column;
