@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./CardsBox.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import Ad from "./Ad/Ad";
 
 function CardsBox() {
   return (
@@ -45,7 +46,7 @@ function CardsBox() {
             </section>
           </section>
         </section>
-        <section className={styles.adVids}></section>
+        <Ad />
       </section>
       <section className={styles.cards}>
         <section className={styles.card}>
