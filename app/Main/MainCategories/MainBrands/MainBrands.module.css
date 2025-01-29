@@ -36,11 +36,19 @@
   position: relative;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: transform 0.15s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .brand:hover {
-  transform: translateY(-0.3rem);
+  transform: scale(1.02);
+}
+
+.img {
+  transition: filter 0.2s ease-in-out;
+}
+
+.brand:hover img {
+  filter: blur(0.5rem);
 }
 
 .brand::after {
