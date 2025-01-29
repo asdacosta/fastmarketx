@@ -5,10 +5,11 @@ import Link from "next/link";
 
 interface MainItemsProps {
   itemsName: string;
+  itemsQuantity?: number;
 }
 
-function MainItems({ itemsName }: MainItemsProps) {
-  const items = new Array(14).fill(1);
+function MainItems({ itemsName, itemsQuantity = 14 }: MainItemsProps) {
+  const items = new Array(itemsQuantity).fill(1);
   const initials = itemsName.split(" ")[0];
 
   const itemsSvg: { [key: string]: JSX.Element } = {
