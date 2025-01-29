@@ -7,6 +7,7 @@ function CardsBox() {
     <section className={styles.cardsBox}>
       <section className={styles.card}>
         <Image
+          draggable="false"
           src="/mainImgs/store.avif"
           alt="Store"
           fill
@@ -16,6 +17,7 @@ function CardsBox() {
       </section>
       <section className={styles.card}>
         <Image
+          draggable="false"
           src="/mainImgs/products.avif"
           alt="Store"
           fill
@@ -25,6 +27,7 @@ function CardsBox() {
       </section>
       <section className={styles.card}>
         <Image
+          draggable="false"
           src="/mainImgs/services.avif"
           alt="Store"
           fill
@@ -34,6 +37,7 @@ function CardsBox() {
       </section>
       <section className={styles.card}>
         <Image
+          draggable="false"
           src="/mainImgs/foods.avif"
           alt="Store"
           fill
