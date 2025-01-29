@@ -6,11 +6,15 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
+  gap: 0.5rem;
   padding: 0.5rem 2rem;
   color: white;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+}
+
+.header svg {
+  fill: white;
 }
 
 .products {
