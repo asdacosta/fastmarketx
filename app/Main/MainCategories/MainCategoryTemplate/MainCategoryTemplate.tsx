@@ -1,6 +1,13 @@
+"use client";
 import Image from "next/image";
-import React from "react";
 import styles from "./MainCategoryTemplate.module.css";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/scrollbar";
+import { Navigation, Scrollbar, Autoplay } from "swiper/modules";
+import "./Swiper.css";
 
 interface MainCategoryTemplateProps {
   categoryName: string;
@@ -24,19 +31,33 @@ function MainCategoryTemplate({ categoryName }: MainCategoryTemplateProps) {
         <h3>{categoryName}</h3>
       </section>
       <section className={styles.categoryItems}>
-        {items.map((item, index) => {
-          return (
-            <section key={index} className={styles.item}>
-              <Image
-                src="/mainImgs/products.avif"
-                alt="Store"
-                fill
-                className={styles.img}
-              />
-              <span className={styles.cardName}>Card Name</span>
-            </section>
-          );
-        })}
+        <Swiper
+          navigation={true}
+          modules={[Navigation, Scrollbar, Autoplay]}
+          slidesPerView={5}
+          slidesPerGroup={1}
+          spaceBetween={10}
+          scrollbar={{ draggable: false }}
+          loop
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          className="mySwiper"
+        >
+          {items.map((item, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <section className={styles.item}>
+                  <Image
+                    src="/mainImgs/products.avif"
+                    alt="Store"
+                    fill
+                    className={styles.img}
+                  />
+                  <span className={styles.cardName}>Card Name</span>
+                </section>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
       </section>
     </section>
   );
