@@ -29,22 +29,83 @@
 .trendItems {
   display: grid;
   justify-content: center;
-  grid-template: repeat(2, 13rem) / repeat(auto-fit, minmax(11rem, 12rem));
-  gap: 0.5rem;
+  grid-template: repeat(2, 16.5rem) / repeat(auto-fit, minmax(10rem, 11.5rem));
+  grid-auto-rows: 15rem;
+  gap: 1rem;
   background: black;
   padding: 1rem 1.5rem;
 }
 
-.trendItems > section {
+.item {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content: center; */
   background: black;
-  border-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
   overflow: hidden;
   position: relative;
   cursor: pointer;
+  transition: transform 0.15s ease-in-out;
 }
 
-.img {
-  object-fit: cover;
+.item:hover {
+  transform: scale(1.02);
+  box-shadow: 0rem 0rem 0.15rem var(--dark-gold);
+}
+
+.imgBox {
+  position: relative;
+  flex: 1;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 0.2rem 0.5rem;
+  gap: 0.2rem;
+}
+
+.productInfo span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: white;
+}
+
+.price > span:first-child {
+  align-self: flex-end;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.price > span:last-child {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.productName,
+.storeName {
+  font-size: 0.9rem;
+  color: var(--dark-color);
+}
+
+.storeName {
+  display: flex;
+  gap: 0.1rem;
+}
+
+.storeName span {
+  padding: 0.1rem;
+}
+
+.storeName svg {
+  width: 0.9rem;
+  fill: var(--dark-gold);
 }
