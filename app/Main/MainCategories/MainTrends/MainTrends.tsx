@@ -22,6 +22,7 @@ function MainTrends() {
             <section key={index} className={styles.item}>
               <div className={styles.imgBox}>
                 <Image
+                  draggable="false"
                   src="/mainImgs/products.avif"
                   alt="Store"
                   fill
