@@ -62,23 +62,6 @@
     120deg,
     rgb(150, 150, 150) 0%,
     rgb(150, 150, 150) 35%,
-    rgba(43, 224, 169, 0.85) 50%,
-    rgb(150, 150, 150) 65%,
-    rgb(150, 150, 150) 100%
-  );
-  background-size: 200% 200%;
-  background-clip: text;
-}
-
-.categories > section:nth-child(2) svg {
-  fill: rgba(43, 224, 169, 0.75);
-}
-
-.categories > section:last-child h3 {
-  background: linear-gradient(
-    120deg,
-    rgb(150, 150, 150) 0%,
-    rgb(150, 150, 150) 35%,
     rgba(229, 126, 29, 0.85) 50%,
     rgb(150, 150, 150) 65%,
     rgb(150, 150, 150) 100%
@@ -87,8 +70,25 @@
   background-clip: text;
 }
 
-.categories > section:last-child svg {
+.categories > section:nth-child(2) svg {
   fill: rgba(229, 126, 29, 0.75);
+}
+
+.categories > section:last-child h3 {
+  background: linear-gradient(
+    120deg,
+    rgb(150, 150, 150) 0%,
+    rgb(150, 150, 150) 35%,
+    rgba(43, 224, 169, 0.85) 50%,
+    rgb(150, 150, 150) 65%,
+    rgb(150, 150, 150) 100%
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+}
+
+.categories > section:last-child svg {
+  fill: rgba(43, 224, 169, 0.75);
 }
 
 .categories .item {

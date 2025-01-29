@@ -56,11 +56,11 @@
 
 .card:nth-child(3) {
   box-shadow: calc(-1 * var(--shadow)) var(--shadow) var(--shadow)
-    var(--dark-green);
+    var(--dark-orange);
 }
 
 .card:last-child {
-  box-shadow: var(--shadow) var(--shadow) var(--shadow) var(--dark-orange);
+  box-shadow: var(--shadow) var(--shadow) var(--shadow) var(--dark-green);
 }
 
 .card > span {
