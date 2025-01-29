@@ -11,12 +11,12 @@ function MainCategories() {
       <MainCategoryTemplate categoryName="Products" />
       <MainSubCategories categoryName="Products" />
       <MainItems itemsName="Popular Products" />
-      <MainCategoryTemplate categoryName="Services" />
-      <MainSubCategories categoryName="Services" />
-      <MainItems itemsName="Popular Services" />
       <MainCategoryTemplate categoryName="Meals" />
       <MainSubCategories categoryName="Meals" />
       <MainItems itemsName="Popular Meals" />
+      <MainCategoryTemplate categoryName="Services" />
+      <MainSubCategories categoryName="Services" />
+      <MainItems itemsName="Popular Services" />
       <MainCategoryTemplate categoryName="Stores" />
       <MainSubCategories categoryName="Stores" />
       <MainItems itemsName="Popular Stores" />
