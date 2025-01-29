@@ -45,6 +45,20 @@
   grid-template: repeat(2, 10rem) / repeat(2, minmax(10, 13rem));
   gap: 1rem;
   padding: 1rem;
+  position: relative;
+}
+
+.items::before {
+  content: "";
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+
+  background: rgb(28, 29, 30);
 }
 
 .item {
