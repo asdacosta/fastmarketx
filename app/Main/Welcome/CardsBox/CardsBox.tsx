@@ -28,22 +28,22 @@ function CardsBox() {
       <section className={styles.card}>
         <Image
           draggable="false"
-          src="/mainImgs/services.avif"
-          alt="Store"
-          fill
-          className={styles.img}
-        />
-        <span>Discover Services</span>
-      </section>
-      <section className={styles.card}>
-        <Image
-          draggable="false"
           src="/mainImgs/foods.avif"
           alt="Store"
           fill
           className={styles.img}
         />
         <span>Order meals</span>
+      </section>
+      <section className={styles.card}>
+        <Image
+          draggable="false"
+          src="/mainImgs/services.avif"
+          alt="Store"
+          fill
+          className={styles.img}
+        />
+        <span>Discover Services</span>
       </section>
     </section>
   );
