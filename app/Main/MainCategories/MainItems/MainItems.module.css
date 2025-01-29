@@ -29,7 +29,7 @@
 .trendItems {
   display: grid;
   justify-content: center;
-  grid-template: repeat(2, 16.5rem) / repeat(auto-fit, minmax(10rem, 11.5rem));
+  grid-template: 16.5rem / repeat(auto-fit, minmax(10rem, 11.5rem));
   grid-auto-rows: 15rem;
   gap: 1rem;
   background: black;
