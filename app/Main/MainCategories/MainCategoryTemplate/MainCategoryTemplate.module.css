@@ -1,0 +1,58 @@
+.mainCategory {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  color: white;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.products {
+  background: var(--dark-blue);
+}
+
+.services {
+  background: var(--dark-green);
+}
+
+.meals {
+  background: var(--dark-orange);
+}
+
+.stores {
+  background: var(--dark-violet);
+}
+
+.categoryItems {
+  display: grid;
+  justify-content: center;
+  grid-template: 15rem / repeat(5, minmax(12rem, 18rem));
+  gap: 1rem;
+  background: black;
+  padding: 1rem 1.5rem;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  background: black;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.cardName {
+  color: var(--dark-color);
+  position: absolute;
+  bottom: 0.5rem;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0.1rem 0.5rem;
+  border-radius: 1rem;
+}
