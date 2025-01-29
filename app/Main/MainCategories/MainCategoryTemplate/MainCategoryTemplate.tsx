@@ -14,14 +14,21 @@ interface MainCategoryTemplateProps {
 }
 
 function MainCategoryTemplate({ categoryName }: MainCategoryTemplateProps) {
-  const items = new Array(14).fill(1);
-
   const categoryClasses: { [key: string]: string } = {
     Products: styles.products,
     Services: styles.services,
     Meals: styles.meals,
     Stores: styles.stores,
   };
+
+  const categoryQuantity: { [key: string]: number } = {
+    Products: 9,
+    Services: 6,
+    Meals: 8,
+    Stores: 10,
+  };
+
+  const items = new Array(categoryQuantity[categoryName]).fill(1);
 
   return (
     <section className={styles.mainCategory}>
@@ -47,6 +54,7 @@ function MainCategoryTemplate({ categoryName }: MainCategoryTemplateProps) {
               <SwiperSlide key={index}>
                 <section className={styles.item}>
                   <Image
+                    draggable="false"
                     src="/mainImgs/products.avif"
                     alt="Store"
                     fill
