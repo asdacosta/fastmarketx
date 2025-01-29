@@ -1,0 +1,72 @@
+.mainSubCategories {
+  display: grid;
+  grid-template: repeat(1, 25rem) / repeat(4, minmax(25, 27rem));
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.subCategory {
+  display: flex;
+  flex-direction: column;
+  background: black;
+  border-radius: 0.5rem;
+}
+
+.header {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  padding: 0.2rem 0 0.2rem 2rem;
+}
+
+.products {
+  background: var(--dark-blue);
+}
+
+.services {
+  background: var(--dark-green);
+}
+
+.meals {
+  background: var(--dark-orange);
+}
+
+.stores {
+  background: var(--dark-violet);
+}
+
+.header h3 {
+  color: white;
+}
+
+.items {
+  flex: 1;
+  display: grid;
+  grid-template: repeat(2, 10rem) / repeat(2, minmax(10, 13rem));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.item {
+  display: flex;
+  justify-content: center;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  height: 95%;
+  transition: transform 0.15s ease-in-out;
+}
+
+.item:hover {
+  transform: scale(1.02);
+}
+
+.cardName {
+  color: var(--dark-color);
+  position: absolute;
+  bottom: 0.5rem;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0.1rem 0.5rem;
+  border-radius: 1rem;
+}
