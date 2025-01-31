@@ -1,8 +1,12 @@
+.searchInput {
+  flex: 1;
+  max-width: 30rem;
+  position: relative;
+}
+
 .form {
   display: flex;
   align-items: center;
-  flex: 1;
-  max-width: 30rem;
 }
 
 .form input,
@@ -19,10 +23,27 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-left: 2rem;
   flex: 1;
+  outline: none;
 }
 
 .form button {
   background: var(--dark-gold);
   border-radius: 0 var(--radius) var(--radius) 0;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.form button:hover {
+  opacity: 0.9;
+}
+
+.searchIcon {
+  fill: rgb(110, 110, 110);
+  width: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 0.5rem;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
