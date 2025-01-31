@@ -51,7 +51,7 @@
 
 .item:hover {
   transform: translateY(-0.3rem);
-  box-shadow: 0rem 0rem 0.15rem var(--dark-gold);
+  box-shadow: 0rem 0rem 0.5rem var(--dark-gold);
 }
 
 .imgBox {
