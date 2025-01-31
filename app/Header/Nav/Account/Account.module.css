@@ -1,0 +1,73 @@
+.account {
+  position: relative;
+}
+
+.accountButton {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.account svg {
+  width: 1.5rem;
+  fill: var(--dark-color);
+}
+
+.accountButton span {
+  font-size: 1.05rem;
+}
+
+.accountList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  border-radius: 0.5rem;
+  position: absolute;
+  background: var(--dark-bg);
+  padding: 0.5rem 1rem;
+  width: 10rem;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sign {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.sign > a {
+  color: black;
+  background: var(--dark-gold);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  border: 0.05rem solid var(--dark-gold);
+  transition: all 0.15s ease-in-out;
+}
+
+.sign > a:hover {
+  background: transparent;
+  color: var(--dark-color);
+}
+
+.otherList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.otherList > a {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.otherList > a:hover {
+  opacity: 0.7;
+}
+
+.otherList svg {
+  width: 0.9rem;
+}
