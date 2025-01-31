@@ -1,0 +1,26 @@
+.cart {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  position: relative;
+  gap: 0.1rem;
+}
+
+.cart svg {
+  width: 2.3rem;
+  fill: var(--dark-gold);
+}
+
+.cart span:last-child {
+  font-size: 0.8rem;
+  align-self: flex-end;
+}
+
+.cartNum {
+  font-size: 0.85rem;
+  position: absolute;
+  left: 0.7rem;
+  color: var(--dark-color);
+  width: 0.5rem;
+  height: 0.5rem;
+}
