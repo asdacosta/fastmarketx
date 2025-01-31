@@ -63,6 +63,26 @@
   cursor: pointer;
 }
 
+svg.xIcon:hover {
+  fill: rgba(95, 95, 95, 0.6);
+}
+
+svg.liIcon:hover {
+  fill: rgb(10, 102, 194);
+}
+
+svg.igIcon:hover {
+  fill: rgb(193, 53, 132);
+}
+
+svg.fbIcon:hover {
+  fill: rgb(24, 119, 242);
+}
+
+svg.tubeIcon:hover {
+  fill: rgb(252, 39, 39);
+}
+
 .contactCard > p {
   display: flex;
   flex-direction: column;
