@@ -20,6 +20,7 @@ function Ad() {
         modules={[Pagination, Autoplay]}
         slidesPerView={1}
         slidesPerGroup={1}
+        spaceBetween={5}
         loop
         autoplay={{ delay: 10000, disableOnInteraction: false }}
         className="mySwiper"
