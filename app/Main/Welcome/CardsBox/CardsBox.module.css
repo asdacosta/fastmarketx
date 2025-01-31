@@ -8,6 +8,7 @@
 
 .ad {
   flex: 1;
+  height: 100%;
 
   color: var(--dark-color);
   display: flex;
@@ -26,6 +27,7 @@
 .otherInfo {
   display: flex;
   flex-direction: column;
+  flex: 1;
   gap: 1rem;
 }
 
@@ -47,14 +49,6 @@
   color: rgb(160, 160, 160);
 }
 
-.primaryInfo > div > span:nth-child(2) {
-  font-weight: 600;
-}
-
-.primaryInfo > div > span:last-child {
-  font-weight: 600;
-}
-
 .primaryInfo,
 .secInfo {
   display: flex;
@@ -70,6 +64,13 @@
   background: var(--dark-gold);
   padding: 0.2rem 0.5rem;
   border-radius: 0.3rem;
+  border: 0.05rem solid var(--dark-gold);
+  transition: all 0.15s ease-in-out;
+}
+
+.secInfo > a:hover {
+  background: transparent;
+  color: var(--dark-color);
 }
 
 .header {
