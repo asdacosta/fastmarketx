@@ -47,11 +47,20 @@
   cursor: pointer;
 }
 
+.contactCard:last-child {
+  justify-content: center;
+  cursor: context-menu;
+}
+
 .contactCard > svg {
   width: 1.7rem;
   height: 1.7rem;
   fill: var(--dark-gold);
-  /* fill: yellow; */
+}
+
+.contactCard:last-child > svg {
+  fill: rgb(95, 95, 95);
+  cursor: pointer;
 }
 
 .contactCard > p {
