@@ -13,22 +13,22 @@ function MainCategories() {
       <MainItems itemsName="Low Cost" itemsQuantity={7} />
       <MainCategoryTemplate categoryName="Products" />
       <MainSubCategories categoryName="Products" />
-      <MainItems itemsName="Popular Products" />
+      <MainItems itemsName="Popular Products" itemsQuantity={7} />
       <MainBrands />
       <MainItems itemsName="Hot Deals" itemsQuantity={7} />
       <MainCategoryTemplate categoryName="Meals" />
       <MainSubCategories categoryName="Meals" />
-      <MainItems itemsName="Popular Meals" />
+      <MainItems itemsName="Popular Meals" itemsQuantity={7} />
       <MainBrands />
       <MainItems itemsName="Hot Deals" itemsQuantity={7} />
       <MainCategoryTemplate categoryName="Services" />
       <MainSubCategories categoryName="Services" />
-      <MainItems itemsName="Popular Services" />
+      <MainItems itemsName="Popular Services" itemsQuantity={7} />
       <MainBrands />
       <MainItems itemsName="Hot Deals" itemsQuantity={7} />
       <MainCategoryTemplate categoryName="Stores" />
       <MainSubCategories categoryName="Stores" />
-      <MainItems itemsName="Popular Stores" />
+      <MainItems itemsName="Popular Stores" itemsQuantity={7} />
       <MainBrands />
       <MainItems itemsName="Hot Deals" itemsQuantity={7} />
     </section>
