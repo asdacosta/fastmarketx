@@ -18,64 +18,9 @@
   white-space: nowrap;
 }
 
-.items {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem 2rem;
-  gap: 1rem;
-}
-
-.productsList,
-.mealsList,
-.servicesList,
-.emptyList {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
 .items h4 {
   color: transparent;
   animation: gradient-animation 3s linear infinite reverse;
-}
-
-.productsList h4 {
-  background: linear-gradient(
-    120deg,
-    rgb(150, 150, 150) 0%,
-    rgb(150, 150, 150) 35%,
-    rgba(49, 123, 220, 0.85) 50%,
-    rgb(150, 150, 150) 65%,
-    rgb(150, 150, 150) 100%
-  );
-  background-size: 200% 200%;
-  background-clip: text;
-}
-
-.mealsList h4 {
-  background: linear-gradient(
-    120deg,
-    rgb(150, 150, 150) 0%,
-    rgb(150, 150, 150) 35%,
-    rgba(229, 126, 29, 0.85) 50%,
-    rgb(150, 150, 150) 65%,
-    rgb(150, 150, 150) 100%
-  );
-  background-size: 200% 200%;
-  background-clip: text;
-}
-
-.servicesList h4 {
-  background: linear-gradient(
-    120deg,
-    rgb(150, 150, 150) 0%,
-    rgb(150, 150, 150) 35%,
-    rgba(43, 224, 169, 0.85) 50%,
-    rgb(150, 150, 150) 65%,
-    rgb(150, 150, 150) 100%
-  );
-  background-size: 200% 200%;
-  background-clip: text;
 }
 
 @keyframes gradient-animation {
@@ -87,28 +32,11 @@
   }
 }
 
-.emptyList > span {
-  opacity: 0.7;
-}
-
-.addItems {
+.items {
   display: flex;
-  justify-content: center;
-  gap: 0.3rem;
-  color: black;
-  background: var(--dark-gold);
-  padding: 0.3rem 0.5rem;
-  border-radius: 0.5rem;
-  width: fit-content;
-  min-width: 5.5rem;
-}
-
-.addItems:hover {
-  background: rgba(232, 205, 4, 1);
-}
-
-.addItems svg {
-  width: 1rem;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  gap: 1rem;
 }
 
 .title {
@@ -120,10 +48,6 @@
 .header h3 {
   font-size: 1.2rem;
   font-weight: 600;
-}
-
-.itemsCount {
-  font-size: 0.9rem;
 }
 
 .header svg {
@@ -144,114 +68,4 @@
 
 .cartSummary {
   flex: 1;
-}
-
-.item {
-  display: flex;
-  gap: 1rem;
-}
-
-.item > div {
-  overflow: hidden;
-  position: relative;
-  border-radius: 0.5rem;
-}
-
-.item > div:first-child {
-  flex: 1;
-  max-width: 7rem;
-}
-
-.item > div:last-child {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  flex: 3;
-}
-
-.namePrice {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.itemName {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.price {
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
-  color: white;
-}
-
-.price > span:first-child {
-  align-self: flex-end;
-  font-size: 0.85rem;
-  font-weight: 400;
-}
-
-.price > span:last-child {
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.accountStock {
-  display: flex;
-  align-items: flex-end;
-  gap: 0.5rem;
-}
-
-.stock {
-  font-size: 0.85rem;
-  color: rgb(139, 139, 139);
-}
-
-.removeSave {
-  font-size: 0.85rem;
-  display: flex;
-  gap: 0.5rem;
-}
-
-.removeSave > div {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-}
-
-.removeSave > div:first-child {
-  color: rgb(213, 108, 108);
-  cursor: pointer;
-}
-
-.removeSave > div:first-child svg {
-  fill: rgb(213, 108, 108);
-}
-
-.removeSave > div:last-child {
-  color: var(--dark-gold);
-  cursor: pointer;
-}
-
-.removeSave > div:last-child svg {
-  fill: var(--dark-gold);
-}
-
-.itemQuantity {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.itemQuantity > svg {
-  fill: var(--dark-gold);
-  width: 1.5rem;
-  cursor: pointer;
-}
-
-.itemQuantity > svg:hover {
-  fill: rgba(232, 205, 4, 1);
 }
