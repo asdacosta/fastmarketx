@@ -1,18 +1,25 @@
 "use client";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Account.module.css";
 
 function Account() {
   const [isVisible, setIsVisible] = useState(false);
+  const accountRef = useRef<HTMLDivElement>(null);
 
   const toggleVisibility = () => setIsVisible((prev) => !prev);
 
   useEffect(() => {
     if (!isVisible) return;
-    document.addEventListener("click", toggleVisibility);
 
-    return () => document.removeEventListener("click", toggleVisibility);
+    const hideOnClickOutsideButton = (event: MouseEvent) => {
+      if (!accountRef.current?.contains(event.target as Node))
+        setIsVisible(false);
+    };
+    document.addEventListener("click", hideOnClickOutsideButton);
+
+    return () =>
+      document.removeEventListener("click", hideOnClickOutsideButton);
   }, [isVisible]);
 
   return (
