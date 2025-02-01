@@ -1,0 +1,29 @@
+.emptyCart {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.emptyCart > span {
+  opacity: 0.7;
+}
+
+.addItems {
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
+  color: black;
+  background: var(--dark-gold);
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.5rem;
+  width: fit-content;
+  min-width: 5.5rem;
+}
+
+.addItems:hover {
+  background: rgba(232, 205, 4, 1);
+}
+
+.addItems svg {
+  width: 1rem;
+}
