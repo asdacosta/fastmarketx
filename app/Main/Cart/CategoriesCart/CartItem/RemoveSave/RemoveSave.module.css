@@ -1,0 +1,45 @@
+.removeSave {
+  font-size: 0.85rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.removeSave > div {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.removeSave > div:first-child {
+  color: rgba(213, 108, 108, 0.85);
+  cursor: pointer;
+}
+
+.removeSave > div:first-child svg {
+  fill: rgba(213, 108, 108, 0.85);
+}
+
+.removeSave > div:first-child:hover {
+  color: rgb(213, 108, 108);
+}
+
+.removeSave > div:first-child:hover svg {
+  fill: rgb(213, 108, 108);
+}
+
+.removeSave > div:last-child {
+  color: var(--dark-gold);
+  cursor: pointer;
+}
+
+.removeSave > div:last-child svg {
+  fill: var(--dark-gold);
+}
+
+.removeSave > div:last-child:hover {
+  color: rgba(232, 205, 4, 1);
+}
+
+.removeSave > div:last-child:hover svg {
+  fill: rgba(232, 205, 4, 1);
+}
