@@ -61,19 +61,3 @@
   font-size: 0.85rem;
   color: rgb(139, 139, 139);
 }
-
-.itemQuantity {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.itemQuantity > svg {
-  fill: var(--dark-gold);
-  width: 1.5rem;
-  cursor: pointer;
-}
-
-.itemQuantity > svg:hover {
-  fill: rgba(232, 205, 4, 1);
-}
