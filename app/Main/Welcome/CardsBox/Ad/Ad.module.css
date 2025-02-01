@@ -24,3 +24,7 @@
   background: rgba(0, 0, 0, 0.15);
   z-index: 1;
 }
+
+.item:hover::before {
+  height: 0;
+}
