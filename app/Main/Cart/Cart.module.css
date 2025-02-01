@@ -14,7 +14,7 @@
   align-items: center;
   gap: 0.5rem;
   border-bottom: 0.15rem solid var(--dark-bg);
-  padding: 0.5rem 1rem;
+  padding: 1rem 2rem;
   white-space: nowrap;
 }
 
@@ -22,7 +22,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0.5rem 1rem;
+  padding: 1rem 2rem;
   gap: 1rem;
 }
 
@@ -93,15 +93,23 @@
 }
 
 .addItems {
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
   color: black;
   background: var(--dark-gold);
   padding: 0.3rem 0.5rem;
   border-radius: 0.5rem;
-  text-align: center;
+  width: fit-content;
+  min-width: 5.5rem;
 }
 
 .addItems:hover {
   background: rgba(232, 205, 4, 1);
+}
+
+.addItems svg {
+  width: 1rem;
 }
 
 .title {
