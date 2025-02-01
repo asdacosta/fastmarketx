@@ -1,0 +1,82 @@
+.categoriesCart {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.productsList,
+.mealsList,
+.servicesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.productsList h4 {
+  background: linear-gradient(
+    120deg,
+    rgb(150, 150, 150) 0%,
+    rgb(150, 150, 150) 35%,
+    rgba(49, 123, 220, 0.85) 50%,
+    rgb(150, 150, 150) 65%,
+    rgb(150, 150, 150) 100%
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+}
+
+.mealsList h4 {
+  background: linear-gradient(
+    120deg,
+    rgb(150, 150, 150) 0%,
+    rgb(150, 150, 150) 35%,
+    rgba(229, 126, 29, 0.85) 50%,
+    rgb(150, 150, 150) 65%,
+    rgb(150, 150, 150) 100%
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+}
+
+.servicesList h4 {
+  background: linear-gradient(
+    120deg,
+    rgb(150, 150, 150) 0%,
+    rgb(150, 150, 150) 35%,
+    rgba(43, 224, 169, 0.85) 50%,
+    rgb(150, 150, 150) 65%,
+    rgb(150, 150, 150) 100%
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+}
+
+.addItems {
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
+  color: black;
+  background: var(--dark-gold);
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.5rem;
+  width: fit-content;
+  min-width: 5.5rem;
+}
+
+.addItems:hover {
+  background: rgba(232, 205, 4, 1);
+}
+
+.addItems svg {
+  width: 1rem;
+}
+
+.itemsCount {
+  font-size: 0.9rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
