@@ -5,6 +5,8 @@
 .accountButton {
   display: flex;
   align-items: center;
+  gap: 0.2rem;
+
   white-space: nowrap;
   color: var(--dark-color);
   background: transparent;
@@ -47,12 +49,10 @@
   border-radius: 0.3rem;
   text-align: center;
   border: 0.05rem solid var(--dark-gold);
-  transition: all 0.15s ease-in-out;
 }
 
 .sign > a:hover {
-  background: transparent;
-  color: var(--dark-color);
+  background: rgba(232, 205, 4, 1);
 }
 
 .otherList {
