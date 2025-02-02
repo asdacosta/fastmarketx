@@ -69,3 +69,61 @@
 .cartSummary {
   flex: 1;
 }
+
+.subtotal {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 2rem;
+}
+
+.amount {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.amount > span:first-child {
+  font-weight: 600;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: white;
+}
+
+.price > span:first-child {
+  align-self: flex-end;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.price > span:last-child {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.payButton {
+  align-self: center;
+
+  display: flex;
+  gap: 0.5rem;
+  background: var(--dark-gold);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.payButton:hover {
+  background: rgba(232, 205, 4, 1);
+}
+
+.payButton > span {
+  color: black;
+  white-space: nowrap;
+}
+
+.payButton svg {
+  width: 1.3rem;
+}
