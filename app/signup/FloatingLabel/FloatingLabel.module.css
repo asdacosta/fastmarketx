@@ -1,0 +1,36 @@
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.inputBox > label {
+  align-self: flex-start;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  color: rgb(90, 90, 90);
+  position: relative;
+  top: 1.9rem;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.inputBox > input {
+  background: var(--dark-color);
+  height: 2rem;
+  min-width: 20rem;
+  border-radius: 0.3rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 1.1rem;
+  color: black;
+}
+
+.inputBox input:focus,
+.inputBox input:hover {
+  outline: 0.15rem solid var(--dark-gold);
+}
+
+label.focused {
+  top: 0rem;
+  color: var(--dark-color);
+}
