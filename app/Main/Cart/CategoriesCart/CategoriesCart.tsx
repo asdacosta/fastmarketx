@@ -13,9 +13,18 @@ function CategoryCart() {
           <CartItem />
           <CartItem />
         </section>
-        <Link href="/" className={styles.addItems}>
-          Shop more
-        </Link>
+        <section className={styles.listEnd}>
+          <Link href="/" className={styles.addItems}>
+            Shop more
+          </Link>
+          <div>
+            <div className={styles.price}>
+              <span>Products Subtotal | </span>
+              <span>GH₵</span>
+              <span>1000.45</span>
+            </div>
+          </div>
+        </section>
       </section>
       <section className={styles.mealsList}>
         <h4>Meals</h4>
