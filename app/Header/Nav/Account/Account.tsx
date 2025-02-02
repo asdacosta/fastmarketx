@@ -39,8 +39,8 @@ function Account() {
       {isVisible && (
         <section className={styles.accountList}>
           <section className={styles.sign}>
-            <Link href="">Sign Up</Link>
-            <Link href="">Sign In</Link>
+            <Link href="signup">Sign Up</Link>
+            <Link href="login">Log In</Link>
           </section>
           <section className={styles.otherList}>
             <Link href="">
