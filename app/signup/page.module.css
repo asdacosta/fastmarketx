@@ -1,0 +1,87 @@
+.page {
+  color: var(--dark-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background: var(--dark-bg);
+  height: 100vh;
+}
+
+.header,
+.body,
+.lastSection {
+  background: black;
+  padding: 1rem 1.5rem;
+  border-radius: 0.4rem;
+}
+
+.body > form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.body > form button {
+  align-self: center;
+
+  font-size: 1.1rem;
+  width: fit-content;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  color: black;
+  background: var(--dark-gold);
+}
+
+.body > form button:hover {
+  background: var(--dark-pure-gold);
+}
+
+.header h1 {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.body h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.lastSection svg {
+  fill: var(--dark-color);
+  width: 0.9rem;
+}
+
+.lastSection > section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.lastSection > section:hover {
+  opacity: 0.8;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.body h2 {
+  align-self: center;
+}
+
+.loginSection {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.loginSection > a {
+  color: var(--dark-gold);
+}
