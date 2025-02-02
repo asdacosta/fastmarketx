@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Cart.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import EmptyCart from "../EmptyCart/EmptyCart";
+import EmptyCart from "./EmptyCart/EmptyCart";
 import CategoryCart from "./CategoriesCart/CategoriesCart";
 
 function Cart() {
