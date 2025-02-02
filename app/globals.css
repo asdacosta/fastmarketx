@@ -3,6 +3,7 @@
   --foreground: #171717;
 
   --dark-gold: rgba(232, 205, 4, 0.85);
+  --dark-pure-gold: rgba(232, 205, 4, 1);
   --dark-color: rgb(210, 210, 210);
   --dark-bg: rgb(28, 29, 30);
   --dark-violet: rgba(146, 44, 218, 0.85);
@@ -40,6 +41,10 @@ body {
   font-family: var(--font-fredoka), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+input {
+  letter-spacing: 0.02rem;
 }
 
 * {
