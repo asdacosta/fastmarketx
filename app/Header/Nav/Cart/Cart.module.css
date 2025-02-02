@@ -4,6 +4,7 @@
   white-space: nowrap;
   position: relative;
   gap: 0.1rem;
+  cursor: pointer;
 }
 
 .cart svg {
