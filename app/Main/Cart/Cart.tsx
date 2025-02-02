@@ -20,7 +20,7 @@ function Cart() {
             </svg>
             <h3>Shopping Cart</h3>
           </div>
-          <span className={styles.itemsCount}>Items | 10</span>
+          <span className={styles.itemsCount}>Items | {items.length}</span>
         </section>
         <section className={styles.items}>
           {items.length > 0 ? <CategoryCart /> : <EmptyCart />}
