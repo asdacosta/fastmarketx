@@ -5,19 +5,21 @@ import MainCategories from "./MainCategories/MainCategories";
 import Cart from "./Cart/Cart";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
+import Menu from "./Menu/Menu";
 
 function Main() {
-  const cartOpen = useSelector(
-    (state: RootState) => state.cartDisplay.cartOpen
+  const componentOpen = useSelector(
+    (state: RootState) => state.componentDisplay
   );
 
   return (
     <main className={styles.main}>
-      {cartOpen ? (
+      {componentOpen.cartOpen ? (
         <Cart />
+      ) : componentOpen.menuOpen ? (
+        <Menu />
       ) : (
         <>
-          {" "}
           <Welcome />
           <MainCategories />
         </>
