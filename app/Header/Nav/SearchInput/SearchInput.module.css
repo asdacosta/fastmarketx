@@ -31,11 +31,10 @@
 .form button {
   background: var(--dark-gold);
   border-radius: 0 var(--radius) var(--radius) 0;
-  transition: opacity 0.15s ease-in-out;
 }
 
 .form button:hover {
-  opacity: 0.9;
+  background: var(--dark-pure-gold);
 }
 
 .searchIcon {
