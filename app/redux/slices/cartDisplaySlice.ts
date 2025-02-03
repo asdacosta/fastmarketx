@@ -5,7 +5,7 @@ const initialState: { cartOpen: boolean } = {
 };
 
 const cartDisplaySlice = createSlice({
-  name: "cartUi",
+  name: "cartDisplay",
   initialState,
   reducers: {
     toggleCart: (state) => {
