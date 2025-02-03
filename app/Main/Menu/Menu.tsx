@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Menu.module.css";
 import Link from "next/link";
+import Jobs from "./Jobs/Jobs";
 
 function Menu() {
   return (
@@ -46,7 +47,11 @@ function Menu() {
           </div>
         </section>
       </section>
-      <section className={styles.listDetails}></section>
+      <section className={styles.listDetails}>
+        <section className={styles.campusJobs}>
+          <Jobs />
+        </section>
+      </section>
     </section>
   );
 }
