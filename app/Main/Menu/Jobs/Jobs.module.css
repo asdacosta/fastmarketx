@@ -1,0 +1,19 @@
+.jobs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 90vh;
+  overflow-y: auto;
+  padding: 1rem 2rem;
+}
+
+.jobPosts {
+  display: grid;
+  grid-template: 14rem / repeat(auto-fit, minmax(15rem, 1fr));
+  grid-auto-rows: 14rem;
+  gap: 1rem;
+}
+
+.jobs h3 {
+  font-size: 1.2rem;
+}
