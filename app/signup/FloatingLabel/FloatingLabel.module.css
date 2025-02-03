@@ -31,6 +31,14 @@
   outline: 0.15rem solid var(--dark-gold);
 }
 
+.inputBox input:-webkit-autofill,
+.inputBox input:-webkit-autofill:hover,
+.inputBox input:-webkit-autofill:focus,
+.inputBox input:-webkit-autofill:active {
+  -webkit-text-fill-color: black;
+  caret-color: black;
+}
+
 label.focused {
   font-size: 0.8rem;
   top: 0rem;
