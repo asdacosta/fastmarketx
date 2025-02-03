@@ -1,0 +1,73 @@
+.jobCard {
+  background-color: var(--dark-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3rem;
+  cursor: context-menu;
+  transition: transform 0.15s ease-in-out;
+}
+
+.jobCard:hover {
+  transform: translateY(-0.3rem);
+}
+
+.header {
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: black;
+}
+
+.store {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.type,
+.location,
+.salary,
+.skill,
+.timer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
+.applyBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.applyButton {
+  background-color: var(--dark-gold);
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.applyButton:hover {
+  background: var(--dark-pure-gold);
+}
+
+.callDescriptionBox {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.callIcon,
+.descriptionIcon,
+.shareIcon {
+  color: #4b5563;
+  cursor: pointer;
+}
