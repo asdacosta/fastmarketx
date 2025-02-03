@@ -6,9 +6,6 @@ import { toggleCart } from "@/app/redux/slices/cartDisplaySlice";
 
 function Cart() {
   const dispatch = useDispatch();
-  const cartOpen = useSelector(
-    (state: RootState) => state.cartDisplay.cartOpen
-  );
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
   return (
