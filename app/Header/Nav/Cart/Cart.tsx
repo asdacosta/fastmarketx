@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Cart.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
-import { toggleCart } from "@/app/redux/slices/cartDisplaySlice";
+import { toggleCart } from "@/app/redux/slices/componentDisplaySlice";
 
 function Cart() {
   const dispatch = useDispatch();
