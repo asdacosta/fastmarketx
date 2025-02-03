@@ -1,0 +1,116 @@
+.accountList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  border-radius: 0.5rem;
+  position: absolute;
+  background: var(--dark-bg);
+  padding: 0.5rem 1rem;
+  width: 10rem;
+  top: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sign {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  overflow: hidden;
+}
+
+.sign > a {
+  color: black;
+  background: var(--dark-gold);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  text-align: center;
+  border: 0.05rem solid var(--dark-gold);
+  animation: slideIn 0.15s forwards ease-in-out;
+}
+
+.sign > a:hover {
+  background: rgba(232, 205, 4, 1);
+}
+
+.sign > a:first-child {
+  transform: translateX(100%);
+}
+
+.sign > a:last-child {
+  transform: translateX(-100%);
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+  }
+}
+
+.otherList {
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+  height: 0;
+  animation: slideDown 0.15s forwards ease-in-out;
+}
+
+@keyframes slideDown {
+  to {
+    height: 10.5rem;
+  }
+}
+
+.otherList > div {
+  display: flex;
+  gap: 0.5rem;
+  transform: translateY(-2rem);
+  opacity: 0;
+  cursor: pointer;
+  animation: fallDown 0.1s 0.1s forwards cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.otherList > div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.otherList > div:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.otherList > div:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.otherList > div:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.otherList > div:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fallDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.otherList svg,
+.otherList span {
+  transition: opacity 0.15s ease-in-out;
+}
+
+.otherList > div:hover svg,
+.otherList > div:hover span {
+  opacity: 0.7;
+}
+
+.otherList svg {
+  width: 1rem;
+  fill: var(--dark-color);
+}
