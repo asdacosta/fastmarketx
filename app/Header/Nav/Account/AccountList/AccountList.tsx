@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import styles from "./AccountList.module.css";
 import { useDispatch } from "react-redux";
-import { openMenu } from "@/app/redux/slices/MenuDisplaySlice";
+import { openMenu } from "@/app/redux/slices/componentDisplaySlice";
 
 function AccountList() {
   const dispatch = useDispatch();
