@@ -1,0 +1,88 @@
+.item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  padding-right: 0.5rem;
+
+  border-top: 0.15rem solid var(--dark-bg);
+}
+
+.item > div:first-child {
+  flex: 1;
+  max-width: 7rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0.5rem;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 3;
+}
+
+.namePrice {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.itemName {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: white;
+}
+
+.price > span:first-child {
+  align-self: flex-end;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.price > span:last-child {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.accountName {
+  font-size: 0.85rem;
+}
+
+.orderNumber,
+.date,
+.itemCount {
+  color: white;
+}
+
+.date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+}
+
+.links > span {
+  background: var(--dark-gold);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: black;
+  cursor: pointer;
+}
+
+.links > span:hover {
+  background: var(--dark-pure-gold);
+}
