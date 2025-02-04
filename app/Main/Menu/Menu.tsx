@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./Menu.module.css";
 import Link from "next/link";
 import Jobs from "./Jobs/Jobs";
+import WishList from "./WishList/WishList";
+import Orders from "./Orders/Orders";
 
 function Menu() {
   return (
@@ -50,6 +52,8 @@ function Menu() {
       <section className={styles.listDetails}>
         <section className={styles.campusJobs}>
           <Jobs />
+          {/* <WishList /> */}
+          {/* <Orders /> */}
         </section>
       </section>
     </section>
