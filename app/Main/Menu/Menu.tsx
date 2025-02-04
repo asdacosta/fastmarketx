@@ -4,6 +4,7 @@ import Link from "next/link";
 import Jobs from "./Jobs/Jobs";
 import WishList from "./WishList/WishList";
 import Orders from "./Orders/Orders";
+import Inbox from "./Inbox/Inbox";
 
 function Menu() {
   return (
@@ -51,9 +52,10 @@ function Menu() {
       </section>
       <section className={styles.listDetails}>
         <section className={styles.campusJobs}>
-          <Jobs />
+          {/* <Jobs /> */}
           {/* <WishList /> */}
           {/* <Orders /> */}
+          <Inbox />
         </section>
       </section>
     </section>
