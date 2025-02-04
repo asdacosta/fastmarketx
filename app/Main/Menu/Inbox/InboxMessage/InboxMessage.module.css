@@ -1,0 +1,60 @@
+.inboxMessage {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  border-top: 0.15rem solid var(--dark-bg);
+}
+
+.profile {
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  background: var(--dark-gold);
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.message > span:first-child {
+  font-weight: 600;
+}
+
+.message > span:last-child,
+.ending > span:last-child {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.85rem;
+  color: gray;
+}
+
+.message > span:last-child {
+  max-width: 18rem;
+}
+
+.ending {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.ending svg {
+  cursor: pointer;
+}
+
+.ending > svg:first-child {
+  width: 0.8rem;
+  fill: rgba(213, 108, 108, 0.85);
+}
+
+.ending > svg:first-child:hover {
+  fill: rgb(213, 108, 108);
+}
