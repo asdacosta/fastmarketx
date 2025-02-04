@@ -1,0 +1,116 @@
+.item {
+  display: flex;
+  padding: 1rem 0;
+  padding-right: 0.5rem;
+  gap: 1rem;
+  border-top: 0.15rem solid var(--dark-bg);
+}
+
+.item > div {
+  overflow: hidden;
+  position: relative;
+  border-radius: 0.5rem;
+}
+
+.item > div:first-child {
+  flex: 1;
+  max-width: 7rem;
+}
+
+.item > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 3;
+}
+
+.namePrice {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.itemName {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: white;
+}
+
+.price > span:first-child {
+  align-self: flex-end;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.price > span:last-child {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.accountStock {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.stock {
+  font-size: 0.85rem;
+  color: rgb(139, 139, 139);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.links div {
+  white-space: nowrap;
+}
+
+.removeAdd {
+  display: flex;
+  gap: 1rem;
+}
+
+.remove {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(213, 108, 108, 0.85);
+  cursor: pointer;
+}
+
+.remove svg {
+  fill: var(--dark-color);
+  fill: rgba(213, 108, 108, 0.85);
+}
+
+.remove:hover {
+  color: rgb(213, 108, 108);
+}
+
+.removeSave:hover svg {
+  fill: rgb(213, 108, 108);
+}
+
+.add {
+  background: var(--dark-gold);
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.add:hover {
+  background: var(--dark-pure-gold);
+}
