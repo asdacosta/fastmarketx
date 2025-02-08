@@ -1,8 +1,9 @@
 "use client";
-import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Account.module.css";
 import AccountList from "./AccountList/AccountList";
+import { Provider } from "react-redux";
+import { store } from "@/app/redux/store";
 
 function Account() {
   const [isVisible, setIsVisible] = useState(false);
@@ -37,7 +38,7 @@ function Account() {
         </svg>
         <span>Account</span>
       </button>
-      {isVisible && <AccountList />}
+      <Provider store={store}>{isVisible && <AccountList />}</Provider>
     </section>
   );
 }
