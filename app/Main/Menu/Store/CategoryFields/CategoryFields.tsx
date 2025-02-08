@@ -41,11 +41,6 @@ function CategoryFields() {
   const [storeType, setStoreType] = useState("products");
   const [storeCategory, setStoreCategory] = useState<string[]>([]);
 
-  const handleStoreTypeChange = (type: string) => {
-    setStoreType(type);
-    dispatch(setField({ field: "storeType", value: true })); // Mark storeType as selected
-  };
-
   const handleCategoryChange = (category: string, checked: boolean) => {
     const newSelection = checked
       ? [...storeCategory, category]
@@ -66,7 +61,7 @@ function CategoryFields() {
                 type="radio"
                 value={type}
                 checked={storeType === type} // Check hidden radio when the custom radio below is selected
-                onChange={(e) => handleStoreTypeChange(e.target.value)}
+                onChange={(e) => setStoreType(e.target.value)}
                 className={styles.radioInput}
               />
               <span className={styles.customRadio}></span>
