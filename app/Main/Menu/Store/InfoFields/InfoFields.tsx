@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { setField } from "@/app/redux/slices/CreateStoreFormSlice";
 import { FormState } from "@/app/redux/slices/CreateStoreFormSlice";
 import styles from "./InfoFields.module.css";
-import { RootState } from "@/app/redux/store";
 
 function InfoFields() {
   const dispatch = useDispatch();
