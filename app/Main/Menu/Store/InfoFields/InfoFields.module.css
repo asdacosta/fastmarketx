@@ -1,0 +1,56 @@
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--dark-color);
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select {
+  padding: 10px;
+}
+
+.formGroup input,
+.formGroup textarea,
+.formGroup select,
+.contactGroup input {
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.formGroup select {
+  color: var(--dark-color);
+}
+
+.contactGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contactGroup > div {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.contactGroup input {
+  padding: 0.5rem 0.5rem 0.5rem 2rem;
+  width: 100%;
+}
+
+.contactGroup svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: var(--dark-color);
+  position: absolute;
+  left: 0.5rem;
+  pointer-events: none;
+}
