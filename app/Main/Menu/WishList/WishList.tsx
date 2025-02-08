@@ -9,8 +9,8 @@ function WishList() {
     <section className={styles.wishlist}>
       <h3>Wishlist | 0</h3>
       <section className={styles.items}>
-        {items.map((item) => (
-          <WishListItem />
+        {items.map((item, index) => (
+          <WishListItem key={index} />
         ))}
       </section>
     </section>

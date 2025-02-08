@@ -15,8 +15,8 @@ function Orders() {
           <span>Canceled</span>
         </section>
         <section className={styles.items}>
-          {items.map((item) => (
-            <OrderItem />
+          {items.map((item, index) => (
+            <OrderItem key={index} />
           ))}
         </section>
       </section>
