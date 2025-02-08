@@ -1,0 +1,89 @@
+.title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--dark-color);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-bottom: 0.1rem solid #333;
+  padding: 0.5rem 0;
+}
+
+.day {
+  opacity: 0.7;
+  flex: 1;
+}
+
+.select {
+  cursor: pointer;
+  color: var(--dark-color);
+  transition: opacity 0.15s ease;
+}
+
+.select:hover {
+  border-color: #777;
+}
+
+.select:focus {
+  border-color: #aaa;
+}
+
+/* Disabled select */
+.select.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  border-color: #444;
+}
+
+/* Always Open Button */
+.alwaysOpenButton {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: #333333;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+
+.alwaysOpenButton svg {
+  width: 1.4rem;
+  fill: var(--dark-color);
+}
+
+.alwaysOpenButton:hover {
+  background: #333333;
+}
+
+.alwaysOpenButton.active {
+  background: #007944;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--dark-color);
+}
+
+.formGroup select {
+  padding: 10px;
+}
+
+.formGroup select {
+  font-size: 0.9rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+}
