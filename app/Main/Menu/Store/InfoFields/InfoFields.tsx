@@ -15,6 +15,7 @@ function InfoFields() {
   const [mobileMoney, setMobileMoney] = useState("");
   const [campus, setCampus] = useState("legon");
 
+  // The generic <K extends keyof FormState> ensures that you can only pass valid field names from your Redux state.
   const handleInputChange = <K extends keyof FormState>(
     field: K,
     value: string,
@@ -22,21 +23,25 @@ function InfoFields() {
   ) => {
     setState(value);
 
+    // For phone number fields, check if all three are filled to update the "allNumbers" field accordingly.
     if (
       field === "phoneNumber" ||
       field === "whatsapp" ||
       field === "mobileMoney"
     ) {
+      // Check if all phone-related fields are non-empty.
       const allNumbersFilled =
         phoneNumber.trim() !== "" &&
         whatsapp.trim() !== "" &&
         mobileMoney.trim() !== "";
+      // Dispatch for the specific field being updated.
       dispatch(
         setField({
           field: field as keyof FormState,
           value: value.trim() !== "",
         })
       );
+      // Also update the 'allNumbers' field in Redux.
       dispatch(
         setField({
           field: "allNumbers" as keyof FormState,
