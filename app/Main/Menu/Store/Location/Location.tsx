@@ -13,13 +13,14 @@ import "./GoogleAutoComplete.css";
 
 const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
 
-const libraries: "places"[] = ["places"]; // "place"[] means an array where each element but be "places" only
+// Specifying the "places" library for Google Maps API
+const libraries: "places"[] = ["places"]; // "place"[] means an array where each element must be "places" only
 const defaultCenter = { lat: 6.6731, lng: -1.5654 }; // KNUST, Ghana
 
 function Location() {
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: GOOGLE_MAPS_API_KEY,
-    libraries,
+    libraries, // Loading the "places" library for autocomplete
   });
 
   const dispatch = useDispatch();
@@ -44,8 +45,9 @@ function Location() {
       }
     : undefined;
 
-  const onPlaceSelected = () => {
+  const handlePlaceSelect = () => {
     if (autocomplete) {
+      // Get selected place
       const place = autocomplete.getPlace();
       if (place.geometry && place.geometry.location) {
         const newLocation = {
@@ -53,6 +55,7 @@ function Location() {
           lng: place.geometry.location.lng(),
         };
 
+        // Update with new location
         setLocation(newLocation);
         dispatch(setField({ field: "location", value: true }));
 
@@ -92,7 +95,7 @@ function Location() {
       }
     );
   };
-
+  // Return if Google Maps API is not loaded
   if (!isLoaded) return <p>Loading maps...</p>;
 
   return (
@@ -113,7 +116,10 @@ function Location() {
 
       <div className={styles.searchBox}>
         <p>Prefer to search? Find your location here.</p>
-        <Autocomplete onLoad={setAutocomplete} onPlaceChanged={onPlaceSelected}>
+        <Autocomplete
+          onLoad={setAutocomplete}
+          onPlaceChanged={handlePlaceSelect}
+        >
           <input
             type="text"
             placeholder="Search for a location..."
@@ -134,6 +140,7 @@ function Location() {
           zoom={13}
           center={location || defaultCenter}
         >
+          {/* Place marker when a location is selected */}
           {location && (
             <Marker
               position={location}
