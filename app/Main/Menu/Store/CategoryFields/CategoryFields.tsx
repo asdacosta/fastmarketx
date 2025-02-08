@@ -49,7 +49,7 @@ function CategoryFields() {
   const handleCategoryChange = (category: string, checked: boolean) => {
     const newSelection = checked
       ? [...storeCategory, category]
-      : storeCategory.filter((c) => c !== category);
+      : storeCategory.filter((cat) => cat !== category);
 
     setStoreCategory(newSelection);
     dispatch(setField({ field: "categories", value: newSelection.length > 0 }));
@@ -65,7 +65,7 @@ function CategoryFields() {
               <input
                 type="radio"
                 value={type}
-                checked={storeType === type}
+                checked={storeType === type} // Check hidden radio when the custom radio below is selected
                 onChange={(e) => handleStoreTypeChange(e.target.value)}
                 className={styles.radioInput}
               />
@@ -82,13 +82,11 @@ function CategoryFields() {
           that apply)
         </label>
         <div className={styles.checkboxGroup}>
-          {(
-            {
-              products,
-              meals,
-              services,
-            }[storeType] || []
-          ).map((category) => (
+          {{
+            products,
+            meals,
+            services,
+          }[storeType]?.map((category) => (
             <label key={category} className={styles.customCheckbox}>
               <input
                 type="checkbox"
