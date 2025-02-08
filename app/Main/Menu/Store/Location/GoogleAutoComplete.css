@@ -1,0 +1,29 @@
+.pac-container {
+  background-color: black !important;
+  color: var(--dark-color) !important;
+}
+
+.pac-item {
+  padding: 0.3rem !important;
+  font-size: 0.9rem;
+  color: var(--dark-color) !important;
+}
+
+/* Highlighted item */
+.pac-item:hover,
+.pac-item-selected {
+  background-color: var(--dark-gold) !important;
+  color: black !important;
+}
+
+.pac-item .pac-item-query {
+  color: #fff !important;
+}
+
+.pac-item:hover .pac-item-query {
+  color: black !important;
+}
+
+.pac-container:focus {
+  outline: none !important;
+}
