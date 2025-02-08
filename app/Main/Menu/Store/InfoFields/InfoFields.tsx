@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setField } from "@/app/redux/slices/CreateStoreFormSlice";
 import { FormState } from "@/app/redux/slices/CreateStoreFormSlice";
 import styles from "./InfoFields.module.css";
@@ -7,7 +7,6 @@ import { RootState } from "@/app/redux/store";
 
 function InfoFields() {
   const dispatch = useDispatch();
-  const formFields = useSelector((state: RootState) => state.createStoreForm);
 
   const [storeName, setStoreName] = useState("");
   const [slogan, setSlogan] = useState("");
