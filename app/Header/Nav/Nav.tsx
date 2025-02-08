@@ -4,7 +4,7 @@ import SearchInput from "./SearchInput/SearchInput";
 import styles from "./Nav.module.css";
 import NavScrollEffect from "./NavScrollEffect";
 import Account from "./Account/Account";
-import Cart from "./Cart/Cart";
+import CartClient from "./Cart/CartClient";
 
 function Nav() {
   return (
@@ -23,7 +23,7 @@ function Nav() {
         </section>
         <section className={styles.secondary}>
           <Account />
-          <Cart />
+          <CartClient />
         </section>
       </nav>
     </>
