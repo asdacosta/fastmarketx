@@ -8,7 +8,12 @@ import Link from "next/link";
 
 function Cart() {
   const cartData = useSelector((state: RootState) => state.cart);
+  const componentOpen = useSelector(
+    (state: RootState) => state.componentDisplay.cartOpen
+  );
   const { items, total } = cartData;
+
+  if (!componentOpen) return null;
 
   return (
     <section className={styles.cart}>
