@@ -1,42 +1,61 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Menu.module.css";
-import Link from "next/link";
 import Jobs from "./Jobs/Jobs";
 import WishList from "./WishList/WishList";
 import Orders from "./Orders/Orders";
 import Inbox from "./Inbox/Inbox";
+import CreateStore from "./Store/CreateStore";
 
 function Menu() {
+  const [activeComponent, setActiveComponent] = useState("Jobs");
+
   return (
     <section className={styles.menu}>
       <section className={styles.menuList}>
         <h3>Menu</h3>
         <section className={styles.list}>
-          <div>
+          <div
+            onClick={() => setActiveComponent("Jobs")}
+            className={`${activeComponent === "Jobs" ? styles.active : ""}`}
+          >
             <svg role="img" viewBox="0 -960 960 960">
               <path d="M172.31-140Q142-140 121-161q-21-21-21-51.31v-415.38Q100-658 121-679q21-21 51.31-21H340v-67.69Q340-798 361-819q21-21 51.31-21h135.38Q578-840 599-819q21 21 21 51.31V-700h167.69Q818-700 839-679q21 21 21 51.31v415.38Q860-182 839-161q-21 21-51.31 21H172.31Zm0-60h615.38q4.62 0 8.46-3.85 3.85-3.84 3.85-8.46v-415.38q0-4.62-3.85-8.46-3.84-3.85-8.46-3.85H172.31q-4.62 0-8.46 3.85-3.85 3.84-3.85 8.46v415.38q0 4.62 3.85 8.46 3.84 3.85 8.46 3.85ZM400-700h160v-67.69q0-4.62-3.85-8.46-3.84-3.85-8.46-3.85H412.31q-4.62 0-8.46 3.85-3.85 3.84-3.85 8.46V-700ZM160-200v-440 440Z" />
             </svg>
             <span>Campus Jobs</span>
           </div>
-          <div>
+          <div
+            onClick={() => setActiveComponent("WishList")}
+            className={`${activeComponent === "WishList" ? styles.active : ""}`}
+          >
             <svg role="img" viewBox="0 0 512 512">
               <path d="M225.8 468.2l-2.5-2.3L48.1 303.2C17.4 274.7 0 234.7 0 192.8l0-3.3c0-70.4 50-130.8 119.2-144C158.6 37.9 198.9 47 231 69.6c9 6.4 17.4 13.8 25 22.3c4.2-4.8 8.7-9.2 13.5-13.3c3.7-3.2 7.5-6.2 11.5-9c0 0 0 0 0 0C313.1 47 353.4 37.9 392.8 45.4C462 58.6 512 119.1 512 189.5l0 3.3c0 41.9-17.4 81.9-48.1 110.4L288.7 465.9l-2.5 2.3c-8.2 7.6-19 11.9-30.2 11.9s-22-4.2-30.2-11.9zM239.1 145c-.4-.3-.7-.7-1-1.1l-17.8-20-.1-.1s0 0 0 0c-23.1-25.9-58-37.7-92-31.2C81.6 101.5 48 142.1 48 189.5l0 3.3c0 28.5 11.9 55.8 32.8 75.2L256 430.7 431.2 268c20.9-19.4 32.8-46.7 32.8-75.2l0-3.3c0-47.3-33.6-88-80.1-96.9c-34-6.5-69 5.4-92 31.2c0 0 0 0-.1 .1s0 0-.1 .1l-17.8 20c-.3 .4-.7 .7-1 1.1c-4.5 4.5-10.6 7-16.9 7s-12.4-2.5-16.9-7z" />
             </svg>
             <span>Wishlist</span>
           </div>
-          <div>
+          <div
+            onClick={() => setActiveComponent("Orders")}
+            className={`${activeComponent === "Orders" ? styles.active : ""}`}
+          >
             <svg role="img" viewBox="0 0 512 512">
               <path d="M152.1 38.2c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 113C-2.3 103.6-2.3 88.4 7 79s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zm0 160c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 273c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zM224 96c0-17.7 14.3-32 32-32l224 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-224 0c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32l224 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-224 0c-17.7 0-32-14.3-32-32zM160 416c0-17.7 14.3-32 32-32l288 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-288 0c-17.7 0-32-14.3-32-32zM48 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
             </svg>
             <span>Orders</span>
           </div>
-          <div>
+          <div
+            onClick={() => setActiveComponent("Inbox")}
+            className={`${activeComponent === "Inbox" ? styles.active : ""}`}
+          >
             <svg role="img" viewBox="0 0 512 512">
               <path d="M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64l384 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128z" />
             </svg>
             <span>Inbox</span>
           </div>
-          <div>
+          <div
+            onClick={() => setActiveComponent("CreateStore")}
+            className={`${
+              activeComponent === "CreateStore" ? styles.active : ""
+            }`}
+          >
             <svg role="img" viewBox="0 0 640 512">
               <path d="M36.8 192l566.3 0c20.3 0 36.8-16.5 36.8-36.8c0-7.3-2.2-14.4-6.2-20.4L558.2 21.4C549.3 8 534.4 0 518.3 0L121.7 0c-16 0-31 8-39.9 21.4L6.2 134.7c-4 6.1-6.2 13.2-6.2 20.4C0 175.5 16.5 192 36.8 192zM64 224l0 160 0 80c0 26.5 21.5 48 48 48l224 0c26.5 0 48-21.5 48-48l0-80 0-160-64 0 0 160-192 0 0-160-64 0zm448 0l0 256c0 17.7 14.3 32 32 32s32-14.3 32-32l0-256-64 0z" />
             </svg>
@@ -51,11 +70,12 @@ function Menu() {
         </section>
       </section>
       <section className={styles.listDetails}>
-        <section className={styles.campusJobs}>
-          {/* <Jobs /> */}
-          {/* <WishList /> */}
-          {/* <Orders /> */}
-          <Inbox />
+        <section className={styles.component}>
+          {activeComponent === "Jobs" && <Jobs />}
+          {activeComponent === "WishList" && <WishList />}
+          {activeComponent === "Orders" && <Orders />}
+          {activeComponent === "Inbox" && <Inbox />}
+          {activeComponent === "CreateStore" && <CreateStore />}
         </section>
       </section>
     </section>
