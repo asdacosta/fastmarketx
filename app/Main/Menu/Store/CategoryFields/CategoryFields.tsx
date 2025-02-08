@@ -39,14 +39,16 @@ function CategoryFields() {
   const dispatch = useDispatch();
 
   const [storeType, setStoreType] = useState("products");
-  const [storeCategory, setStoreCategory] = useState<string[]>([]);
+  const [storeCategories, setStoreCategories] = useState<string[]>([]);
 
   const handleCategoryChange = (category: string, checked: boolean) => {
+    // Add category if checked and remove if unchecked
     const newSelection = checked
-      ? [...storeCategory, category]
-      : storeCategory.filter((cat) => cat !== category);
+      ? [...storeCategories, category]
+      : storeCategories.filter((cat) => cat !== category);
 
-    setStoreCategory(newSelection);
+    setStoreCategories(newSelection);
+    // Set field to true if at least one is checked
     dispatch(setField({ field: "categories", value: newSelection.length > 0 }));
   };
 
@@ -86,7 +88,7 @@ function CategoryFields() {
               <input
                 type="checkbox"
                 value={category.toLowerCase()}
-                checked={storeCategory.includes(category.toLowerCase())}
+                checked={storeCategories.includes(category.toLowerCase())}
                 onChange={(e) =>
                   handleCategoryChange(e.target.value, e.target.checked)
                 }
