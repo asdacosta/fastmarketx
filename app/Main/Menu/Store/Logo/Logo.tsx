@@ -62,6 +62,7 @@ const Logo = () => {
                 >
                   {selectedIcon !== null && icons.stores[selectedIcon]
                     ? React.cloneElement(icons.stores[selectedIcon], {
+                        // Clone and alter props of child without manually creating new element
                         fill: iconColor,
                         width: 60,
                         height: 60,
