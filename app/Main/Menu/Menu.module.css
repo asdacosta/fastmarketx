@@ -57,3 +57,13 @@
   width: 1.1rem;
   fill: var(--dark-color);
 }
+
+.active {
+  color: var(--dark-gold);
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.active svg {
+  fill: var(--dark-gold);
+}
