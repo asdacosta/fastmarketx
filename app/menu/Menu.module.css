@@ -3,6 +3,7 @@
   justify-content: center;
   gap: 1rem;
   color: var(--dark-color);
+  background: var(--dark-bg);
   min-height: 100vh;
   padding: 1rem 2rem;
 }

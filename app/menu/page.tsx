@@ -3,10 +3,12 @@ import React from "react";
 import { Provider } from "react-redux";
 import { store } from "@/app/redux/store";
 import Menu from "./Menu";
+import Header from "../Header/Header";
 
-function MenuClient() {
+function page() {
   return (
     <>
+      <Header />
       <Provider store={store}>
         <Menu />
       </Provider>
@@ -14,4 +16,4 @@ function MenuClient() {
   );
 }
 
-export default MenuClient;
+export default page;

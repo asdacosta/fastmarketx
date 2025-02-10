@@ -6,16 +6,9 @@ import WishList from "./WishList/WishList";
 import Orders from "./Orders/Orders";
 import Inbox from "./Inbox/Inbox";
 import CreateStore from "./Store/CreateStore";
-import { RootState } from "@/app/redux/store";
-import { useSelector } from "react-redux";
 
 function Menu() {
   const [activeComponent, setActiveComponent] = useState("Jobs");
-  const componentOpen = useSelector(
-    (state: RootState) => state.componentDisplay.menuOpen
-  );
-
-  if (!componentOpen) return null;
 
   return (
     <section className={styles.menu}>
