@@ -5,12 +5,14 @@ import Image from "next/image";
 interface ItemTemplateProps {
   itemsQuantity: number;
   extraDetails?: string[];
+  buttons?: string[];
   price?: boolean;
 }
 
 function ItemTemplate({
   itemsQuantity,
   extraDetails = [],
+  buttons = [],
   price = true,
 }: ItemTemplateProps) {
   const items = new Array(itemsQuantity).fill(1);
@@ -42,6 +44,11 @@ function ItemTemplate({
                   {detail}
                 </span>
               ))}
+            </div>
+            <div className={styles.buttons}>
+              {buttons.map((content, index) => {
+                return <button key={index}>{content}</button>;
+              })}
             </div>
           </section>
         );
