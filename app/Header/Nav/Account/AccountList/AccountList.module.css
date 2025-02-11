@@ -7,7 +7,7 @@
   position: absolute;
   background: var(--dark-bg);
   padding: 0.5rem 1rem;
-  width: 10rem;
+  width: 11rem;
   top: 3rem;
   left: 50%;
   transform: translateX(-50%);
@@ -23,10 +23,11 @@
 .sign > a {
   color: black;
   background: var(--dark-gold);
-  padding: 0.2rem 0.5rem;
+  padding: 0.3rem 0.5rem;
   border-radius: 0.3rem;
   text-align: center;
   border: 0.05rem solid var(--dark-gold);
+  white-space: nowrap;
   animation: slideIn 0.15s forwards ease-in-out;
 }
 
@@ -112,6 +113,6 @@
 }
 
 .otherList svg {
-  width: 1rem;
+  width: 0.95rem;
   fill: var(--dark-color);
 }
