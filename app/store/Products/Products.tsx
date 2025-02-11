@@ -11,18 +11,22 @@ function Products() {
           <ItemTemplate
             itemsQuantity={1}
             extraDetails={["Quantity: 3", "Date Placed: 2/02/2025"]}
+            buttons={["Promote"]}
           />
           <ItemTemplate
             itemsQuantity={1}
             extraDetails={["Quantity: 3", "Date Placed: 2/02/2025"]}
+            buttons={["Promote"]}
           />
           <ItemTemplate
             itemsQuantity={1}
             extraDetails={["Quantity: 3", "Date Placed: 2/02/2025"]}
+            buttons={["Promote"]}
           />
           <ItemTemplate
             itemsQuantity={1}
             extraDetails={["Quantity: 3", "Date Placed: 2/02/2025"]}
+            buttons={["Promote"]}
           />
         </div>
       </section>
