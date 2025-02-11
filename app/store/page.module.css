@@ -16,15 +16,41 @@
   max-width: 15rem;
 }
 
+.storeName h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
 .navLinks {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .navLinks > button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   background: transparent;
   text-align: left;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.navLinks > button:hover {
+  opacity: 0.7;
+}
+
+.navLinks svg {
+  width: 1rem;
+  fill: var(--dark-color);
+}
+
+.active {
+  color: var(--dark-gold);
+}
+
+.active svg {
+  fill: var(--dark-gold);
 }
 
 .main {
