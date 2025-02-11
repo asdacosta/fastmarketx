@@ -1,0 +1,27 @@
+.ads {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.ads button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: black;
+  background: var(--dark-gold);
+}
+
+.ads button:hover {
+  background: var(--dark-pure-gold);
+}
+
+.ads h2 {
+  font-size: 1.2rem;
+  color: gray;
+  margin-bottom: 0.5rem;
+}
+
+.promoted > div {
+  display: flex;
+  gap: 1rem;
+}
