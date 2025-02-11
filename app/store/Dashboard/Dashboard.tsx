@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Dashboard.module.css";
 import ItemTemplate from "@/app/ItemTemplate/ItemTemplate";
+import Chart from "./Chart/Chart";
 
 function Dashboard() {
   return (
@@ -17,28 +18,37 @@ function Dashboard() {
       <section className={styles.sales}>
         <h3>Sales</h3>
         <div>
-          <p>Weekly Sales • GH₵ 80</p>
-          <p>Monthly Sales • GH₵ 800</p>
-          <p>Total Revenue • GH₵ 5000</p>
-          <p>Total Orders • 120</p>
-          <p>Total Products • 30</p>
+          <p>
+            Weekly Sales • <em>GH₵</em>
+            <span> 80</span>
+          </p>
+          <p>
+            Monthly Sales • <em>GH₵</em>
+            <span> 800</span>
+          </p>
+          <p>
+            Total Revenue • <em>GH₵</em>
+            <span> 5000</span>
+          </p>
+          <p>
+            Total Orders • <span>120</span>
+          </p>
+          <p>
+            Total Products • <span>30</span>
+          </p>
         </div>
       </section>
       <section className={styles.performance}>
-        <h3>Performance</h3>
-        <div>
-          <h4>Best Selling Products</h4>
-          <div className={styles.bestSelling}>
-            <ItemTemplate itemsQuantity={1} extraDetails={["Quantity: 7"]} />
-            <ItemTemplate itemsQuantity={1} extraDetails={["Quantity: 14"]} />
-          </div>
-          <div className={styles.analytics}>
-            <span>
-              {" "}
-              Revenue Overview – A graph showing total revenue over time (daily,
-              weekly, monthly).
-            </span>
-          </div>
+        <h3>Best Selling</h3>
+        <div className={styles.bestSelling}>
+          <ItemTemplate itemsQuantity={1} extraDetails={["Quantity: 7"]} />
+          <ItemTemplate itemsQuantity={1} extraDetails={["Quantity: 14"]} />
+        </div>
+      </section>
+      <section className={styles.performance}>
+        <h3>Revenue Over Time</h3>
+        <div className={styles.analytics}>
+          <Chart />
         </div>
       </section>
     </section>
