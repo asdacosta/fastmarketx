@@ -32,6 +32,13 @@ function Dashboard() {
             <ItemTemplate itemsQuantity={1} extraDetails={["Quantity: 7"]} />
             <ItemTemplate itemsQuantity={1} extraDetails={["Quantity: 14"]} />
           </div>
+          <div className={styles.analytics}>
+            <span>
+              {" "}
+              Revenue Overview – A graph showing total revenue over time (daily,
+              weekly, monthly).
+            </span>
+          </div>
         </div>
       </section>
     </section>
