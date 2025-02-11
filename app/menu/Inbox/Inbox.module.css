@@ -1,6 +1,7 @@
 .inbox {
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .inbox h3 {
