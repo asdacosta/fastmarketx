@@ -13,6 +13,19 @@
   transition: transform 0.2s ease-in-out;
 }
 
+.logo {
+  border-radius: 2rem;
+  overflow: hidden;
+  border-right: 0.1rem solid var(--dark-gold);
+  border-left: 0.1rem solid var(--dark-gold);
+}
+
+.logoBox {
+  position: relative;
+  width: 5.5rem;
+  height: 2.5rem;
+}
+
 .hidden + .nav {
   transform: translateY(-100%);
 }
