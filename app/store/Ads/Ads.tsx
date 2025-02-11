@@ -1,12 +1,18 @@
 import React from "react";
 import styles from "./Ads.module.css";
 import ItemTemplate from "@/app/ItemTemplate/ItemTemplate";
+import { useDispatch } from "react-redux";
+import { setStoreUi } from "@/app/redux/slices/storeUiSlice";
 
 function Ads() {
+  const dispatch = useDispatch();
+
   return (
     <section className={styles.ads}>
       <section>
-        <button>Promote Products</button>
+        <button onClick={() => dispatch(setStoreUi("Products"))}>
+          Promote Products
+        </button>
       </section>
       <section className={styles.promoted}>
         <h2>Promoted Products</h2>
