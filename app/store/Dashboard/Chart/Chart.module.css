@@ -1,0 +1,44 @@
+.chartContainer {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.button {
+  background: #222;
+  border: 1px solid #555;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background: #333;
+}
+
+.activeButton {
+  background: var(--dark-gold);
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.activeButton:hover {
+  background: var(--dark-pure-gold);
+}
