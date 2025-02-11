@@ -5,6 +5,7 @@ import styles from "./Nav.module.css";
 import NavScrollEffect from "./NavScrollEffect";
 import Account from "./Account/Account";
 import CartClient from "./Cart/CartClient";
+import Image from "next/image";
 
 function Nav() {
   return (
@@ -12,11 +13,17 @@ function Nav() {
       <NavScrollEffect />
       <nav className={styles.nav}>
         <section className={styles.primary}>
-          <section className={styles.logoBox}>
-            <Link href="/">
-              <h1>CampusairX</h1>
-            </Link>
-          </section>
+          <Link href="/" className={styles.logo}>
+            <section className={styles.logoBox}>
+              <Image
+                draggable="false"
+                src="/logo.png"
+                alt="Store"
+                fill
+                className={styles.img}
+              />
+            </section>
+          </Link>
           <section className={styles.inputsBox}>
             <SearchInput />
           </section>
