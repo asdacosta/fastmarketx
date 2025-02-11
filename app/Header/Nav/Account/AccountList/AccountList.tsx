@@ -6,7 +6,7 @@ function AccountList() {
   return (
     <section className={styles.accountList}>
       <section className={styles.sign}>
-        <Link href="signup">Sign Up</Link>
+        <Link href="signup">Create Account</Link>
         <Link href="login">Log In</Link>
       </section>
       <section className={styles.otherList}>
