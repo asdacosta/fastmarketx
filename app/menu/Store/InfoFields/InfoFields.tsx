@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setField } from "@/app/redux/slices/CreateStoreFormSlice";
 import { FormState } from "@/app/redux/slices/CreateStoreFormSlice";
 import styles from "./InfoFields.module.css";
+import Typed from "typed.js";
 
 function InfoFields() {
   const dispatch = useDispatch();
@@ -14,6 +15,82 @@ function InfoFields() {
   const [whatsapp, setWhatsapp] = useState("");
   const [mobileMoney, setMobileMoney] = useState("");
   const [campus, setCampus] = useState("legon");
+
+  const storeNameRef = useRef(null);
+  const sloganRef = useRef(null);
+  const descriptionRef = useRef(null);
+
+  useEffect(() => {
+    if (!storeNameRef.current && !sloganRef.current && !descriptionRef.current)
+      return;
+
+    const typedStoreName = new Typed(storeNameRef.current, {
+      strings: [
+        "Urban Closet",
+        "Bite Box",
+        "Tech Hive",
+        "Glow Up Hub",
+        "Fun Zone",
+        "Hype Fit",
+        "Daily Grill",
+        "Pocket Tech",
+        "Hair Essence",
+      ],
+      attr: "placeholder",
+      loop: true,
+      loopCount: 3,
+      typeSpeed: 30,
+      backSpeed: 15,
+      backDelay: 5000,
+    });
+
+    const typedSlogan = new Typed(sloganRef.current, {
+      strings: [
+        "Effortless Style, Every Day.",
+        "Tasty foods, Anytime, Anywhere.",
+        "Innovation at Your Fingertips.",
+        "Your Beauty, Our Passion.",
+        "Playtime Redefined.",
+        "Wear the real vibe.",
+        "Flame, Flavor, Feast.",
+        "Smart Choices for Smart Living.",
+        "Stronger Strands, Healthier Hair. ^500",
+      ],
+      attr: "placeholder",
+      loop: true,
+      loopCount: 3,
+      typeSpeed: 20,
+      backSpeed: 10,
+      backDelay: 4500,
+    });
+
+    const typedDescription = new Typed(descriptionRef.current, {
+      strings: [
+        "Trendy streetwear like oversized hoodies, ripped jeans, t-shirts, and sneakers.",
+        "Delicious, freshly made food, delivered hot and fast to your doorstep.",
+        "The latest gadgets and electronics at unbeatable prices.",
+        "High-quality skincare and beauty products to help you shine every day.",
+        "Educational toys, puzzles, game boards, and gaming consoles.",
+        "Streetwear essentials like cargo pants, bomber jackets, and sneakers.",
+        "Casual eatery serving handcrafted burgers, grilled specialties.",
+        "Mobile phones, accessories, headphones, and earbuds.",
+        "Premium haircare infused with nourishing ingredients for every hair type. ^500",
+      ],
+      attr: "placeholder",
+      loop: true,
+      loopCount: 3,
+      typeSpeed: 10,
+      backSpeed: 5,
+      backDelay: 4000,
+      showCursor: false, // cursor shows for textarea input
+    });
+
+    return () => {
+      typedStoreName.destroy();
+      typedSlogan.destroy();
+      typedDescription.destroy();
+    };
+  }, []);
 
   // The generic <K extends keyof FormState> ensures that you can only pass valid field names from your Redux state.
   const handleInputChange = <K extends keyof FormState>(
@@ -58,8 +135,8 @@ function InfoFields() {
       <div className={styles.formGroup}>
         <label>Store Name</label>
         <input
+          ref={storeNameRef}
           type="text"
-          placeholder="Urban Closet"
           value={storeName}
           onChange={(e) =>
             handleInputChange("storeName", e.target.value, setStoreName)
@@ -70,8 +147,8 @@ function InfoFields() {
       <div className={styles.formGroup}>
         <label>Slogan</label>
         <input
+          ref={sloganRef}
           type="text"
-          placeholder="Effortless Style, Every Day."
           value={slogan}
           onChange={(e) =>
             handleInputChange("slogan", e.target.value, setSlogan)
@@ -82,7 +159,7 @@ function InfoFields() {
       <div className={styles.formGroup}>
         <label>Description (What your store offers)</label>
         <textarea
-          placeholder="Oversized hoodies, ripped jeans, t-shirts, and sneakers."
+          ref={descriptionRef}
           value={storeDescription}
           onChange={(e) =>
             handleInputChange(
