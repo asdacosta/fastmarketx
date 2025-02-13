@@ -5,6 +5,7 @@ import wishlistReducer from "./slices/wishlistSlice";
 import createStoreFormSlice from "./slices/CreateStoreFormSlice";
 import menuUiSlice from "./slices/MenuUiSlice";
 import storeUiSlice from "./slices/storeUiSlice";
+import updateStoreSlice from "./slices/updateStoreSlice";
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ export const store = configureStore({
     createStoreForm: createStoreFormSlice,
     menuUi: menuUiSlice,
     storeUi: storeUiSlice,
+    updateStore: updateStoreSlice,
   },
 });
 
