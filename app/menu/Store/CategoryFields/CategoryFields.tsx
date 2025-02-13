@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setField } from "@/app/redux/slices/CreateStoreFormSlice"; // Import Redux action
 import styles from "./CategoryFields.module.css";
+import { RootState } from "@/app/redux/store";
 
 const products = [
   "Electronics",
@@ -37,6 +38,9 @@ const services = [
 
 function CategoryFields() {
   const dispatch = useDispatch();
+  const categoryType = useSelector(
+    (state: RootState) => state.updateStore.categoryType
+  );
 
   const [storeType, setStoreType] = useState("products");
   const [storeCategories, setStoreCategories] = useState<string[]>([]);
@@ -54,24 +58,26 @@ function CategoryFields() {
 
   return (
     <>
-      <div className={styles.formGroup}>
-        <label className={styles.label}>Store Type</label>
-        <div className={styles.radioGroup}>
-          {["products", "meals", "services"].map((type) => (
-            <label key={type} className={styles.radioLabel}>
-              <input
-                type="radio"
-                value={type}
-                checked={storeType === type} // Check hidden radio when the custom radio below is selected
-                onChange={(e) => setStoreType(e.target.value)}
-                className={styles.radioInput}
-              />
-              <span className={styles.customRadio}></span>
-              {type.charAt(0).toUpperCase() + type.slice(1)}
-            </label>
-          ))}
+      {categoryType && (
+        <div className={styles.formGroup}>
+          <label className={styles.label}>Store Type</label>
+          <div className={styles.radioGroup}>
+            {["products", "meals", "services"].map((type) => (
+              <label key={type} className={styles.radioLabel}>
+                <input
+                  type="radio"
+                  value={type}
+                  checked={storeType === type} // Check hidden radio when the custom radio below is selected
+                  onChange={(e) => setStoreType(e.target.value)}
+                  className={styles.radioInput}
+                />
+                <span className={styles.customRadio}></span>
+                {type.charAt(0).toUpperCase() + type.slice(1)}
+              </label>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       <div className={styles.formGroup}>
         <label>
