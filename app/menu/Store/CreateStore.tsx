@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
 
 import styles from "./CreateStore.module.css";
@@ -11,8 +11,10 @@ import CategoryFields from "./CategoryFields/CategoryFields";
 import Location from "./Location/Location";
 import Logo from "./Logo/Logo";
 import Banner from "./Banner/Banner";
+import { disableCategoryType } from "@/app/redux/slices/updateStoreSlice";
 
 function CreateStore() {
+  const dispatch = useDispatch();
   const [isPublic, setIsPublic] = useState(true);
   const formFields = useSelector((state: RootState) => state.createStoreForm);
 
@@ -55,6 +57,7 @@ function CreateStore() {
             className={`${styles.createButton} ${
               allFieldsComplete ? styles.activeButton : ""
             }`}
+            onClick={() => dispatch(disableCategoryType())}
           >
             {allFieldsComplete ? "Create Store" : "Complete all fields"}
           </button>
