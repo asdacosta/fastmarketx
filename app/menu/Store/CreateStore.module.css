@@ -23,20 +23,10 @@
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  max-height: 90vh;
-  overflow: auto;
 }
 
 .header {
   align-self: center;
-  text-align: center;
-}
-
-.createStore h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--dark-color);
-  padding: 1rem 0;
 }
 
 .createStore p {
