@@ -24,8 +24,7 @@ function UpdateStore() {
   return (
     <section className={styles.createStore}>
       <section className={styles.header}>
-        <h2>Create Your Store</h2>
-        <p>Fill in the details to set up your store.</p>
+        <p>Fill in the details to update your store</p>
       </section>
       <section className={styles.container}>
         <div className={styles.card}>
