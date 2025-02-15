@@ -1,13 +1,9 @@
 .wishlist {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 1rem 2rem;
 }
 
 .items {
   display: flex;
   flex-direction: column;
-  height: 90vh;
-  overflow-y: auto;
 }
