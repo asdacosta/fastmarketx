@@ -1,11 +1,8 @@
 .menu {
   display: flex;
   justify-content: center;
-  gap: 1rem;
   color: var(--dark-color);
-  background: var(--dark-bg);
-  min-height: 100vh;
-  padding: 1rem 2rem;
+  height: 100vh;
 }
 
 .menuList {
@@ -14,6 +11,7 @@
   flex-direction: column;
   gap: 2rem;
   padding: 1rem 2rem;
+  background: black;
 }
 
 .menuList h3 {
@@ -25,12 +23,10 @@
 
 .listDetails {
   flex: 4;
-}
-
-.menuList,
-.listDetails {
-  background: black;
-  border-radius: 0.5rem;
+  display: flex;
+  overflow-y: auto;
+  padding: 2.5rem 2rem;
+  background: var(--dark-bg);
 }
 
 .list {
