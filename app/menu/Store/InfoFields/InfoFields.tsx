@@ -19,9 +19,15 @@ function InfoFields() {
   const storeNameRef = useRef(null);
   const sloganRef = useRef(null);
   const descriptionRef = useRef(null);
+  const mobileNumberRef = useRef(null);
 
   useEffect(() => {
-    if (!storeNameRef.current && !sloganRef.current && !descriptionRef.current)
+    if (
+      !storeNameRef.current ||
+      !sloganRef.current ||
+      !descriptionRef.current ||
+      !mobileNumberRef.current
+    )
       return;
 
     const typedStoreName = new Typed(storeNameRef.current, {
@@ -85,10 +91,21 @@ function InfoFields() {
       showCursor: false, // cursor shows for textarea input
     });
 
+    const typedNumber = new Typed(mobileNumberRef.current, {
+      strings: ["0538584584", "233538584584", "Mobile number"],
+      attr: "placeholder",
+      loop: true,
+      loopCount: 3,
+      typeSpeed: 30,
+      backSpeed: 15,
+      backDelay: 3000,
+    });
+
     return () => {
       typedStoreName.destroy();
       typedSlogan.destroy();
       typedDescription.destroy();
+      typedNumber.destroy();
     };
   }, []);
 
@@ -178,8 +195,8 @@ function InfoFields() {
             <path d="M80 0C44.7 0 16 28.7 16 64l0 384c0 35.3 28.7 64 64 64l224 0c35.3 0 64-28.7 64-64l0-384c0-35.3-28.7-64-64-64L80 0zm80 432l64 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-64 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
           </svg>
           <input
+            ref={mobileNumberRef}
             type="tel"
-            placeholder="Mobile number"
             value={phoneNumber}
             onChange={(e) =>
               handleInputChange("phoneNumber", e.target.value, setPhoneNumber)
