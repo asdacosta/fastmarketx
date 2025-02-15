@@ -1,6 +1,7 @@
 .createStore {
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 1rem;
 }
 
@@ -9,24 +10,19 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 0 2rem;
+  max-width: 35rem;
   padding-bottom: 1rem;
   /* background-color: var(--dark-bg); */
 }
 
 .card {
   background: var(--dark-bg);
-  padding: 1.5rem;
+  padding: 1rem 0;
   border-radius: 1rem;
   width: 100%;
-  max-width: 35rem;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-}
-
-.header {
-  align-self: center;
 }
 
 .createStore p {
