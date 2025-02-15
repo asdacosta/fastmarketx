@@ -22,7 +22,7 @@ function Menu() {
         <h3>Menu</h3>
         <section className={styles.list}>
           <div
-            onClick={() => dispatch(setMenu("Dashboard"))}
+            onClick={() => dispatch(setMenu("Jobs"))}
             className={`${activeComponent === "Jobs" ? styles.active : ""}`}
           >
             <svg role="img" viewBox="0 -960 960 960">
@@ -31,7 +31,7 @@ function Menu() {
             <span>Campus Jobs</span>
           </div>
           <div
-            onClick={() => dispatch(setMenu("Wishlist"))}
+            onClick={() => dispatch(setMenu("WishList"))}
             className={`${activeComponent === "WishList" ? styles.active : ""}`}
           >
             <svg role="img" viewBox="0 0 512 512">
@@ -77,13 +77,11 @@ function Menu() {
         </section>
       </section>
       <section className={styles.listDetails}>
-        <section className={styles.component}>
-          {activeComponent === "Jobs" && <Jobs />}
-          {activeComponent === "WishList" && <WishList />}
-          {activeComponent === "Orders" && <Orders />}
-          {activeComponent === "Inbox" && <Inbox />}
-          {activeComponent === "CreateStore" && <CreateStore />}
-        </section>
+        {activeComponent === "Jobs" && <Jobs />}
+        {activeComponent === "WishList" && <WishList />}
+        {activeComponent === "Orders" && <Orders />}
+        {activeComponent === "Inbox" && <Inbox />}
+        {activeComponent === "CreateStore" && <CreateStore />}
       </section>
     </section>
   );
