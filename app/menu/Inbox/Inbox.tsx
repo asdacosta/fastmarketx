@@ -7,7 +7,6 @@ function Inbox() {
 
   return (
     <section className={styles.inbox}>
-      <h3>Inbox | {items.length}</h3>
       <section className={styles.messages}>
         {items.map((item, index) => (
           <InboxMessage key={index} />
