@@ -7,7 +7,6 @@ function Orders() {
 
   return (
     <section className={styles.orders}>
-      <h3>Orders</h3>
       <section className={styles.itemsContainer}>
         <section className={styles.sectionLinks}>
           <span>Active</span>
