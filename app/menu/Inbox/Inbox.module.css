@@ -1,15 +1,9 @@
 .inbox {
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
-}
-
-.inbox h3 {
-  padding: 1rem 2rem;
 }
 
 .messages {
   display: flex;
   flex-direction: column;
-  padding: 1rem 2rem;
 }
