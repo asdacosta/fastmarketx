@@ -19,6 +19,7 @@
 .storeName h2 {
   font-size: 1.2rem;
   font-weight: 600;
+  color: gray;
 }
 
 .navLinks {
@@ -56,6 +57,6 @@
 .main {
   flex: 4;
   display: flex;
-  padding: 2rem 1rem;
+  padding: 2.5rem 2rem;
   overflow-y: auto;
 }
