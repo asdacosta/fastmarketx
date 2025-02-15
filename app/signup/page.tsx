@@ -2,12 +2,23 @@ import Link from "next/link";
 import React from "react";
 import styles from "./page.module.css";
 import FloatingLabel from "./FloatingLabel/FloatingLabel";
+import Image from "next/image";
 
 function page() {
   return (
     <main className={styles.page}>
       <section className={styles.header}>
-        <h1>CampusairX</h1>
+        <Link href="/" className={styles.logo}>
+          <section className={styles.logoBox}>
+            <Image
+              draggable="false"
+              src="/logo.png"
+              alt="Store"
+              fill
+              className={styles.img}
+            />
+          </section>
+        </Link>
       </section>
       <section className={styles.body}>
         <h2>Create an account</h2>
