@@ -53,7 +53,6 @@ const jobs = [
 function Jobs() {
   return (
     <section className={styles.jobs}>
-      <h3>Jobs | {jobs.length}</h3>
       <section className={styles.jobPosts}>
         {jobs.map((job, index) => (
           <JobCard key={index} job={job} />
