@@ -25,10 +25,8 @@ function CreateStore() {
 
   return (
     <section className={styles.createStore}>
-      <section className={styles.header}>
-        <p>Fill in the details to set up your store.</p>
-      </section>
       <section className={styles.container}>
+        <p>Fill in the details to set up your store.</p>
         <div className={styles.card}>
           <InfoFields />
           <CategoryFields />
