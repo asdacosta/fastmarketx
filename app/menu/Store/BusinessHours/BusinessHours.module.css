@@ -55,6 +55,7 @@
 
 .alwaysOpenButton svg {
   width: 1.4rem;
+  height: 1.3rem;
   fill: var(--dark-color);
 }
 
