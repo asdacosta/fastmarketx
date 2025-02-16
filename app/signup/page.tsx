@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 import FloatingLabel from "./FloatingLabel/FloatingLabel";
 import Image from "next/image";
 import Gender from "./Gender/Gender";
+import Campus from "./Campus/Campus";
 
 function page() {
   return (
@@ -26,6 +27,7 @@ function page() {
         <form>
           <FloatingLabel name="name" label="Name" />
           <Gender />
+          <Campus />
           <FloatingLabel name="mobileEmail" label="Mobile number or Email" />
           <FloatingLabel name="pwd1" label="Password" />
           <FloatingLabel name="pwd2" label="Confirm Password" />
