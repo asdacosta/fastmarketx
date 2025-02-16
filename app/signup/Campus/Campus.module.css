@@ -1,0 +1,15 @@
+.campus {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.campus select {
+  font-size: 0.9rem;
+  border-radius: 0.3rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: var(--dark-color);
+  color: black;
+}
