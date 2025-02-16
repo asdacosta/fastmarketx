@@ -1,0 +1,42 @@
+.gender {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding-top: 0.5rem;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.radioInput {
+  display: none;
+}
+
+.customRadio {
+  width: 1rem;
+  height: 1rem;
+  border: 0.1rem solid #555;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.5rem;
+  position: relative;
+}
+
+.radioInput:checked + .customRadio::after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--dark-gold);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radioLabel:hover .customRadio {
+  border-color: var(--dark-gold);
+}
