@@ -1,0 +1,82 @@
+.theme {
+  display: flex;
+  align-items: center;
+  width: 2.7rem;
+  height: 1.5rem;
+  background: var(--dark-bg);
+  border: 0.05rem solid var(--dark-gold);
+  border-radius: 1rem;
+  position: relative;
+}
+
+.theme > svg {
+  width: 1rem;
+  position: absolute;
+  border-radius: 5rem;
+}
+
+.theme.dark > svg:first-child {
+  left: 2%;
+  animation: showForDark 0.2s ease-in-out forwards;
+}
+
+.theme.dark > svg:last-child {
+  left: 2%;
+  animation: hideForDark 0.2s ease-in-out forwards;
+}
+
+@keyframes showForDark {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    left: 60%;
+    opacity: 1;
+  }
+}
+
+@keyframes hideForDark {
+  50% {
+    opacity: 0;
+  }
+  to {
+    left: 60%;
+    opacity: 0;
+  }
+}
+
+.theme.light > svg:first-child {
+  left: 60%;
+  animation: hideForLight 0.2s ease-in-out forwards;
+}
+
+.theme.light > svg:last-child {
+  left: 60%;
+  animation: showForLight 0.2s ease-in-out forwards;
+}
+
+@keyframes showForLight {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    left: 2%;
+    opacity: 1;
+  }
+}
+
+@keyframes hideForLight {
+  50% {
+    opacity: 0;
+  }
+  to {
+    left: 2%;
+    opacity: 0;
+  }
+}
