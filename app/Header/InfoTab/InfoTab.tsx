@@ -3,6 +3,7 @@ import styles from "./InfoTab.module.css";
 import Link from "next/link";
 import CampusSelect from "./CampusSelect/CampusSelect";
 import Theme from "./Theme/Theme";
+import SlidingInfo from "./SlidingInfo/SlidingInfo";
 
 function InfoTab() {
   return (
@@ -27,11 +28,7 @@ function InfoTab() {
           <span>Official Store</span>
         </Link>
       </section>
-      <section className={styles.textSlide}>
-        <span>●</span>
-        <span>You can buy from nearby stores</span>
-        <span>●</span>
-      </section>
+      <SlidingInfo />
       <section className={styles.tertiary}>
         <Theme />
         <CampusSelect />
