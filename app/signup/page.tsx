@@ -3,6 +3,7 @@ import React from "react";
 import styles from "./page.module.css";
 import FloatingLabel from "./FloatingLabel/FloatingLabel";
 import Image from "next/image";
+import Gender from "./Gender/Gender";
 
 function page() {
   return (
@@ -24,6 +25,7 @@ function page() {
         <h2>Create an account</h2>
         <form>
           <FloatingLabel name="name" label="Name" />
+          <Gender />
           <FloatingLabel name="mobileEmail" label="Mobile number or Email" />
           <FloatingLabel name="pwd1" label="Password" />
           <FloatingLabel name="pwd2" label="Confirm Password" />
