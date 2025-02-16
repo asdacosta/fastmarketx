@@ -9,6 +9,7 @@ import CreateStore from "./Store/CreateStore";
 import { useDispatch, useSelector } from "react-redux";
 import { setMenu } from "../redux/slices/MenuUiSlice";
 import { RootState } from "../redux/store";
+import Settings from "./Settings/Settings";
 
 function Menu() {
   const dispatch = useDispatch();
@@ -85,6 +86,7 @@ function Menu() {
         {activeComponent === "Orders" && <Orders />}
         {activeComponent === "Inbox" && <Inbox />}
         {activeComponent === "CreateStore" && <CreateStore />}
+        {activeComponent === "Settings" && <Settings />}
       </section>
     </section>
   );
