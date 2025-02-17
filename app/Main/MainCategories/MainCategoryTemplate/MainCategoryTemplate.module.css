@@ -14,10 +14,15 @@
 }
 
 .header svg {
+  width: 1rem;
   fill: white;
 }
 
 .products {
+  background: var(--dark-blue);
+}
+
+.electronics {
   background: var(--dark-blue);
 }
 
