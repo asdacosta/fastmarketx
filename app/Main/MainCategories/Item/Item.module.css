@@ -135,11 +135,28 @@
 .add {
   color: black;
   background: var(--dark-gold);
-  padding: 0.5rem;
+  padding: 0.45rem;
   border-radius: 0.5rem;
   font-size: 1rem;
 }
 
 .add:hover {
   background: var(--dark-pure-gold);
+}
+
+.addQuantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--dark-bg);
+}
+
+.addQuantity span {
+  color: var(--dark-color);
+  user-select: none;
+}
+
+.addQuantity svg {
+  width: 1.79rem;
+  fill: var(--dark-pure-gold);
 }
