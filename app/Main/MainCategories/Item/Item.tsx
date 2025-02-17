@@ -7,6 +7,7 @@ function Item() {
   const [addedToWish, setAddedToWish] = useState(false);
   const [addedToCart, setAddedToCart] = useState(false);
   const [quantity, setQuantity] = useState(1);
+  const [revealDescription, setRevealDescription] = useState(false);
 
   const decrementQuantity = () => {
     setQuantity((prev) => {
@@ -30,9 +31,26 @@ function Item() {
           fill
           className={styles.img}
         />
-        <svg viewBox="0 0 512 512" className={styles.infoIcon}>
+        <svg
+          viewBox="0 0 512 512"
+          className={styles.infoIcon}
+          onMouseEnter={() => setRevealDescription(true)}
+          onMouseLeave={() => setRevealDescription(false)}
+        >
           <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
         </svg>
+        {revealDescription && (
+          <p className={styles.description}>
+            <span>
+              <em>Name:</em> If me make a billion a morning
+            </span>
+            <span>
+              <em>Description:</em> Anything ah anything. Work till we can't no
+              more then we work again and again until we're incapacitated then
+              we work once again. Yeah...
+            </span>
+          </p>
+        )}
         <div
           onClick={() => setAddedToWish((prev) => !prev)}
           className={styles.wishBox}
