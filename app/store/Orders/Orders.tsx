@@ -17,22 +17,22 @@ function Orders() {
         <div className={styles.items}>
           <ItemTemplate
             itemsQuantity={1}
-            extraDetails={["Quantity: 3", "Date Placed: 2/02/2025"]}
+            extraDetails={["Quantity: 3", "Placed: 2/02/2025"]}
             buttons={["Completed"]}
           />
           <ItemTemplate
             itemsQuantity={1}
-            extraDetails={["Quantity: 3", "Date Placed: 2/02/2025"]}
+            extraDetails={["Quantity: 3", "Placed: 2/02/2025"]}
             buttons={["Completed"]}
           />
           <ItemTemplate
             itemsQuantity={1}
-            extraDetails={["Quantity: 3", "Date Placed: 2/02/2025"]}
+            extraDetails={["Quantity: 3", "Placed: 2/02/2025"]}
             buttons={["Completed"]}
           />
           <ItemTemplate
             itemsQuantity={1}
-            extraDetails={["Quantity: 3", "Date Placed: 2/02/2025"]}
+            extraDetails={["Quantity: 3", "Placed: 2/02/2025"]}
             buttons={["Completed"]}
           />
         </div>
@@ -42,7 +42,7 @@ function Orders() {
         <div className={styles.items}>
           <ItemTemplate
             itemsQuantity={1}
-            extraDetails={["Quantity: 3", "Date Completed: 2/02/2025"]}
+            extraDetails={["Quantity: 3", "Completed: 2/02/2025"]}
           />
         </div>
       </section>
