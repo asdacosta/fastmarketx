@@ -16,7 +16,7 @@ function Ads() {
       </section>
       <section className={styles.promoted}>
         <h2>Promoted Products</h2>
-        <div>
+        <div className={styles.items}>
           <ItemTemplate
             itemsQuantity={1}
             extraDetails={["Promoted: 2/02/2025", "Expire: 2/02/2025"]}
