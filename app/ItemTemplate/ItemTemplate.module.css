@@ -11,8 +11,8 @@
   background: black;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-  height: 17rem;
-  width: 11rem;
+  /* height: 17rem;
+  width: 11rem; */
   overflow: hidden;
   position: relative;
   cursor: pointer;
