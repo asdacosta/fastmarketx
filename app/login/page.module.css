@@ -93,16 +93,15 @@
 
 .logo {
   position: absolute;
-  top: 2rem;
-  left: 2rem;
+  top: 1rem;
+  left: 1rem;
+  overflow: hidden;
+  border-radius: 2rem;
+  box-shadow: 0 0 0.3rem var(--dark-gold);
 }
 
 .logoBox {
   position: relative;
-  width: 5.5rem;
-  height: 2.5rem;
-  border-right: 0.1rem solid var(--dark-gold);
-  border-left: 0.1rem solid var(--dark-gold);
-  border-radius: 2rem;
-  overflow: hidden;
+  width: 7rem;
+  height: 3rem;
 }
