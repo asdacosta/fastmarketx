@@ -10,22 +10,22 @@ function Products() {
         <div className={styles.items}>
           <ItemTemplate
             itemsQuantity={1}
-            extraDetails={["Quantity: 3", "Date Placed: 2/02/2025"]}
+            extraDetails={["Quantity: 3"]}
             buttons={["Promote"]}
           />
           <ItemTemplate
             itemsQuantity={1}
-            extraDetails={["Quantity: 3", "Date Placed: 2/02/2025"]}
+            extraDetails={["Quantity: 3"]}
             buttons={["Promote"]}
           />
           <ItemTemplate
             itemsQuantity={1}
-            extraDetails={["Quantity: 3", "Date Placed: 2/02/2025"]}
+            extraDetails={["Quantity: 3"]}
             buttons={["Promote"]}
           />
           <ItemTemplate
             itemsQuantity={1}
-            extraDetails={["Quantity: 3", "Date Placed: 2/02/2025"]}
+            extraDetails={["Quantity: 3"]}
             buttons={["Promote"]}
           />
         </div>
@@ -35,15 +35,18 @@ function Products() {
         <div className={styles.items}>
           <ItemTemplate
             itemsQuantity={1}
-            extraDetails={["Quantity: 3", "Date Placed: 2/02/2025"]}
+            extraDetails={["Quantity: 3"]}
+            buttons={["Promote"]}
           />
           <ItemTemplate
             itemsQuantity={1}
-            extraDetails={["Quantity: 3", "Date Placed: 2/02/2025"]}
+            extraDetails={["Quantity: 3"]}
+            buttons={["Promote"]}
           />
           <ItemTemplate
             itemsQuantity={1}
-            extraDetails={["Quantity: 3", "Date Placed: 2/02/2025"]}
+            extraDetails={["Quantity: 3"]}
+            buttons={["Promote"]}
           />
         </div>
       </section>
@@ -52,7 +55,8 @@ function Products() {
         <div className={styles.items}>
           <ItemTemplate
             itemsQuantity={1}
-            extraDetails={["Quantity: 3", "Date Completed: 2/02/2025"]}
+            extraDetails={["Quantity: 3"]}
+            buttons={["Promote"]}
           />
         </div>
       </section>
