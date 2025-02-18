@@ -2,7 +2,8 @@
   position: fixed;
   right: 2rem;
   bottom: 1rem;
-  background: black;
+  mix-blend-mode: difference;
+  z-index: 10;
 }
 
 .bot svg {
