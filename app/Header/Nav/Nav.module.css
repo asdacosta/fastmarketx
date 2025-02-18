@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
   background: rgba(0, 0, 0, 0.85);
   border-bottom: 0.05rem solid var(--dark-gold);
   color: var(--dark-color);
@@ -15,16 +15,15 @@
 }
 
 .logo {
-  border-radius: 2rem;
   overflow: hidden;
-  border-right: 0.1rem solid var(--dark-gold);
-  border-left: 0.1rem solid var(--dark-gold);
+  border-radius: 2rem;
+  box-shadow: 0 0 0.3rem var(--dark-gold);
 }
 
 .logoBox {
   position: relative;
-  width: 5.5rem;
-  height: 2.5rem;
+  width: 7rem;
+  height: 3rem;
 }
 
 .hidden + .nav {
