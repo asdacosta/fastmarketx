@@ -8,6 +8,7 @@
   padding: 0.5rem 1rem;
   border-radius: 1rem;
   height: fit-content;
+  white-space: nowrap;
 }
 
 .categories > section {
