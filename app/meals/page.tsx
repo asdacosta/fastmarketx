@@ -27,7 +27,7 @@ function page() {
         </section>
         <section className={styles.items}>
           {currentItems.map((_, index) => (
-            <Item key={index} />
+            <Item key={index} category="meal" />
           ))}
         </section>
         <section className={styles.pagination}>
