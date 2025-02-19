@@ -6,7 +6,7 @@ import Item from "@/app/Main/MainCategories/Item/Item";
 import Header from "@/app/Header/Header";
 import { notFound, useParams } from "next/navigation";
 
-const allowedRoutes = [
+const allowedCategoryRoutes = [
   "electronics",
   "groceries",
   "fashion",
@@ -18,6 +18,14 @@ const allowedRoutes = [
   "automotive",
 ];
 
+const allowedItemsRoutes = [
+  "trending",
+  "speedy",
+  "lowcost",
+  "popular",
+  "hotdeals",
+];
+
 const itemsCount = new Array(27).fill(1);
 const itemsPerPage = 10;
 
@@ -26,7 +34,11 @@ function page() {
   const params = useParams();
   const category = params?.category as string;
 
-  if (!allowedRoutes.includes(category)) notFound();
+  if (
+    !allowedCategoryRoutes.includes(category) &&
+    !allowedItemsRoutes.includes(category)
+  )
+    notFound();
 
   const totalPages = Math.ceil(itemsCount.length / itemsPerPage);
 
@@ -39,9 +51,11 @@ function page() {
     <>
       <Header />
       <section className={styles.page}>
-        <section className={styles.categories}>
-          <MainCategoryTemplate categoryName={category} />
-        </section>
+        {allowedCategoryRoutes.includes(category) && (
+          <section className={styles.categories}>
+            <MainCategoryTemplate categoryName={category} />
+          </section>
+        )}
         <section className={styles.items}>
           {currentItems.map((_, index) => (
             <Item key={index} />
