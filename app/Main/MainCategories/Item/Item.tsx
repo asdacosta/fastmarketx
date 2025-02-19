@@ -6,9 +6,14 @@ import Image from "next/image";
 interface ItemProps {
   includeStars?: boolean;
   includeButton?: boolean;
+  category?: "product" | "meal" | "service";
 }
 
-function Item({ includeStars = true, includeButton = true }: ItemProps) {
+function Item({
+  includeStars = true,
+  includeButton = true,
+  category = "product",
+}: ItemProps) {
   const [addedToWish, setAddedToWish] = useState(false);
   const [addedToCart, setAddedToCart] = useState(false);
   const [quantity, setQuantity] = useState(1);
@@ -27,7 +32,7 @@ function Item({ includeStars = true, includeButton = true }: ItemProps) {
   const incrementQuantity = () => setQuantity((prev) => prev + 1);
 
   return (
-    <section className={styles.item}>
+    <section className={`${styles.item} ${styles[category]}`}>
       <div className={styles.imgBox}>
         <Image
           draggable="false"
