@@ -46,7 +46,7 @@ function page() {
           <section className={styles.categories}>
             <MainCategoryTemplate
               categoryName={
-                category === "home" || "academic"
+                category === "home" || category === "academic"
                   ? category + "services"
                   : category
               }
