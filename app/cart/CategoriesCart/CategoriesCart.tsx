@@ -14,7 +14,7 @@ function CategoryCart() {
           <CartItem />
         </section>
         <section className={styles.listEnd}>
-          <Link href="/" className={styles.addItems}>
+          <Link href="/products" className={styles.addItems}>
             Shop more
           </Link>
           <div>
@@ -29,14 +29,14 @@ function CategoryCart() {
       <section className={styles.mealsList}>
         <h4>Meals</h4>
         <section className={styles.list}></section>
-        <Link href="/" className={styles.addItems}>
+        <Link href="/meals" className={styles.addItems}>
           Shop more
         </Link>
       </section>
       <section className={styles.servicesList}>
         <h4>Services</h4>
         <section className={styles.list}></section>
-        <Link href="/" className={styles.addItems}>
+        <Link href="/services" className={styles.addItems}>
           Shop more
         </Link>
       </section>
