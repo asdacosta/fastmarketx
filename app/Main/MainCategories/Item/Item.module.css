@@ -91,7 +91,7 @@
 
 .productName,
 .storeName {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--dark-color);
 }
 
@@ -102,11 +102,6 @@
 
 .storeName span {
   padding: 0.1rem;
-}
-
-.storeName svg {
-  width: 0.9rem;
-  fill: var(--dark-gold);
 }
 
 .wishBox {
@@ -131,6 +126,7 @@
   display: flex;
   align-items: center;
   gap: 0.3rem;
+  margin-top: 0.4rem;
 }
 
 .starIcons {
@@ -154,6 +150,7 @@
   padding: 0.45rem;
   border-radius: 0.5rem;
   font-size: 1rem;
+  margin-top: 0.4rem;
 }
 
 .add:hover {
@@ -193,4 +190,18 @@
 
 .description em {
   font-weight: 600;
+}
+
+.storeName {
+  display: flex;
+  align-items: center;
+}
+
+.storeLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 10rem;
 }
