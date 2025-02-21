@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 0.15rem solid var(--dark-bg);
+  padding: 1rem 2rem;
+  white-space: nowrap;
+}
+
+.cartSummary {
+  flex: 1;
+  color: var(--dark-color);
+  background: black;
+  border-radius: 0.5rem;
+  min-height: 10rem;
+  max-width: 18rem;
+}
+
+.amount {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.amount > span:first-child {
+  font-weight: 600;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: white;
+}
+
+.price > span:first-child {
+  align-self: flex-end;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.price > span:last-child {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
