@@ -1,0 +1,89 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--dark-bg);
+  min-height: 100vh;
+  color: var(--dark-color);
+  padding: 2rem 1rem;
+}
+
+.page > * {
+  width: 100%;
+  max-width: 35rem;
+}
+
+.chosen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  padding: 1rem;
+}
+
+.chosen > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chosen .img {
+  border-radius: 1rem;
+}
+
+.chosenBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.payNow {
+  display: flex;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.payNow > span {
+  font-size: 1.1rem;
+  text-align: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  color: black;
+}
+
+.payNow > span:first-child {
+  flex: 3;
+  background: var(--dark-gold);
+}
+
+.payNow > span:last-child {
+  flex: 1;
+  background: silver;
+  font-weight: 600;
+}
+
+.payNow > span:last-child em {
+  font-weight: 100;
+  font-size: 0.8rem;
+}
+
+.header {
+  align-self: flex-start;
+}
+
+.logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  overflow: hidden;
+  border-radius: 2rem;
+  box-shadow: 0 0 0.3rem var(--dark-gold);
+}
+
+.logoBox {
+  position: relative;
+  width: 7rem;
+  height: 3rem;
+}
