@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import styles from "./page.module.css";
 import Header from "@/app/Header/Header";
-import Link from "next/link";
 import LocationAddress from "./LocationAddress/LocationAddress";
 import CartSummary from "./CartSummary/CartSummary";
 import Payment from "./Payment/Payment";
