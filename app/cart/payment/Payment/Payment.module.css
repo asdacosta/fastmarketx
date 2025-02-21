@@ -1,0 +1,157 @@
+.payment {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.paymentDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mMoney,
+.payWithCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  padding: 1rem;
+  position: relative;
+  border-radius: 0.5rem;
+}
+
+.paymentDetails > div:last-child {
+  opacity: 0.6;
+}
+
+.paymentDetails svg {
+  width: 0.7rem;
+  fill: var(--dark-color);
+}
+
+.paymentText {
+  position: relative;
+  left: 3.7rem;
+}
+
+.imgBox {
+  display: flex;
+  position: absolute;
+  left: 1rem;
+  border-radius: 10rem;
+  overflow: hidden;
+  border: 0.1rem solid black;
+  background: black;
+}
+
+.imgBox:nth-child(2) {
+  left: 2rem;
+  z-index: 1;
+}
+
+.imgBox:nth-child(3) {
+  left: 3rem;
+  z-index: 1;
+}
+
+.img {
+  border: 10rem;
+}
+
+.active svg {
+  transform: rotate(90deg);
+}
+
+.active + div {
+  display: flex;
+}
+
+.mMoney,
+.payWithCard {
+  cursor: pointer;
+}
+
+.payWithCard {
+  pointer-events: none;
+}
+
+.momoOptions {
+  display: none;
+  flex-direction: column;
+  background: black;
+  gap: 1rem;
+  padding: 1rem;
+  transform: translateY(-0.5rem);
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.radioInput {
+  display: none;
+}
+
+.customRadio {
+  width: 1rem;
+  height: 1rem;
+  border: 0.1rem solid #555;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 0.5rem;
+  position: relative;
+}
+
+.radioInput:checked + .customRadio::after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--dark-gold);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radioLabel:not(.active):hover .customRadio {
+  border-color: var(--dark-gold);
+}
+
+.radioLabel .img {
+  margin-left: auto;
+  border-radius: 1rem;
+  opacity: 0.4;
+}
+
+.radioInput:checked ~ .img {
+  opacity: 1;
+}
+
+.payButton {
+  padding: 0.5rem;
+  background: var(--dark-gold);
+  color: black;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+
+.payButton:hover {
+  background: var(--dark-pure-gold);
+}
+
+.momoNumber input {
+  height: 2.1rem;
+  color: black;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 20rem;
+  padding: 0.5rem;
+  background: var(--dark-color);
+}
