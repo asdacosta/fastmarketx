@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
-import { Fredoka } from "next/font/google";
+import { Quicksand, Poppins } from "next/font/google";
 import "./globals.css";
 import "./reset.css";
 
-const fredoka = Fredoka({
-  variable: "--font-fredoka",
+const quicksand = Quicksand({
   subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "500", "700"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-quicksand",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -22,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fredoka.variable} `}>{children}</body>
+      <body className={quicksand.className}>{children}</body>
     </html>
   );
 }
