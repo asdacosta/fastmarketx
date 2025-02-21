@@ -17,7 +17,7 @@ const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
 const libraries: "places"[] = ["places"]; // "place"[] means an array where each element must be "places" only
 const defaultCenter = { lat: 6.6731, lng: -1.5654 }; // KNUST, Ghana
 
-function Location() {
+function Location({ selling = true }: { selling?: boolean }) {
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: GOOGLE_MAPS_API_KEY,
     libraries, // Loading the "places" library for autocomplete
@@ -101,8 +101,8 @@ function Location() {
   return (
     <div className={styles.location}>
       <div className={styles.label}>
-        <span>Location (Where you'll sell from)</span>
-        <p>Kindly ensure you're present at the location before setting it.</p>
+        {selling && <span>Location (Where you'll sell from)</span>}
+        <p>Ensure you're present at the location and confirm on the map</p>
       </div>
 
       <button
