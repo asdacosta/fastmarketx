@@ -8,13 +8,33 @@
   white-space: nowrap;
 }
 
+.header h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.header svg {
+  fill: var(--dark-color);
+}
+
+.shoppingCart {
+  flex: 3;
+}
+
+.subtotal {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 2rem;
+}
+
 .cartSummary {
-  flex: 1;
   color: var(--dark-color);
   background: black;
   border-radius: 0.5rem;
-  min-height: 10rem;
+  height: max-content;
   max-width: 18rem;
+  white-space: nowrap;
 }
 
 .amount {
