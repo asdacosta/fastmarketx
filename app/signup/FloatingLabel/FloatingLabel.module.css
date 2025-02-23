@@ -7,6 +7,7 @@
 .inputBox > label {
   align-self: flex-start;
   font-size: 0.95rem;
+  font-weight: 500;
   height: 0.8rem;
   margin-left: 1rem;
   color: rgb(90, 90, 90);
