@@ -13,10 +13,10 @@
 }
 
 .accountButton svg {
-  width: 1.3rem;
+  width: 1.2rem;
   fill: var(--dark-color);
 }
 
 .accountButton span {
-  font-size: 1.05rem;
+  font-size: 1rem;
 }
