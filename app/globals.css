@@ -42,6 +42,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button,
+input,
+textarea,
+select,
+option {
+  font-family: inherit;
+  font-weight: 500;
+}
+
 input {
   letter-spacing: 0.02rem;
 }
