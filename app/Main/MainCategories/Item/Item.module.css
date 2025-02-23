@@ -162,6 +162,7 @@
   justify-content: space-between;
   align-items: center;
   background: var(--dark-bg);
+  margin-top: 0.4rem;
 }
 
 .addQuantity span {
@@ -170,7 +171,7 @@
 }
 
 .addQuantity svg {
-  width: 1.79rem;
+  width: 1.87rem;
   fill: var(--dark-pure-gold);
 }
 
@@ -188,8 +189,29 @@
   z-index: 1;
 }
 
+.description > span {
+  position: relative;
+  font-weight: 400;
+}
+
+.description > span:first-child {
+  left: -100%;
+  animation: slideIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.description > span:last-child {
+  left: 100%;
+  animation: slideIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes slideIn {
+  to {
+    left: 0;
+  }
+}
+
 .description em {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .storeName {
