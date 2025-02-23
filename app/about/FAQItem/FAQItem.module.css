@@ -1,0 +1,27 @@
+.faqItem {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid silver;
+  padding: 10px 0;
+}
+
+.faqQuestion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon {
+  transition: transform 0.15s ease-in-out;
+}
+
+.open {
+  transform: rotate(90deg);
+}
+
+.faqAnswer {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: rgb(140, 140, 140);
+}
