@@ -7,12 +7,14 @@ interface MainItemsProps {
   itemsName: string;
   itemsQuantity?: number;
   category?: "product" | "meal" | "service";
+  url: string;
 }
 
 function MainItems({
   itemsName,
   itemsQuantity = 14,
   category = "product",
+  url,
 }: MainItemsProps) {
   const items = new Array(itemsQuantity).fill(1);
   const initials = itemsName.split(" ")[0];
@@ -52,7 +54,7 @@ function MainItems({
           {itemsSvg[initials]}
           <h3>{itemsName}</h3>
         </div>
-        <Link href="/all">View All</Link>
+        <Link href={url}>View All</Link>
       </section>
       <section className={styles.trendItems}>
         {items.map((item, index) => {
