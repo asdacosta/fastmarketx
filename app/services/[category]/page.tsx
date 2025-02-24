@@ -50,6 +50,14 @@ function page() {
                   ? category + "services"
                   : category
               }
+              subCategories={[
+                "Beauty & Wellness",
+                "Home",
+                "Tech",
+                "Academic",
+                "Logistics",
+                "Events",
+              ]}
             />
           </section>
         )}
