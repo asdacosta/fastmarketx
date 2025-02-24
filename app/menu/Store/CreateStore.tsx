@@ -15,8 +15,9 @@ import { disableCategoryType } from "@/app/redux/slices/updateStoreSlice";
 
 function CreateStore() {
   const dispatch = useDispatch();
+
   const [isPublic, setIsPublic] = useState(true);
-  const formFields = useSelector((state: RootState) => state.createStoreForm);
+  const formFields = useSelector((state: RootState) => state.storeFormState);
 
   // Check if all required fields are true
   const allFieldsComplete = Object.values(formFields).every(
