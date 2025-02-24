@@ -262,7 +262,7 @@ svg.wishCover {
   left: 50%;
   transform: translate(-50%, 0);
   z-index: 1;
-  animation: slideUp 1.2s ease-in-out forwards;
+  animation: slideUp 1.15s ease-in-out forwards;
 }
 
 @keyframes slideUp {

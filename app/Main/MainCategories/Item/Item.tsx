@@ -56,7 +56,7 @@ function Item({
     setToggleFeedback(true);
     const timer = setTimeout(() => {
       setToggleFeedback(false);
-    }, 1300);
+    }, 1200);
 
     return () => clearTimeout(timer);
   }, [addedFeedback]);
