@@ -35,7 +35,7 @@
 }
 
 .infoIcon {
-  width: 1.25rem;
+  width: 1.3rem;
   position: absolute;
   right: 0.4rem;
   top: 0.4rem;
@@ -108,8 +108,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 1.9rem;
+  height: 1.9rem;
   position: absolute;
   bottom: 0.4rem;
   right: 0.4rem;
@@ -118,7 +118,7 @@
 }
 
 .wishBox > svg {
-  width: 1.2rem;
+  width: 1.4rem;
   fill: var(--dark-pure-gold);
 }
 
@@ -180,7 +180,7 @@
   flex-direction: column;
   gap: 0.3rem;
   padding: 0.2rem;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--dark-color);
   background: rgba(0, 0, 0, 0.85);
   position: absolute;
@@ -199,8 +199,13 @@
   animation: slideIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 
-.description > span:last-child {
+.description > span:nth-child(2) {
   left: 100%;
+  animation: slideIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.description > span:last-child {
+  left: -100%;
   animation: slideIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 
