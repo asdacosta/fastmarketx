@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setField } from "@/app/redux/slices/CreateStoreFormSlice"; // Import Redux action
+import {
+  setCategoriesValue,
+  setFieldState,
+  setStoreTypeValue,
+} from "@/app/redux/slices/CreateStoreFormSlice"; // Import Redux action
 import styles from "./CategoryFields.module.css";
 import { RootState } from "@/app/redux/store";
 
@@ -38,12 +42,15 @@ const services = [
 
 function CategoryFields() {
   const dispatch = useDispatch();
-  const categoryType = useSelector(
+  const fieldsValues = useSelector((state: RootState) => state.storeFormValue);
+  const catType = useSelector(
     (state: RootState) => state.updateStore.categoryType
   );
 
-  const [storeType, setStoreType] = useState("products");
-  const [storeCategories, setStoreCategories] = useState<string[]>([]);
+  const [storeType, setStoreType] = useState(fieldsValues.storeType);
+  const [storeCategories, setStoreCategories] = useState<string[]>(
+    fieldsValues.categories
+  );
 
   const handleCategoryChange = (category: string, checked: boolean) => {
     // Add category if checked and remove if unchecked
@@ -53,12 +60,22 @@ function CategoryFields() {
 
     setStoreCategories(newSelection);
     // Set field to true if at least one is checked
-    dispatch(setField({ field: "categories", value: newSelection.length > 0 }));
+    dispatch(
+      setFieldState({ field: "categories", value: newSelection.length > 0 })
+    );
+    // Update values in redux
+    dispatch(setCategoriesValue(newSelection));
+  };
+
+  const handleTypeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setStoreType(value);
+    dispatch(setStoreTypeValue(value));
   };
 
   return (
     <>
-      {categoryType && (
+      {catType && (
         <div className={styles.formGroup}>
           <label className={styles.label}>Store Type</label>
           <div className={styles.radioGroup}>
@@ -68,7 +85,7 @@ function CategoryFields() {
                   type="radio"
                   value={type}
                   checked={storeType === type} // Check hidden radio when the custom radio below is selected
-                  onChange={(e) => setStoreType(e.target.value)}
+                  onChange={handleTypeChange}
                   className={styles.radioInput}
                 />
                 <span className={styles.customRadio}></span>
