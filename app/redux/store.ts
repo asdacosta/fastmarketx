@@ -2,7 +2,10 @@ import { configureStore } from "@reduxjs/toolkit";
 import userReducer from "./slices/userSlice";
 import cartReducer from "./slices/cartSlice";
 import wishlistReducer from "./slices/wishlistSlice";
-import createStoreFormSlice from "./slices/CreateStoreFormSlice";
+import {
+  formStateReducer,
+  formValueReducer,
+} from "./slices/CreateStoreFormSlice";
 import menuUiSlice from "./slices/MenuUiSlice";
 import storeUiSlice from "./slices/storeUiSlice";
 import updateStoreSlice from "./slices/updateStoreSlice";
@@ -12,7 +15,8 @@ export const store = configureStore({
     user: userReducer,
     cart: cartReducer,
     wishlist: wishlistReducer,
-    createStoreForm: createStoreFormSlice,
+    storeFormValue: formValueReducer,
+    storeFormState: formStateReducer,
     menuUi: menuUiSlice,
     storeUi: storeUiSlice,
     updateStore: updateStoreSlice,
