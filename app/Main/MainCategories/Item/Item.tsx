@@ -56,6 +56,9 @@ function Item({
         {revealDescription && (
           <p className={styles.description}>
             <span>
+              <em>Receiving Method:</em> Delivery
+            </span>
+            <span>
               <em>Name:</em> If me make a billion a morning
             </span>
             <span>
