@@ -1,0 +1,244 @@
+.addPdt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.addButton svg {
+  width: 1rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.addButton {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: black;
+  background: var(--dark-gold);
+}
+
+.addButton:hover {
+  background: var(--dark-pure-gold);
+}
+
+.addButton:hover svg {
+  transform: rotate(90deg);
+}
+
+.addButton:disabled {
+  background: silver;
+  cursor: context-menu;
+}
+
+.addButton:disabled svg {
+  transition: none;
+}
+
+.container {
+  max-width: 500px;
+}
+
+.container p {
+  text-align: center;
+  margin: 0.5rem 0;
+  color: gray;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.container input,
+.container select,
+.container textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.container textarea {
+  resize: none;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+}
+
+.row div {
+  flex: 1;
+}
+
+.preview {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.preview img {
+  width: 70px;
+  height: 70px;
+  border-radius: 5px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.submitBtn {
+  background: var(--dark-gold);
+  flex: 2;
+}
+
+.submitBtn:hover {
+  background: var(--dark-pure-gold);
+}
+
+.cancelBtn {
+  background: gray;
+  flex: 1;
+}
+
+.cancelBtn:hover {
+  background: silver;
+}
+
+.cancelAddButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cancelAddButtons > button {
+  color: black;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+}
+
+.colorOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.colorLabel {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.colorCircle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid #ccc;
+}
+
+/* Image Upload */
+.uploadContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fileInput {
+  display: none;
+}
+
+.uploadButton {
+  display: flex;
+  gap: 0.5rem;
+  background: silver;
+  color: black;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.uploadButton svg {
+  width: 1rem;
+}
+
+.uploadButton:hover {
+  background: gray;
+}
+
+/* Image Previews */
+.imagePreviewContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.imagePreview {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.imagePreview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.removeButton {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.removeButton:hover {
+  background: darkred;
+}
+
+.selectionContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.optionButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: black;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.optionButton:hover {
+  background: gray;
+}
+
+.optionButton.selected {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
