@@ -53,7 +53,20 @@ function page() {
       <section className={styles.page}>
         {allowedCategoryRoutes.includes(category) && (
           <section className={styles.categories}>
-            <MainCategoryTemplate categoryName={category} />
+            <MainCategoryTemplate
+              categoryName={category}
+              subCategories={[
+                "electronics",
+                "Groceries",
+                "Fashion",
+                "Academic",
+                "Home & Kitchen",
+                "Beauty & Health",
+                "Sports",
+                "Games & Toys",
+                "Automotive",
+              ]}
+            />
           </section>
         )}
         <section className={styles.items}>
