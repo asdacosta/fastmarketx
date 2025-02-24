@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { setField } from "@/app/redux/slices/CreateStoreFormSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setFieldState,
+  setLocationValue,
+} from "@/app/redux/slices/CreateStoreFormSlice";
 import styles from "./Location.module.css";
 import { MapPinHouse } from "lucide-react";
 import {
@@ -10,6 +13,7 @@ import {
   useJsApiLoader,
 } from "@react-google-maps/api";
 import "./GoogleAutoComplete.css";
+import { RootState } from "@/app/redux/store";
 
 const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
 
@@ -24,8 +28,12 @@ function Location({ selling = true }: { selling?: boolean }) {
   });
 
   const dispatch = useDispatch();
+  const formFieldsLocation = useSelector(
+    (state: RootState) => state.storeFormValue.location
+  );
+
   const [location, setLocation] = useState<{ lat: number; lng: number } | null>(
-    null
+    formFieldsLocation
   );
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -57,7 +65,8 @@ function Location({ selling = true }: { selling?: boolean }) {
 
         // Update with new location
         setLocation(newLocation);
-        dispatch(setField({ field: "location", value: true }));
+        dispatch(setFieldState({ field: "location", value: true }));
+        dispatch(setLocationValue(newLocation));
 
         setFeedback("Location set!");
         setTimeout(() => setFeedback(""), 2000);
@@ -82,7 +91,8 @@ function Location({ selling = true }: { selling?: boolean }) {
         };
 
         setLocation(newLocation);
-        dispatch(setField({ field: "location", value: true })); // Update Redux
+        dispatch(setFieldState({ field: "location", value: true })); // Update Redux
+        dispatch(setLocationValue(newLocation));
 
         setFeedback("Location set!");
         setTimeout(() => setFeedback(""), 2000);
