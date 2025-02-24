@@ -37,8 +37,8 @@
 .infoIcon {
   width: 1.3rem;
   position: absolute;
-  right: 0.4rem;
-  top: 0.4rem;
+  right: 0.5rem;
+  top: 0.5rem;
   z-index: 2;
 }
 
@@ -110,7 +110,7 @@
   justify-content: center;
   border-radius: 10rem;
   position: absolute;
-  bottom: 0.4rem;
+  bottom: 0.2rem;
   right: 0.4rem;
   z-index: 1;
 }
@@ -245,4 +245,41 @@ svg.wishCover {
   width: 1.55rem;
   height: 1.55rem;
   border-radius: 10rem;
+}
+
+.addedFeedback {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: black;
+  border-radius: var(--radius);
+  background: var(--dark-gold);
+  padding: 0.3rem;
+  position: absolute;
+  pointer-events: none;
+  white-space: nowrap;
+  opacity: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1;
+  animation: slideUp 1.2s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    bottom: 0;
+    opacity: 0;
+  }
+  20% {
+    bottom: 43%;
+    opacity: 1;
+  }
+  80% {
+    bottom: 43%;
+    opacity: 1;
+  }
+  100% {
+    bottom: 0;
+    opacity: 0;
+  }
 }
