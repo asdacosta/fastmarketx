@@ -1,20 +1,30 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { setField } from "@/app/redux/slices/CreateStoreFormSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setBannerValue,
+  setFieldState,
+} from "@/app/redux/slices/CreateStoreFormSlice";
 import styles from "./Banner.module.css";
 import { MousePointerClick, Upload } from "lucide-react";
+import { RootState } from "@/app/redux/store";
 
 const PIXABAY_API_KEY = process.env.NEXT_PUBLIC_PIXABAY_API_KEY || "";
 
 function Banner() {
   const dispatch = useDispatch();
+  const formFieldsBanner = useSelector(
+    (state: RootState) => state.storeFormValue.banner
+  );
+
   const [query, setQuery] = useState<string>("");
   const [images, setImages] = useState<
     { id: number; webformatURL: string; largeImageURL: string }[]
   >([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(
+    formFieldsBanner
+  );
 
   const fetchImages = async (searchQuery: string) => {
     if (!searchQuery) return;
@@ -42,7 +52,8 @@ function Banner() {
 
   const handleImageSelect = (imageUrl: string) => {
     setSelectedImage(imageUrl);
-    dispatch(setField({ field: "banner", value: true }));
+    dispatch(setFieldState({ field: "banner", value: true }));
+    dispatch(setBannerValue(imageUrl));
     setIsModalOpen(false);
   };
 
@@ -52,7 +63,8 @@ function Banner() {
       const reader = new FileReader();
       reader.onloadend = () => {
         setSelectedImage(reader.result as string);
-        dispatch(setField({ field: "banner", value: true }));
+        dispatch(setFieldState({ field: "banner", value: true }));
+        dispatch(setBannerValue(reader.result as string));
       };
       reader.readAsDataURL(file);
     }
