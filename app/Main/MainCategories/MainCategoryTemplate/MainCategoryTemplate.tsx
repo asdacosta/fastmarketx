@@ -9,9 +9,11 @@ import "swiper/css/scrollbar";
 import { Navigation, Scrollbar, Autoplay } from "swiper/modules";
 import "./Swiper.css";
 import { JSX } from "react";
+import Link from "next/link";
 
 interface MainCategoryTemplateProps {
   categoryName: string;
+  subCategories: string[];
 }
 
 interface MainCategoryTemplateSubObject {
@@ -21,7 +23,10 @@ interface MainCategoryTemplateSubObject {
   svg: JSX.Element;
 }
 
-function MainCategoryTemplate({ categoryName }: MainCategoryTemplateProps) {
+function MainCategoryTemplate({
+  categoryName,
+  subCategories,
+}: MainCategoryTemplateProps) {
   categoryName = categoryName.toLowerCase();
 
   const categoryDetails: { [key: string]: MainCategoryTemplateSubObject } = {
@@ -306,8 +311,6 @@ function MainCategoryTemplate({ categoryName }: MainCategoryTemplateProps) {
     },
   };
 
-  const items = new Array(categoryDetails[categoryName].quantity || 0).fill(1);
-
   return (
     <section className={styles.mainCategory}>
       <section
@@ -330,10 +333,15 @@ function MainCategoryTemplate({ categoryName }: MainCategoryTemplateProps) {
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           className="mySwiper"
         >
-          {items.map((item, index) => {
+          {subCategories.map((category, index) => {
             return (
-              <SwiperSlide key={index}>
-                <section className={styles.item}>
+              <SwiperSlide key={category}>
+                <Link
+                  href={`/${categoryName}/${
+                    category === "homeservices" ? "home" : category
+                  }`}
+                  className={styles.item}
+                >
                   <Image
                     quality={80}
                     placeholder="blur"
@@ -344,8 +352,10 @@ function MainCategoryTemplate({ categoryName }: MainCategoryTemplateProps) {
                     fill
                     className={styles.img}
                   />
-                  <span className={styles.cardName}>Card Name</span>
-                </section>
+                  <span className={styles.cardName}>
+                    {categoryDetails[category]?.name}
+                  </span>
+                </Link>
               </SwiperSlide>
             );
           })}
