@@ -108,18 +108,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.9rem;
-  height: 1.9rem;
+  border-radius: 10rem;
   position: absolute;
   bottom: 0.4rem;
   right: 0.4rem;
-  border-radius: 10rem;
-  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
 }
 
-.wishBox > svg {
-  width: 1.4rem;
+.emptyWishWithCover {
+  position: relative;
+}
+
+.emptyWishWithCover > svg:first-child {
+  z-index: 1;
+}
+
+.wishBox svg {
+  width: 1.5rem;
   fill: var(--dark-pure-gold);
+  position: relative;
+}
+
+svg.wishCover {
+  position: absolute;
+  left: 0;
+  fill: rgba(0, 0, 0, 0.8);
+  z-index: 0;
 }
 
 .stars {
