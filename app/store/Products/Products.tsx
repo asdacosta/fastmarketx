@@ -1,10 +1,12 @@
 import React from "react";
 import styles from "./Products.module.css";
 import ItemTemplate from "@/app/ItemTemplate/ItemTemplate";
+import AddProduct from "./AddProduct/AddProduct";
 
 function Products() {
   return (
     <section className={styles.products}>
+      <AddProduct />
       <section className={styles.all}>
         <h2>All Products</h2>
         <div className={styles.items}>
