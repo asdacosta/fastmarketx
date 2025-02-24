@@ -1,19 +1,29 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useDispatch } from "react-redux";
-import { setField } from "@/app/redux/slices/CreateStoreFormSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setAllNumbersValue,
+  setDescriptionValue,
+  setFieldState,
+  setSloganValue,
+  setStoreNameValue,
+} from "@/app/redux/slices/CreateStoreFormSlice";
 import { FormState } from "@/app/redux/slices/CreateStoreFormSlice";
 import styles from "./InfoFields.module.css";
 import Typed from "typed.js";
+import { RootState } from "@/app/redux/store";
 
 function InfoFields() {
   const dispatch = useDispatch();
+  const fieldsValues = useSelector((state: RootState) => state.storeFormValue);
 
-  const [storeName, setStoreName] = useState("");
-  const [slogan, setSlogan] = useState("");
-  const [storeDescription, setStoreDescription] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [whatsapp, setWhatsapp] = useState("");
-  const [mobileMoney, setMobileMoney] = useState("");
+  const [storeName, setStoreName] = useState(fieldsValues.storeName);
+  const [slogan, setSlogan] = useState(fieldsValues.slogan);
+  const [storeDescription, setStoreDescription] = useState(
+    fieldsValues.description
+  );
+  const [phoneNumber, setPhoneNumber] = useState(fieldsValues.allNumbers.phone);
+  const [whatsapp, setWhatsapp] = useState(fieldsValues.allNumbers.whatsapp);
+  const [mobileMoney, setMobileMoney] = useState(fieldsValues.allNumbers.momo);
   const [campus, setCampus] = useState("legon");
 
   const storeNameRef = useRef(null);
@@ -123,28 +133,47 @@ function InfoFields() {
       field === "whatsapp" ||
       field === "mobileMoney"
     ) {
+      const trimmedPhone = phoneNumber.trim();
+      const trimmedWhatsapp = whatsapp.trim();
+      const trimmedMomo = mobileMoney.trim();
+
+      // Update values
+      dispatch(
+        setAllNumbersValue({
+          phone: trimmedPhone,
+          whatsapp: trimmedWhatsapp,
+          momo: trimmedMomo,
+        })
+      );
       // Check if all phone-related fields are non-empty.
       const allNumbersFilled =
-        phoneNumber.trim() !== "" &&
-        whatsapp.trim() !== "" &&
-        mobileMoney.trim() !== "";
+        trimmedPhone !== "" && trimmedWhatsapp !== "" && trimmedMomo !== "";
       // Dispatch for the specific field being updated.
       dispatch(
-        setField({
+        setFieldState({
           field: field as keyof FormState,
           value: value.trim() !== "",
         })
       );
       // Also update the 'allNumbers' field in Redux.
       dispatch(
-        setField({
+        setFieldState({
           field: "allNumbers" as keyof FormState,
           value: allNumbersFilled,
         })
       );
     } else {
-      dispatch(setField({ field, value: value.trim() !== "" }));
-    } // Convert non-empty strings to true
+      // Convert non-empty strings to true for other fields
+      dispatch(setFieldState({ field, value: value.trim() !== "" }));
+
+      if (field === "storeName") {
+        dispatch(setStoreNameValue(value));
+      } else if (field === "slogan") {
+        dispatch(setSloganValue(value));
+      } else if (field === "description") {
+        dispatch(setDescriptionValue(value));
+      }
+    }
   };
 
   return (
@@ -236,7 +265,7 @@ function InfoFields() {
           Campus (Unlock Universal Store with{" "}
           <span className={styles.premium}>Premium Account</span>)
         </label>
-        <select value={campus} onChange={(e) => setCampus(e.target.value)}>
+        <select value={campus} onChange={(e) => setCampus("legon")}>
           <option value="universal">Universal</option>
           <option value="legon">Legon</option>
           <option value="knust">KNUST</option>
