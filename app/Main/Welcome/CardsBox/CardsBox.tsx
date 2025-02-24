@@ -3,8 +3,12 @@ import styles from "./CardsBox.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import Ad from "./Ad/Ad";
+import { useDispatch } from "react-redux";
+import { setMenu } from "@/app/redux/slices/MenuUiSlice";
 
 function CardsBox() {
+  const menuDispatch = useDispatch();
+
   return (
     <section className={styles.cardsBox}>
       <section className={styles.ad}>
@@ -49,7 +53,11 @@ function CardsBox() {
         <Ad />
       </section>
       <section className={styles.cards}>
-        <section className={styles.card}>
+        <Link
+          href="/menu"
+          onClick={() => menuDispatch(setMenu("CreateStore"))}
+          className={styles.card}
+        >
           <Image
             draggable="false"
             src="/mainImgs/store.avif"
@@ -58,8 +66,8 @@ function CardsBox() {
             className={styles.img}
           />
           <span>Set up a store</span>
-        </section>
-        <section className={styles.card}>
+        </Link>
+        <Link href="/products" className={styles.card}>
           <Image
             draggable="false"
             src="/mainImgs/products.avif"
@@ -67,9 +75,9 @@ function CardsBox() {
             fill
             className={styles.img}
           />
-          <span>Explore services</span>
-        </section>
-        <section className={styles.card}>
+          <span>Explore products</span>
+        </Link>
+        <Link href="/meals" className={styles.card}>
           <Image
             draggable="false"
             src="/mainImgs/foods.avif"
@@ -78,8 +86,8 @@ function CardsBox() {
             className={styles.img}
           />
           <span>Order meals</span>
-        </section>
-        <section className={styles.card}>
+        </Link>
+        <Link href="/services" className={styles.card}>
           <Image
             draggable="false"
             src="/mainImgs/services.avif"
@@ -88,7 +96,7 @@ function CardsBox() {
             className={styles.img}
           />
           <span>Discover Services</span>
-        </section>
+        </Link>
       </section>
     </section>
   );
