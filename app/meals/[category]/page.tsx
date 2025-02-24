@@ -46,7 +46,19 @@ function page() {
       <section className={styles.page}>
         {allowedCategoryRoutes.includes(category) && (
           <section className={styles.categories}>
-            <MainCategoryTemplate categoryName={category} />
+            <MainCategoryTemplate
+              categoryName={category}
+              subCategories={[
+                "Beverages",
+                "Bakery",
+                "International",
+                "Native",
+                "Instant & Snacks",
+                "Frozen Foods",
+                "Vegan & Vegetarian",
+                "Meal Prep",
+              ]}
+            />
           </section>
         )}
         <section className={styles.items}>
