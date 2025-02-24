@@ -14,7 +14,7 @@ import Banner from "./Banner/Banner";
 
 function UpdateStore() {
   const [isPublic, setIsPublic] = useState(true);
-  const formFields = useSelector((state: RootState) => state.createStoreForm);
+  const formFields = useSelector((state: RootState) => state.storeFormState);
 
   // Check if all required fields are true
   const allFieldsComplete = Object.values(formFields).every(
