@@ -2,17 +2,27 @@ import React, { useState } from "react";
 import { X, Palette, Shapes, Brush } from "lucide-react";
 import { icons } from "./Icons";
 import styles from "./Logo.module.css";
-
-const firstIconKey = Object.keys(icons.stores)[0];
-const firstIconIndex = firstIconKey ? parseInt(firstIconKey) : null;
+import { useDispatch, useSelector } from "react-redux";
+import { setLogoValue } from "@/app/redux/slices/CreateStoreFormSlice";
+import { RootState } from "@/app/redux/store";
 
 const Logo = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedIcon, setSelectedIcon] = useState<number | null>(
-    firstIconIndex
+  const dispatch = useDispatch();
+  const formFieldsLogo = useSelector(
+    (state: RootState) => state.storeFormValue.logo
   );
-  const [bgColor, setBgColor] = useState("#E8CD04");
-  const [iconColor, setIconColor] = useState("#FFFFFF");
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedIcon, setSelectedIcon] = useState<number>(formFieldsLogo.icon);
+  const [bgColor, setBgColor] = useState(formFieldsLogo.bg);
+  const [iconColor, setIconColor] = useState(formFieldsLogo.color);
+
+  const handleModalClose = () => {
+    setIsOpen(false);
+    dispatch(
+      setLogoValue({ icon: selectedIcon, color: iconColor, bg: bgColor })
+    );
+  };
 
   return (
     <div className={styles.container}>
@@ -44,12 +54,9 @@ const Logo = () => {
       </div>
 
       {isOpen && (
-        <div className={styles.overlay} onClick={() => setIsOpen(false)}>
+        <div className={styles.overlay} onClick={handleModalClose}>
           <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-            <button
-              onClick={() => setIsOpen(false)}
-              className={styles.closeButton}
-            >
+            <button onClick={handleModalClose} className={styles.closeButton}>
               <X size={24} />
             </button>
 
