@@ -28,3 +28,78 @@
 .item:hover::before {
   height: 0;
 }
+
+.adInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  /* padding: 0.5rem 1rem; */
+}
+
+.header > h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.header > svg {
+  fill: var(--dark-gold);
+  width: 1.5rem;
+}
+
+.otherInfo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 1rem;
+}
+
+.primaryInfo {
+  font-size: 0.9rem;
+  gap: 0.3rem;
+}
+
+.primaryInfo > div {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.primaryInfo > span {
+  font-size: 0.9rem;
+}
+
+.primaryInfo > div > span:first-child {
+  font-size: 0.85rem;
+  color: rgb(160, 160, 160);
+}
+
+.primaryInfo,
+.secInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.secInfo {
+  gap: 0.5rem;
+}
+
+.secInfo > * {
+  font-size: 0.9rem;
+  /* font-weight: 600; */
+  color: black;
+  background: var(--dark-gold);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  border: 0.05rem solid var(--dark-gold);
+}
+
+.secInfo > a:hover {
+  background: rgba(232, 205, 4, 1);
+}
