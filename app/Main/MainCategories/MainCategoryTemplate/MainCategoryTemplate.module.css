@@ -80,4 +80,10 @@
   padding: 0.1rem 0.5rem;
   border-radius: 1rem;
   z-index: 2;
+  font-size: 0.9rem;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 90%;
 }
