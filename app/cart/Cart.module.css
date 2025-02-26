@@ -58,7 +58,7 @@
 .cartSummary {
   color: var(--dark-color);
   background: black;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
   min-height: 10rem;
 }
 
@@ -112,7 +112,7 @@
   gap: 0.5rem;
   background: var(--dark-gold);
   padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
 }
 
 .payButton:hover {
