@@ -1,0 +1,11 @@
+.products {
+  background: var(--dark-blue);
+}
+
+.services {
+  background: var(--dark-green);
+}
+
+.meals {
+  background: var(--dark-orange);
+}
