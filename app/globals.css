@@ -17,7 +17,7 @@
   --speed: 0.12s;
 
   letter-spacing: 0.02rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 @media (prefers-color-scheme: dark) {
