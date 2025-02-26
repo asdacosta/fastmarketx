@@ -6,25 +6,33 @@
   color: var(--dark-color);
   background: black;
   padding: 0.5rem 1rem;
+  padding: 1rem 0 1rem 1rem;
   border-radius: 1rem;
   height: fit-content;
   white-space: nowrap;
 }
 
-.categories > section {
+.products,
+.meals,
+.services {
   font-size: 0.9rem;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
+  position: relative;
 }
 
-.categories ul {
+.products ul,
+.meals ul,
+.services ul {
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
 }
 
-.categories h3 {
+.products h3,
+.meals h3,
+.services h3 {
   font-size: 0.95rem;
   align-self: stretch;
   text-align: center;
@@ -42,7 +50,7 @@
   }
 }
 
-.categories > section:first-child h3 {
+.products h3 {
   background: linear-gradient(
     120deg,
     rgb(150, 150, 150) 0%,
@@ -55,11 +63,11 @@
   background-clip: text;
 }
 
-.categories > section:first-child svg {
+.products svg {
   fill: rgba(49, 123, 220, 0.75);
 }
 
-.categories > section:nth-child(2) h3 {
+.meals h3 {
   background: linear-gradient(
     120deg,
     rgb(150, 150, 150) 0%,
@@ -72,11 +80,11 @@
   background-clip: text;
 }
 
-.categories > section:nth-child(2) svg {
+.meals svg {
   fill: rgba(229, 126, 29, 0.75);
 }
 
-.categories > section:last-child h3 {
+.services h3 {
   background: linear-gradient(
     120deg,
     rgb(150, 150, 150) 0%,
@@ -89,7 +97,7 @@
   background-clip: text;
 }
 
-.categories > section:last-child svg {
+.services svg {
   fill: rgba(43, 224, 169, 0.75);
 }
 
@@ -104,12 +112,23 @@
 .link {
   display: flex;
   align-items: center;
+  padding-right: 1rem;
   gap: 0.25rem;
-  width: fit-content;
   cursor: pointer;
 }
 
 .categories svg {
   height: 1.2rem;
   width: 1.2rem;
+}
+
+.hoverCover {
+  position: absolute;
+  top: 0;
+  left: 12rem;
+  padding: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background: black;
+  z-index: 10;
 }
