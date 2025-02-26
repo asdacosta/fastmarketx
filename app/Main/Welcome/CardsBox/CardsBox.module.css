@@ -104,7 +104,7 @@
   padding: 0.2rem 0.8rem;
   border-radius: 1rem;
   text-align: center;
-  transition: margin 0.2s ease-in-out;
+  transition: margin var(--speed) ease-in-out;
 }
 
 .card:hover > span {
