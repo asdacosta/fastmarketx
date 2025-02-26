@@ -99,8 +99,9 @@
   padding: 0.2rem 0.5rem;
   border-radius: var(--radius);
   border: 0.05rem solid var(--dark-gold);
+  transition: background var(--speed) ease-in-out;
 }
 
 .secInfo > a:hover {
-  background: rgba(232, 205, 4, 1);
+  background: var(--dark-pure-gold);
 }

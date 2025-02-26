@@ -19,6 +19,7 @@
   border-radius: 10rem;
   background: var(--dark-gold);
   color: black;
+  transition: background var(--speed) ease-in-out;
 }
 
 .locationButton:hover {

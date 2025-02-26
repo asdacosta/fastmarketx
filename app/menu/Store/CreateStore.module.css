@@ -79,6 +79,7 @@
   border-radius: var(--radius);
   margin-top: 10px;
   pointer-events: none;
+  transition: background var(--speed) ease-in-out;
 }
 
 .activeButton {
@@ -88,5 +89,5 @@
 }
 
 .createButton:hover {
-  background-color: var(--dark-pure-gold);
+  background: var(--dark-pure-gold);
 }

@@ -113,6 +113,7 @@
   background: var(--dark-gold);
   padding: 0.5rem 1rem;
   border-radius: var(--radius);
+  transition: background var(--speed) ease-in-out;
 }
 
 .payButton:hover {

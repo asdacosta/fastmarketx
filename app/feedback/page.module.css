@@ -61,7 +61,7 @@
   border-radius: 0.5rem;
   font-size: 1rem;
   font-weight: 600;
-  transition: background 0.1s ease-in-out;
+  transition: background var(--speed) ease-in-out;
 }
 
 .submitButton:hover {

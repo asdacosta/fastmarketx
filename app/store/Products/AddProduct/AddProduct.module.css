@@ -7,7 +7,7 @@
 
 .addButton svg {
   width: 1rem;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.15s ease-in-out;
 }
 
 .addButton {
@@ -17,6 +17,7 @@
   border-radius: 0.5rem;
   color: black;
   background: var(--dark-gold);
+  transition: background var(--speed) ease-in-out;
 }
 
 .addButton:hover {

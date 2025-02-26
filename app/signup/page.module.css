@@ -39,6 +39,7 @@
   margin-top: 0.5rem;
   color: black;
   background: var(--dark-gold);
+  transition: background var(--speed) ease-in-out;
 }
 
 .body > form button:hover {
@@ -60,7 +61,7 @@
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
-  transition: opacity 0.1s ease-in-out;
+  transition: opacity var(--speed) ease-in-out;
 }
 
 .lastSection > section:hover {

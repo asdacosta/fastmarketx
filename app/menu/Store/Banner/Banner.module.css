@@ -24,6 +24,7 @@
   color: black;
   border-radius: var(--radius);
   cursor: pointer;
+  transition: background var(--speed) ease-in-out;
 }
 
 .openButton:hover {
@@ -51,6 +52,7 @@
   background-color: var(--dark-gold);
   color: black;
   border-radius: var(--radius);
+  transition: background var(--speed) ease-in-out;
 }
 
 .searchButton:hover {

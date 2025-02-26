@@ -27,6 +27,7 @@
   display: flex;
   flex-direction: column;
   transition: opacity 0.15s ease-in-out;
+  transition: background var(--speed) ease-in-out;
 }
 
 .contactCard:hover > p {
@@ -63,6 +64,7 @@
   background: var(--dark-gold);
   color: black;
   font-size: 1rem;
+  transition: background var(--speed) ease-in-out;
 }
 
 .callButton:hover {

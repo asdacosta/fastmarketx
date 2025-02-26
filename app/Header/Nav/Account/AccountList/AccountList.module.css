@@ -30,6 +30,7 @@
   border: 0.05rem solid var(--dark-gold);
   white-space: nowrap;
   animation: slideIn 0.15s forwards ease-in-out;
+  transition: background var(--speed) ease-in-out;
 }
 
 .sign > a:hover {
@@ -105,7 +106,7 @@
 
 .otherList svg,
 .otherList span {
-  transition: opacity 0.15s ease-in-out;
+  transition: opacity var(--speed) ease-in-out;
 }
 
 .otherList > a:hover svg,

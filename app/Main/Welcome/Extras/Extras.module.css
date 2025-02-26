@@ -86,7 +86,7 @@ svg.tubeIcon:hover {
 .contactCard > p {
   display: flex;
   flex-direction: column;
-  transition: opacity 0.15s ease-in-out;
+  transition: opacity var(--speed) ease-in-out;
 }
 
 .contactCard:hover > p {

@@ -51,6 +51,7 @@
   gap: 0.5rem;
   padding: 1rem;
   color: black;
+  transition: background var(--speed) ease-in-out;
 }
 
 .payNow > span:first-child {
@@ -60,8 +61,16 @@
 
 .payNow > span:last-child {
   flex: 1;
-  background: silver;
+  background: rgb(150, 150, 150);
   font-weight: 600;
+}
+
+.payNow:hover > span:first-child {
+  background: var(--dark-pure-gold);
+}
+
+.payNow:hover > span:last-child {
+  background: silver;
 }
 
 .payNow > span:last-child em {

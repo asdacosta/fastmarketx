@@ -31,6 +31,7 @@
 .form button {
   background: var(--dark-gold);
   border-radius: 0 var(--radius) var(--radius) 0;
+  transition: background var(--speed) ease-in-out;
 }
 
 .form button:hover {
