@@ -1,0 +1,39 @@
+.container {
+  min-height: 30vh;
+}
+
+.listContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.subCategoryTitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: gray;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.item {
+  font-size: 0.8rem;
+  color: var(--dark-color);
+  padding: 0.3rem 0;
+  border-bottom: 0.05rem solid rgb(80, 80, 80);
+  cursor: pointer;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.emptyMessage,
+.errorMessage {
+  font-size: 16px;
+  color: #999;
+  text-align: center;
+  padding: 10px;
+}
