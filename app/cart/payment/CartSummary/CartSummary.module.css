@@ -31,7 +31,7 @@
 .cartSummary {
   color: var(--dark-color);
   background: black;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
   height: max-content;
   max-width: 18rem;
   white-space: nowrap;

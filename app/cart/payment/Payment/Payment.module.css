@@ -18,7 +18,7 @@
   background: black;
   padding: 1rem;
   position: relative;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
 }
 
 .paymentDetails > div:last-child {
@@ -138,7 +138,7 @@
   color: black;
   font-size: 1rem;
   text-align: center;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
 }
 
 .payButton:hover {
@@ -149,7 +149,7 @@
   height: 2.1rem;
   color: black;
   font-size: 1rem;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
   width: 100%;
   max-width: 20rem;
   padding: 0.5rem;

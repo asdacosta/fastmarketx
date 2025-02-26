@@ -11,8 +11,8 @@
   padding: 0.5rem 2rem;
   background: var(--dark-gold);
   color: black;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  border-top-left-radius: var(--big-radius);
+  border-top-right-radius: var(--big-radius);
 }
 
 .header > div {

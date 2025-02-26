@@ -9,7 +9,7 @@
 .item > div {
   overflow: hidden;
   position: relative;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
 }
 
 .item > div:first-child {
@@ -107,7 +107,7 @@
   background: var(--dark-gold);
   color: black;
   padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
   cursor: pointer;
 }
 

@@ -54,12 +54,13 @@
   width: 100%;
   font-size: 0.9rem;
   padding: 0.7rem;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
+  border: 1px solid gray;
   background: black;
 }
 
 .mapContainer {
-  border-radius: 1rem;
+  border-radius: 2rem;
   overflow: hidden;
   border: 0.2rem solid var(--dark-gold);
 }

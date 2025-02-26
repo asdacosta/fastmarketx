@@ -6,7 +6,7 @@
 .item > div {
   overflow: hidden;
   position: relative;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
 }
 
 .item > div:first-child {

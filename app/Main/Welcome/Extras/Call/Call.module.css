@@ -52,17 +52,17 @@
   gap: 0.5rem;
   background: black;
   padding: 1rem;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
   text-align: center;
 }
 
 .callButton {
   padding: 0.5rem 1rem;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
   background: var(--dark-gold);
   color: black;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .callButton:hover {
@@ -72,7 +72,7 @@
 .cancelButton {
   margin-top: 0.5rem;
   padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
   background: silver;
   color: black;
   font-size: 1rem;

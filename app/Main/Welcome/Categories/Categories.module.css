@@ -7,7 +7,7 @@
   background: black;
   padding: 0.5rem 1rem;
   padding: 1rem 0 1rem 1rem;
-  border-radius: 1rem;
+  border-radius: var(--big-radius);
   height: fit-content;
   white-space: nowrap;
 }
@@ -127,8 +127,8 @@
   top: 0;
   left: 12rem;
   padding: 1rem;
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
+  border-top-right-radius: var(--big-radius);
+  border-bottom-right-radius: var(--big-radius);
   background: black;
   z-index: 10;
 }

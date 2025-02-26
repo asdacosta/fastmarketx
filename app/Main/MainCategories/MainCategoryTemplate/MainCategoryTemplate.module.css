@@ -9,8 +9,8 @@
   gap: 0.5rem;
   padding: 0.5rem 2rem;
   color: white;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  border-top-left-radius: var(--big-radius);
+  border-top-right-radius: var(--big-radius);
 }
 
 .header svg {
@@ -27,7 +27,7 @@
 .item {
   display: flex;
   justify-content: center;
-  border-radius: 1rem;
+  border-radius: var(--big-radius);
   overflow: hidden;
   position: relative;
   cursor: pointer;

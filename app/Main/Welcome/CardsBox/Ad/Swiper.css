@@ -2,13 +2,14 @@
   display: flex;
   width: 100%;
   height: 100%;
+  border-radius: var(--big-radius);
 }
 
 .swiper-slide {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-radius: 1rem;
+  border-radius: var(--big-radius);
 }
 
 .swiper .swiper-pagination-bullet {

@@ -14,7 +14,7 @@
   display: flex;
   gap: 2rem;
   background: black;
-  border-radius: 1rem;
+  border-radius: var(--big-radius);
   padding: 1rem 2rem;
 }
 
@@ -34,7 +34,7 @@
   background: black;
   padding: 1rem;
   margin-bottom: 2rem;
-  border-radius: 1rem;
+  border-radius: var(--big-radius);
   position: relative;
 }
 
@@ -55,7 +55,7 @@
   display: flex;
   justify-content: center;
   background: black;
-  border-radius: 1rem;
+  border-radius: var(--big-radius);
   overflow: hidden;
   position: relative;
   cursor: pointer;

@@ -22,7 +22,8 @@
   font-size: 0.9rem;
   background: var(--dark-gold);
   color: black;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
+  cursor: pointer;
 }
 
 .openButton:hover {
@@ -41,7 +42,7 @@
   font-size: 0.9rem;
   width: 15rem;
   border: 1px solid #ccc;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
 }
 
 .searchButton {
@@ -49,7 +50,7 @@
   font-size: 0.9rem;
   background-color: var(--dark-gold);
   color: black;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
 }
 
 .searchButton:hover {

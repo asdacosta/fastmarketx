@@ -41,7 +41,7 @@
 
 .payNow {
   display: flex;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
   overflow: hidden;
 }
 

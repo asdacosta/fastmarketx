@@ -10,15 +10,15 @@
   display: flex;
   flex-direction: column;
   background: black;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   color: white;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  border-top-left-radius: var(--big-radius);
+  border-top-right-radius: var(--big-radius);
   padding: 0.2rem 1rem;
 }
 
@@ -63,7 +63,7 @@
 .item {
   display: flex;
   justify-content: center;
-  border-radius: 1rem;
+  border-radius: var(--big-radius);
   overflow: hidden;
   position: relative;
   cursor: pointer;

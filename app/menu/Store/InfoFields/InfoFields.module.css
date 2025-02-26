@@ -21,8 +21,8 @@
 .formGroup select,
 .contactGroup input {
   font-size: 0.9rem;
-  border-radius: 0.5rem;
-  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  border: 1px solid gray;
 }
 
 .formGroup select {

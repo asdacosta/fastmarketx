@@ -12,7 +12,7 @@
   max-width: 7rem;
   overflow: hidden;
   position: relative;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
 }
 
 .itemInfo {
@@ -78,7 +78,7 @@
 .links > span {
   background: var(--dark-gold);
   padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
   color: black;
   cursor: pointer;
 }
