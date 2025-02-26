@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./MainSubCategories.module.css";
 import Image from "next/image";
-import MainCategoryTemplate from "../MainCategoryTemplate/MainCategoryTemplate";
+import Link from "next/link";
+import { CategoryDetails } from "../CategoryDetails/CategoryDetails";
 
 interface MainSubCategories {
   categoryName: string;
@@ -28,8 +29,17 @@ function MainSubCategories({
           <section
             className={`${styles.header} ${categoryClasses[categoryName]}`}
           >
-            <span></span>
-            <h3>{key}</h3>
+            <h3>{CategoryDetails[key]?.name}</h3>
+            <Link
+              href={`/${categoryName.toLowerCase()}/${
+                key === "homeservices" || key === "academicservices"
+                  ? key.replace("services", "")
+                  : key
+              }`}
+              className={styles.viewAll}
+            >
+              View All
+            </Link>
           </section>
           <section className={styles.items}>
             {values.map((value, index) => (
