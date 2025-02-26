@@ -18,7 +18,6 @@
 .card {
   background: var(--dark-bg);
   padding: 1rem 0;
-  border-radius: 1rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -46,15 +45,6 @@
 .formGroup textarea,
 .formGroup select {
   padding: 10px;
-}
-
-.formGroup input,
-.formGroup textarea,
-.formGroup select,
-.contactGroup input {
-  font-size: 0.9rem;
-  border-radius: 0.5rem;
-  border: 1px solid #ccc;
 }
 
 .formGroup select {
@@ -86,7 +76,7 @@
   border: none;
   padding: 10px;
   font-size: 16px;
-  border-radius: 5px;
+  border-radius: var(--radius);
   margin-top: 10px;
   pointer-events: none;
 }
