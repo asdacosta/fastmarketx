@@ -36,7 +36,7 @@
   position: relative;
   border-radius: var(--radius);
   cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+  transition: transform var(--speed) ease-in-out;
 }
 
 .brand:hover {
@@ -44,7 +44,7 @@
 }
 
 .img {
-  transition: filter 0.2s ease-in-out;
+  transition: filter var(--speed) ease-in-out;
 }
 
 .brand:hover img {
