@@ -16,7 +16,7 @@
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  transition: transform 0.15s ease-in-out;
+  transition: transform var(--speed) ease-in-out;
 }
 
 .item:hover {
@@ -36,10 +36,11 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.15);
   z-index: 1;
+  transition: opacity var(--speed) ease-in-out;
 }
 
 .imgBox:hover::before {
-  height: 0;
+  opacity: 0;
 }
 
 .productInfo {
