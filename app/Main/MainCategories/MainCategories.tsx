@@ -36,20 +36,20 @@ function MainCategories() {
       <MainSubCategories
         categoryName="Products"
         subCategoryData={{
-          Fashion: ["Clothing", "Footwear", "Accessories", "Bags"],
-          Electronics: [
+          fashion: ["Clothing", "Footwear", "Accessories", "Bags"],
+          electronics: [
             "Phones & Accessories",
             "Computers & Tablets",
             "Audio & Photography",
             "Home Appliances",
           ],
-          Groceries: [
+          groceries: [
             "Fresh Foods",
             "Kitchen Essentials",
             "Snacks & Sweet",
             "Drinks & Beverages",
           ],
-          "Home & Kitchen": [
+          homeandkitchen: [
             "Furniture",
             "Home Decor",
             "Kitchen & Dining",
@@ -84,20 +84,20 @@ function MainCategories() {
       <MainSubCategories
         categoryName="Meals"
         subCategoryData={{
-          International: [
+          international: [
             "Pizza",
             "Shawarma",
             "Burger",
             "Pasta, Noodles & Spaghetti",
           ],
-          Bakery: ["Breads", "Pastries", "Cakes", "Cookies"],
-          Instant: [
+          bakery: ["Breads", "Pastries", "Cakes", "Cookies"],
+          instantandsnacks: [
             "Salads",
             "Sandwiches & Wraps",
             "Soups & Stews",
             "Meal Kits",
           ],
-          Beverages: [
+          beverages: [
             "Coffee & Tea",
             "Juices & Smoothies",
             "Grains & Porridge",
@@ -132,20 +132,25 @@ function MainCategories() {
       <MainSubCategories
         categoryName="Services"
         subCategoryData={{
-          "Beauty & Wellness": [
+          beautyandwellness: [
             "Hairdressing",
             "Manicures & Pedicures",
             "Haircuts & Styling",
             "Massage",
           ],
-          Tech: [
+          tech: [
             "Web/App Development",
             "Graphic Design",
             "IT support",
             "Repairs",
           ],
-          Home: ["Cleaning", "Electrical", "Carpentry", "Plumbing"],
-          Educational: ["Tutoring", "Online courses", "Programs", "Events"],
+          homeservices: ["Cleaning", "Electrical", "Carpentry", "Plumbing"],
+          academicservices: [
+            "Tutoring",
+            "Online courses",
+            "Programs",
+            "Events",
+          ],
         }}
       />
       <MainItems
