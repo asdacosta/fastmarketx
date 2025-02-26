@@ -1,5 +1,6 @@
 .selectBox select {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
+  font-weight: 600;
   height: 1.5rem;
   border: none;
   border-bottom: 0.05rem solid var(--dark-color);

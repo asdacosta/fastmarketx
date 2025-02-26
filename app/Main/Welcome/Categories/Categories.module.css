@@ -15,7 +15,7 @@
 .products,
 .meals,
 .services {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;

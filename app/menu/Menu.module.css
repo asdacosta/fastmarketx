@@ -39,6 +39,7 @@
 
 .list > button {
   display: flex;
+  font-size: 0.95rem;
   align-items: center;
   gap: 0.5rem;
   background: transparent;

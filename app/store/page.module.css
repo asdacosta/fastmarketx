@@ -32,6 +32,7 @@
   align-items: center;
   gap: 0.5rem;
   background: transparent;
+  font-size: 0.95rem;
   text-align: left;
   transition: opacity 0.15s ease-in-out;
 }

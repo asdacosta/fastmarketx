@@ -111,6 +111,7 @@
   display: flex;
   gap: 0.5rem;
   background: var(--dark-gold);
+  font-size: 1rem;
   padding: 0.5rem 1rem;
   border-radius: var(--radius);
   transition: background var(--speed) ease-in-out;
