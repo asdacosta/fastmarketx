@@ -16,13 +16,13 @@
 }
 
 .theme.dark > svg:first-child {
-  left: 2%;
-  animation: showForDark 0.2s ease-in-out forwards;
+  left: 5%;
+  animation: showForDark 0.15s ease-in-out forwards;
 }
 
 .theme.dark > svg:last-child {
-  left: 2%;
-  animation: hideForDark 0.2s ease-in-out forwards;
+  left: 5%;
+  animation: hideForDark 0.15s ease-in-out forwards;
 }
 
 @keyframes showForDark {
@@ -50,12 +50,12 @@
 
 .theme.light > svg:first-child {
   left: 60%;
-  animation: hideForLight 0.2s ease-in-out forwards;
+  animation: hideForLight 0.15s ease-in-out forwards;
 }
 
 .theme.light > svg:last-child {
   left: 60%;
-  animation: showForLight 0.2s ease-in-out forwards;
+  animation: showForLight 0.15s ease-in-out forwards;
 }
 
 @keyframes showForLight {
@@ -66,7 +66,7 @@
     opacity: 0;
   }
   to {
-    left: 2%;
+    left: 5%;
     opacity: 1;
   }
 }
@@ -76,7 +76,7 @@
     opacity: 0;
   }
   to {
-    left: 2%;
+    left: 5%;
     opacity: 0;
   }
 }
