@@ -62,7 +62,7 @@ const Logo = () => {
 
             <div className={styles.content}>
               <div className={styles.preview}>
-                <h2>Preview</h2>
+                <h3>Preview</h3>
                 <div
                   className={styles.logoBox}
                   style={{ backgroundColor: bgColor }}
@@ -82,7 +82,7 @@ const Logo = () => {
               </div>
 
               <div className={styles.customization}>
-                <h2>Customize</h2>
+                <h3>Customize</h3>
 
                 <div className={styles.option}>
                   <div className={styles.optionLabel}>
