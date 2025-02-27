@@ -5,11 +5,11 @@
   border: none;
   border-bottom: 0.05rem solid var(--dark-color);
   background: transparent;
-  color: var(--dark-color);
+  color: var(--color);
   cursor: pointer;
 }
 
 .selectBox option {
-  background: black;
-  color: var(--dark-color);
+  background: var(--background);
+  color: var(--color);
 }
