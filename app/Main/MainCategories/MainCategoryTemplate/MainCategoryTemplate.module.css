@@ -21,7 +21,7 @@
 .categoryItems {
   height: 16rem;
   padding: 1rem 1.5rem;
-  background: black;
+  background: var(--background);
 }
 
 .item {
@@ -36,6 +36,7 @@
 }
 
 .item::before {
+  display: var(--img-cover-display);
   content: "";
   position: absolute;
   width: 100%;
@@ -54,10 +55,10 @@
 }
 
 .cardName {
-  color: var(--dark-color);
+  color: var(--color);
   position: absolute;
   bottom: 0.5rem;
-  background: rgba(0, 0, 0, 0.8);
+  background: var(--trans-bg);
   padding: 0.1rem 0.5rem;
   border-radius: 1rem;
   z-index: 2;
