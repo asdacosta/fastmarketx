@@ -5,13 +5,13 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  background: var(--dark-bg);
+  background: var(--foreground);
   height: 100vh;
 }
 
 .body,
 .lastSection {
-  background: black;
+  background: var(--background);
   padding: 1rem 1.5rem;
 }
 
@@ -52,7 +52,7 @@
 }
 
 .lastSection svg {
-  fill: var(--dark-color);
+  fill: var(--color);
   width: 0.9rem;
 }
 
