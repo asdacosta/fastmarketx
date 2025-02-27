@@ -18,7 +18,7 @@
 }
 
 .form input {
-  background: rgb(230, 230, 230);
+  background: var(--input-color);
   border-radius: var(--radius) 0 0 var(--radius);
   white-space: nowrap;
   overflow: hidden;
