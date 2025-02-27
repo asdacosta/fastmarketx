@@ -13,14 +13,14 @@
 
 .swiper .swiper-button-prev,
 .swiper .swiper-button-next {
-  color: var(--dark-color);
+  color: var(--color);
 }
 
 .swiper .swiper-button-prev::after,
 .swiper .swiper-button-next::after {
   font-size: 1.2rem;
   font-weight: 800;
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--trans-bg);
   border-radius: 50%;
   padding: 0.35rem 0.7rem;
 }
@@ -39,5 +39,5 @@
 }
 
 .swiper .swiper-scrollbar-drag {
-  background: var(--dark-color);
+  background: var(--color);
 }
