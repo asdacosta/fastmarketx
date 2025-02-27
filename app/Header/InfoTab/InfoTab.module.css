@@ -4,8 +4,8 @@
   justify-content: space-between;
   height: 2.2rem;
   padding: 0 2rem;
-  background: black;
-  color: var(--dark-color);
+  background: var(--background);
+  color: var(--color);
   width: 100%;
   margin-top: 4.5rem;
   white-space: nowrap;
@@ -13,7 +13,7 @@
 
 .infoTab svg {
   width: 1.1rem;
-  fill: var(--dark-color);
+  fill: var(--color);
 }
 
 svg.officialStar {
