@@ -36,13 +36,13 @@ function AccountList() {
           <svg role="img" viewBox="0 0 448 512">
             <path d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z" />
           </svg>
-          <span>All Menu</span>
+          <span>All menu</span>
         </Link>
         <Link href="/about">
-          <svg role="img" viewBox="0 0 192 512">
+          <svg role="img" viewBox="0 0 192 512" className={styles.infoIcon}>
             <path d="M48 80a48 48 0 1 1 96 0A48 48 0 1 1 48 80zM0 224c0-17.7 14.3-32 32-32l64 0c17.7 0 32 14.3 32 32l0 224 32 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 512c-17.7 0-32-14.3-32-32s14.3-32 32-32l32 0 0-192-32 0c-17.7 0-32-14.3-32-32z" />
           </svg>
-          <span>How It Works</span>
+          <span>How it works</span>
         </Link>
         <Link href="logout">
           <svg role="img" viewBox="0 0 512 512">
