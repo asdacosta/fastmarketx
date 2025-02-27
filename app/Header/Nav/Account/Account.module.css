@@ -8,13 +8,13 @@
   gap: 0.2rem;
 
   white-space: nowrap;
-  color: var(--dark-color);
+  color: var(--color);
   background: transparent;
 }
 
 .accountButton svg {
   width: 1.3rem;
-  fill: var(--dark-color);
+  fill: var(--color);
 }
 
 .accountButton span {
