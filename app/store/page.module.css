@@ -1,7 +1,7 @@
 .page {
   display: flex;
-  background: var(--dark-bg);
-  color: var(--dark-color);
+  background: var(--foreground);
+  color: var(--color);
   height: 100vh;
 }
 
@@ -11,7 +11,7 @@
   flex-direction: column;
   gap: 2rem;
   padding: 1rem 2rem;
-  background: black;
+  background: var(--background);
   max-width: 14rem;
 }
 
