@@ -1,7 +1,7 @@
 .title {
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--dark-color);
+  color: var(--color);
 }
 
 .row {
@@ -20,7 +20,7 @@
 
 .select {
   cursor: pointer;
-  color: var(--dark-color);
+  color: var(--color);
   transition: opacity 0.15s ease;
 }
 
@@ -56,7 +56,7 @@
 .alwaysOpenButton svg {
   width: 1.4rem;
   height: 1.3rem;
-  fill: var(--dark-color);
+  fill: white;
 }
 
 .alwaysOpenButton:hover {
@@ -76,7 +76,7 @@
 .formGroup label {
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--dark-color);
+  color: var(--color);
 }
 
 .formGroup select {
