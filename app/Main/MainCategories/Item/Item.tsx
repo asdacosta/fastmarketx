@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./Item.module.css";
 import Image from "next/image";
 import { storeIcons } from "./StoreIcons";
+import StoreLogo from "./StoreLogo/StoreLogo";
 
 interface ItemProps {
   includeStars?: boolean;
@@ -21,9 +22,6 @@ function Item({
   const [revealDescription, setRevealDescription] = useState(false);
   const [addedFeedback, setAddedFeedback] = useState("");
   const [toggleFeedback, setToggleFeedback] = useState(false);
-
-  const [storeColor, setStoreColor] = useState("rgba(232, 205, 4, 1)");
-  const [storeIconIndex, setStoreIconIndex] = useState(10);
 
   const decrementQuantity = () => {
     setQuantity((prev) => {
@@ -150,24 +148,7 @@ function Item({
             <span>30</span>
           </div>
         )}
-        <div className={styles.storeName}>
-          <div
-            className={`${styles.storeLogo} ${styles.officialColor} ${styles.officialIcon}`}
-            style={{ background: storeColor }}
-          >
-            {React.cloneElement(storeIcons.stores[storeIconIndex], {
-              fill: "black",
-              width: 16,
-              height: 16,
-              stroke: "black",
-              strokeWidth: 10,
-              style: {
-                filter: `drop-shadow(2px 2px 5px #000)`,
-              },
-            })}
-          </div>
-          <span>Official Store</span>
-        </div>
+        <StoreLogo />
         {includeButton && (
           <>
             {!addedToCart ? (
