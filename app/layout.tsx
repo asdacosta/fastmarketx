@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Quicksand, Poppins } from "next/font/google";
 import "./globals.css";
 import "./reset.css";
+import { ThemeProvider } from "next-themes";
 
 const quicksand = Quicksand({
   subsets: ["latin"],
@@ -26,8 +27,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={quicksand.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={quicksand.className}>
+        <ThemeProvider attribute="class" defaultTheme="dark">
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
