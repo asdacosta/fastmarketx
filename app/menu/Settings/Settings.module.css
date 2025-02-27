@@ -1,7 +1,7 @@
 .settings {
   display: flex;
   flex-direction: column;
-  color: var(--dark-color);
+  color: var(--color);
   width: 100%;
   gap: 1.5rem;
 }
@@ -16,13 +16,13 @@
   display: none;
   flex-direction: column;
   gap: 1.5rem;
-  background: black;
+  background: var(--background);
   padding: 1rem;
 }
 
 .content input {
   height: 2rem;
-  background: var(--dark-color);
+  background: var(--input-color);
   border-radius: var(--radius);
   padding: 0.2rem 0.5rem;
   font-size: 1.1rem;
@@ -45,7 +45,7 @@
 
 .settings svg {
   width: 0.5rem;
-  fill: var(--dark-color);
+  fill: var(--color);
 }
 
 .active + div {
