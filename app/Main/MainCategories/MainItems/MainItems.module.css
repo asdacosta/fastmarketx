@@ -32,6 +32,6 @@
   grid-template: 16.5rem / repeat(auto-fit, minmax(10rem, 1fr));
   grid-auto-rows: 16.5rem;
   gap: 1rem;
-  background: black;
+  background: var(--background);
   padding: 1rem 1.5rem;
 }
