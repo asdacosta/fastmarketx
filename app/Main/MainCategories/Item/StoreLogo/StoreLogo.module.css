@@ -1,0 +1,19 @@
+.storeName {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  font-size: 0.85rem;
+  color: var(--color);
+}
+
+.storeName span {
+  padding: 0.1rem;
+}
+.storeLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 10rem;
+}
