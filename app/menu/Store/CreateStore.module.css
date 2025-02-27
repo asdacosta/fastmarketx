@@ -16,7 +16,7 @@
 }
 
 .card {
-  background: var(--dark-bg);
+  background: var(--foreground);
   padding: 1rem 0;
   width: 100%;
   display: flex;
@@ -38,7 +38,7 @@
 .formGroup label {
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--dark-color);
+  color: var(--color);
 }
 
 .formGroup input,
@@ -48,7 +48,7 @@
 }
 
 .formGroup select {
-  color: var(--dark-color);
+  color: var(--color);
 }
 
 .container textarea {
