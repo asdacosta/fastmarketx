@@ -1,0 +1,25 @@
+:root {
+  --input-color: rgb(230, 230, 230);
+}
+
+.dark {
+  --background: black;
+  --trans-bg: rgba(0, 0, 0, 0.8);
+  --foreground: rgb(28, 29, 31);
+  --color: rgb(210, 210, 210);
+  --white-black-color: white;
+  --input-color: rgb(230, 230, 230);
+  --brand-bg: rgba(0, 0, 0, 0.6);
+  --img-cover-display: inline;
+}
+
+.light {
+  --background: white;
+  --trans-bg: rgba(255, 255, 255, 0.8);
+  --foreground: rgb(232, 234, 237);
+  --input-color: rgb(232, 234, 237);
+  --color: black;
+  --white-black-color: black;
+  --brand-bg: rgba(255, 255, 255, 0.6);
+  --img-cover-display: none;
+}
