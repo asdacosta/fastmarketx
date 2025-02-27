@@ -4,7 +4,7 @@
   align-items: center;
   gap: 0.3rem;
   padding: 0.5rem;
-  border-top: 0.02rem solid rgb(75, 75, 75);
+  border-top: 0.2rem solid var(--foreground);
 }
 
 .contactCard:last-child {
@@ -51,7 +51,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  background: black;
+  background: var(--background);
   padding: 1rem;
   border-radius: var(--radius);
   text-align: center;
