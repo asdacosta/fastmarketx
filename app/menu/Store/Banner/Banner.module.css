@@ -100,7 +100,7 @@
 }
 
 .modal {
-  background: var(--dark-bg);
+  background: var(--foreground);
   padding: 1rem;
   padding-top: 2rem;
   border-radius: 1rem;
