@@ -4,7 +4,7 @@
   padding: 1rem 0;
   padding-right: 0.5rem;
 
-  border-top: 0.15rem solid var(--dark-bg);
+  border-top: 0.15rem solid var(--foreground);
 }
 
 .item > div:first-child {
