@@ -9,7 +9,7 @@
 .subCategory {
   display: flex;
   flex-direction: column;
-  background: black;
+  background: var(--background);
   border-radius: var(--radius);
 }
 
@@ -57,7 +57,7 @@
   height: 1.5rem;
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 
-  background: rgb(28, 29, 30);
+  background: var(--foreground);
 }
 
 .item {
@@ -72,6 +72,7 @@
 }
 
 .item::before {
+  display: var(--img-cover-display);
   content: "";
   position: absolute;
   width: 100%;
@@ -90,10 +91,10 @@
 }
 
 .cardName {
-  color: var(--dark-color);
+  color: var(--color);
   position: absolute;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: var(--trans-bg);
   padding: 0.5rem 0.2rem;
   /* border-radius: 1rem; */
   z-index: 2;
