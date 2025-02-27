@@ -10,6 +10,11 @@ function MainCategories() {
     <section className={styles.mainCategories}>
       <MainItems itemsName="Trending Products" url="/products/trending" />
       <MainItems
+        itemsName="Smart Picks for You"
+        url="/products/trending"
+        itemsQuantity={7}
+      />
+      <MainItems
         itemsName="Speedy Deals"
         itemsQuantity={7}
         url="/products/speedy"
