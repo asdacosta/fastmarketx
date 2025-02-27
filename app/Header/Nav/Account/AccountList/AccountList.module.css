@@ -5,7 +5,7 @@
 
   border-radius: 0.5rem;
   position: absolute;
-  background: var(--dark-bg);
+  background: var(--foreground);
   padding: 0.5rem 1rem;
   width: 11rem;
   top: 3rem;
@@ -118,5 +118,9 @@
 .otherList svg {
   width: 0.95rem;
   height: 0.95rem;
-  fill: var(--dark-color);
+  fill: var(--color);
+}
+
+svg.infoIcon {
+  height: 0.85rem;
 }
