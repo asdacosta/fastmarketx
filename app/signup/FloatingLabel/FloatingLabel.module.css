@@ -9,7 +9,7 @@
   font-size: 0.95rem;
   font-weight: 500;
   height: 0.8rem;
-  margin-left: 1rem;
+  margin-left: 0.7rem;
   color: rgb(90, 90, 90);
   position: relative;
   top: 1.85rem;
@@ -18,7 +18,7 @@
 }
 
 .inputBox input {
-  background: var(--dark-color);
+  background: var(--input-color);
   height: 2.4rem;
   min-width: 20rem;
   border-radius: 0.3rem;
@@ -43,5 +43,5 @@
 label.focused {
   font-size: 0.8rem;
   top: 0rem;
-  color: var(--dark-color);
+  color: var(--color);
 }
