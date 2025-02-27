@@ -1,11 +1,8 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import "./theme.css";
 
+:root {
   --dark-gold: rgba(232, 205, 4, 0.85);
   --dark-pure-gold: rgba(232, 205, 4, 1);
-  --dark-color: rgb(210, 210, 210);
-  --dark-bg: rgb(28, 29, 31);
   --dark-violet: rgba(146, 44, 218, 0.85);
   --dark-blue: rgba(49, 123, 220, 0.85);
   --dark-green: rgba(18, 188, 137, 0.85);
