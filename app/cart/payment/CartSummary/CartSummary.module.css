@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
-  border-bottom: 0.15rem solid var(--dark-bg);
+  border-bottom: 0.15rem solid var(--foreground);
   padding: 1rem 2rem;
   white-space: nowrap;
 }
@@ -14,7 +14,7 @@
 }
 
 .header svg {
-  fill: var(--dark-color);
+  fill: var(--color);
 }
 
 .shoppingCart {
@@ -29,8 +29,8 @@
 }
 
 .cartSummary {
-  color: var(--dark-color);
-  background: black;
+  color: var(--color);
+  background: var(--background);
   border-radius: var(--radius);
   height: max-content;
   max-width: 18rem;
@@ -51,7 +51,7 @@
   display: flex;
   align-items: center;
   gap: 0.2rem;
-  color: white;
+  color: var(--color);
 }
 
 .price > span:first-child {
