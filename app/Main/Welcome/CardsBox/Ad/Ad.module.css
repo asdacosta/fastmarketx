@@ -17,6 +17,7 @@
 }
 
 .item::before {
+  display: var(--img-cover-display);
   content: "";
   position: absolute;
   width: 100%;
