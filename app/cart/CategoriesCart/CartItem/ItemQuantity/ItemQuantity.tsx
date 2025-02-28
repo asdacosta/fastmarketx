@@ -1,12 +1,25 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./ItemQuantity.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { updateQuantity } from "@/app/redux/slices/cartSlice";
+import { CartDataState } from "@/app/Main/MainCategories/Item/ItemClient";
+import { RootState } from "@/app/redux/store";
 
-function ItemQuantity() {
-  const [quantity, setQuantity] = useState<number>(1);
+function ItemQuantity({ item }: { item: CartDataState }) {
+  const dispatch = useDispatch();
+  const cartData = useSelector((state: RootState) => state.cart);
+  const storedItem = cartData.items.find((i) => i.id === item.id);
+  const quantity = storedItem ? storedItem.quantity : 0;
 
-  const increaseQuantity = () => setQuantity((prev) => prev + 1);
-  const decreaseQuantity = () => setQuantity((prev) => Math.max(1, prev - 1));
+  const increaseQuantity = () => {
+    dispatch(updateQuantity({ id: item.id, quantity: quantity + 1 }));
+  };
+  const decreaseQuantity = () => {
+    dispatch(
+      updateQuantity({ id: item.id, quantity: Math.max(1, quantity - 1) })
+    );
+  };
 
   return (
     <div className={styles.itemQuantity}>
