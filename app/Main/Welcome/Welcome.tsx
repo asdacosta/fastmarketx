@@ -17,7 +17,9 @@ function Welcome() {
       </Provider>
       <section className={styles.extrasBox}>
         <Extras />
-        <Promotion />
+        <Provider store={store}>
+          <Promotion />
+        </Provider>
       </section>
     </section>
   );
