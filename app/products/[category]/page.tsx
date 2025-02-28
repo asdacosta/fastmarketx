@@ -5,6 +5,11 @@ import MainCategoryTemplate from "@/app/Main/MainCategories/MainCategoryTemplate
 import Item from "@/app/Main/MainCategories/Item/Item";
 import Header from "@/app/Header/Header";
 import { notFound, useParams } from "next/navigation";
+import { getNextAvailableItem } from "@/app/Main/MainCategories/Item/getNextAvailableItem";
+import { Provider, useSelector } from "react-redux";
+import { RootState } from "@/app/redux/store";
+import ProductItems from "./ProductItems/ProductItems";
+import { store } from "../../redux/store";
 
 const allowedCategoryRoutes = [
   "electronics",
@@ -69,11 +74,9 @@ function page() {
             />
           </section>
         )}
-        <section className={styles.items}>
-          {currentItems.map((_, index) => (
-            <Item key={index} />
-          ))}
-        </section>
+        <Provider store={store}>
+          <ProductItems currentItems={currentItems} />
+        </Provider>
         <section className={styles.pagination}>
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
