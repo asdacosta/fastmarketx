@@ -3,9 +3,12 @@ import React, { useState } from "react";
 import styles from "./Payment.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/redux/store";
 
 function Payment({ change = false }: { change?: boolean }) {
   const [clicked, setClicked] = useState({ mMoney: false, payWithCard: false });
+  const cartData = useSelector((state: RootState) => state.cart);
   const [momo, setMomo] = useState("mtn");
 
   return (
@@ -130,7 +133,7 @@ function Payment({ change = false }: { change?: boolean }) {
             </div>
             {!change ? (
               <Link href="/cart/payment/complete" className={styles.payButton}>
-                Complete Payment (GH₵ 100)
+                Complete Payment (GH₵ {cartData.totalPrice + 100})
               </Link>
             ) : (
               <button className={styles.payButton}>Update Number</button>
