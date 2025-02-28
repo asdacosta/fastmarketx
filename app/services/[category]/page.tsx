@@ -5,6 +5,9 @@ import MainCategoryTemplate from "@/app/Main/MainCategories/MainCategoryTemplate
 import Item from "@/app/Main/MainCategories/Item/Item";
 import Header from "@/app/Header/Header";
 import { notFound, useParams } from "next/navigation";
+import { Provider } from "react-redux";
+import { store } from "@/app/redux/store";
+import ServiceItems from "./ServiceItems/ServiceItems";
 
 const allowedCategoryRoutes = [
   "beautyandwellness",
@@ -61,11 +64,9 @@ function page() {
             />
           </section>
         )}
-        <section className={styles.items}>
-          {currentItems.map((_, index) => (
-            <Item key={index} category="service" />
-          ))}
-        </section>
+        <Provider store={store}>
+          <ServiceItems currentItems={currentItems} />
+        </Provider>
         <section className={styles.pagination}>
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
