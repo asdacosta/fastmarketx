@@ -5,6 +5,9 @@ import MainCategoryTemplate from "@/app/Main/MainCategories/MainCategoryTemplate
 import Item from "@/app/Main/MainCategories/Item/Item";
 import Header from "@/app/Header/Header";
 import { notFound, useParams } from "next/navigation";
+import { Provider } from "react-redux";
+import { store } from "@/app/redux/store";
+import MealItems from "./MealItems/MealItems";
 
 const allowedCategoryRoutes = [
   "beverages",
@@ -61,11 +64,9 @@ function page() {
             />
           </section>
         )}
-        <section className={styles.items}>
-          {currentItems.map((_, index) => (
-            <Item key={index} category="meal" />
-          ))}
-        </section>
+        <Provider store={store}>
+          <MealItems currentItems={currentItems} />
+        </Provider>
         <section className={styles.pagination}>
           <button
             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
