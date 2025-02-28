@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./Cart.module.css";
 import EmptyCart from "./EmptyCart/EmptyCart";
@@ -8,7 +9,7 @@ import Link from "next/link";
 
 function Cart() {
   const cartData = useSelector((state: RootState) => state.cart);
-  const { items, total } = cartData;
+  const { items, totalPrice } = cartData;
 
   return (
     <section className={styles.cart}>
@@ -38,11 +39,11 @@ function Cart() {
             <span>Subtotal</span>
             <div className={styles.price}>
               <span>GH₵</span>
-              <span>{total}</span>
+              <span>{totalPrice.toFixed(2)}</span>
             </div>
           </section>
           <Link href="cart/payment" className={styles.payButton}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+            <svg viewBox="0 0 576 512">
               <path d="M64 64C28.7 64 0 92.7 0 128L0 384c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64L64 64zm64 320l-64 0 0-64c35.3 0 64 28.7 64 64zM64 192l0-64 64 0c0 35.3-28.7 64-64 64zM448 384c0-35.3 28.7-64 64-64l0 64-64 0zm64-192c-35.3 0-64-28.7-64-64l64 0 0 64zM288 160a96 96 0 1 1 0 192 96 96 0 1 1 0-192z" />
             </svg>
             <span>Proceed to Payment</span>
