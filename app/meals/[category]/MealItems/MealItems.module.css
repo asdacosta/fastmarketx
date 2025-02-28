@@ -1,0 +1,7 @@
+.items {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  grid-auto-rows: 19rem;
+  gap: 2rem 1rem;
+}
