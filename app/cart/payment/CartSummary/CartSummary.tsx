@@ -1,8 +1,14 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import styles from "./CartSummary.module.css";
 import Link from "next/link";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/redux/store";
 
 function CartSummary() {
+  const cartData = useSelector((state: RootState) => state.cart);
+  const [deliveryFee, setDeliveryFee] = useState(100);
+
   return (
     <section className={styles.cartSummary}>
       <section className={styles.header}>
@@ -16,21 +22,21 @@ function CartSummary() {
           <span>Items Cost</span>
           <div className={styles.price}>
             <span>GH₵</span>
-            <span>1000</span>
+            <span>{cartData.totalPrice}</span>
           </div>
         </section>
         <section className={styles.amount}>
           <span>Delivery Fee</span>
           <div className={styles.price}>
             <span>GH₵</span>
-            <span>100</span>
+            <span>{deliveryFee}</span>
           </div>
         </section>
         <section className={styles.amount}>
           <span>Total</span>
           <div className={styles.price}>
             <span>GH₵</span>
-            <span>1100</span>
+            <span>{(cartData.totalPrice + deliveryFee).toFixed(2)}</span>
           </div>
         </section>
       </section>
