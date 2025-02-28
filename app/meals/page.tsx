@@ -4,12 +4,16 @@ import styles from "./page.module.css";
 import MainCategoryTemplate from "@/app/Main/MainCategories/MainCategoryTemplate/MainCategoryTemplate";
 import Item from "@/app/Main/MainCategories/Item/Item";
 import Header from "@/app/Header/Header";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
+import { getNextAvailableItem } from "../Main/MainCategories/Item/getNextAvailableItem";
 
 const itemsCount = new Array(27).fill(1);
 const itemsPerPage = 10;
 
 function page() {
   const [currentPage, setCurrentPage] = useState(1);
+  const cartData = useSelector((state: RootState) => state.cart);
 
   const totalPages = Math.ceil(itemsCount.length / itemsPerPage);
 
@@ -23,12 +27,25 @@ function page() {
       <Header />
       <section className={styles.page}>
         <section className={styles.categories}>
-          <MainCategoryTemplate categoryName="Meals" />
+          <MainCategoryTemplate
+            categoryName="Meals"
+            subCategories={[
+              "beverages",
+              "bakery",
+              "international",
+              "native",
+              "instantandsnacks",
+              "frozenfoods",
+              "veganandvegetarian",
+              "mealprep",
+            ]}
+          />
         </section>
         <section className={styles.items}>
-          {currentItems.map((_, index) => (
-            <Item key={index} category="meal" />
-          ))}
+          {currentItems.map((_, index) => {
+            const itemData = getNextAvailableItem(cartData.items);
+            return <Item key={index} itemData={itemData} category="meal" />;
+          })}
         </section>
         <section className={styles.pagination}>
           <button
