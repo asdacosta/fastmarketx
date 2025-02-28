@@ -3,28 +3,38 @@ import styles from "./CartItem.module.css";
 import Image from "next/image";
 import RemoveSave from "./RemoveSave/RemoveSave";
 import ItemQuantity from "./ItemQuantity/ItemQuantity";
+import { CartItem as CartItemType } from "@/app/redux/slices/cartSlice";
+import { useDispatch } from "react-redux";
 
-function CartItem() {
+function CartItem({ item }: { item: CartItemType }) {
+  const dispatch = useDispatch();
+
   return (
     <section className={styles.item}>
       <div>
-        <Image src="/mainImgs/store.avif" alt="Som" fill />
+        <Image
+          src={item.imageUrl || "/mainImgs/store.avif"}
+          alt={item.name}
+          fill
+        />
       </div>
       <div className={styles.itemInfo}>
         <div className={styles.namePrice}>
-          <span className={styles.itemName}>Product name is here</span>
+          <span className={styles.itemName}>{item.name}</span>
           <div className={styles.price}>
             <span>GH₵</span>
-            <span>1000.45</span>
+            <span>{item.price.toFixed(2)}</span>
           </div>
         </div>
         <div className={styles.accountStock}>
-          <span className={styles.accountName}>Account Name</span>
+          <span className={styles.accountName}>{item.accountName}</span>
           <span>•</span>
-          <span className={styles.stock}>In Stock</span>
+          <span className={styles.stock}>
+            {item.stock > 20 ? "In Stock" : `${item.stock} items left`}
+          </span>
         </div>
-        <ItemQuantity />
-        <RemoveSave />
+        <ItemQuantity item={item} />
+        <RemoveSave id={item.id} />
       </div>
     </section>
   );
