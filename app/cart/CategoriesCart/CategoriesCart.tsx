@@ -3,15 +3,20 @@ import styles from "./CategoriesCart.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import CartItem from "./CartItem/CartItem";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/redux/store";
 
 function CategoryCart() {
+  const cartData = useSelector((state: RootState) => state.cart);
+
   return (
     <section className={styles.categoriesCart}>
       <section className={styles.productsList}>
         <h4>Products</h4>
         <section className={styles.list}>
-          <CartItem />
-          <CartItem />
+          {cartData.items.map((item) => (
+            <CartItem key={item.id} item={item} />
+          ))}
         </section>
         <section className={styles.listEnd}>
           <Link href="/products" className={styles.addItems}>
@@ -21,7 +26,7 @@ function CategoryCart() {
             <div className={styles.price}>
               <span>Products Subtotal | </span>
               <span>GH₵</span>
-              <span>1000.45</span>
+              <span>{cartData.totalPrice.toFixed(2)}</span>
             </div>
           </div>
         </section>
