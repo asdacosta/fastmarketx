@@ -1,7 +1,13 @@
+"use client";
 import React, { JSX } from "react";
 import styles from "./MainItems.module.css";
 import Link from "next/link";
 import Item from "../Item/Item";
+import { CartDataState } from "../Item/ItemClient";
+import { itemsCustomData } from "../Item/ItemsCustomData";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/redux/store";
+import { getNextAvailableItem } from "../Item/getNextAvailableItem";
 
 interface MainItemsProps {
   itemsName: string;
@@ -16,6 +22,8 @@ function MainItems({
   category = "product",
   url,
 }: MainItemsProps) {
+  const cartData = useSelector((state: RootState) => state.cart);
+
   const items = new Array(itemsQuantity).fill(1);
   const initials = itemsName.split(" ")[0];
 
@@ -63,12 +71,14 @@ function MainItems({
       </section>
       <section className={styles.trendItems}>
         {items.map((item, index) => {
+          const itemData = getNextAvailableItem(cartData.items);
           return (
             <Item
               key={index}
               includeButton={false}
               includeStars={false}
               category={category}
+              itemData={itemData}
             />
           );
         })}
