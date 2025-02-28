@@ -1,15 +1,21 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./RemoveSave.module.css";
+import { useDispatch } from "react-redux";
+import { removeFromCart } from "@/app/redux/slices/cartSlice";
 
-function RemoveSave() {
+function RemoveSave({ id }: { id: string }) {
+  const dispatch = useDispatch();
+
   const [saved, setSaved] = useState<boolean>(false);
+  const [itemId, setItemId] = useState(id);
 
   const handleSave = () => setSaved((prev) => !prev);
+  const handleRemove = () => dispatch(removeFromCart(itemId));
 
   return (
     <section className={styles.removeSave}>
-      <div>
+      <div onClick={handleRemove}>
         <svg
           viewBox="0 0 448 512"
           width="0.65rem"
