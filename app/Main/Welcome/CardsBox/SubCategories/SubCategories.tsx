@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./SubCategories.module.css";
+import Link from "next/link";
 
 type CategoriesDataType = {
   [key: string]: {
@@ -388,6 +389,15 @@ const categoriesData: CategoriesDataType = {
   },
 };
 
+export const getSlug = (name: string): string => {
+  return name
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^\w\s-]/g, "") // remove all non-word characters except spaces and hyphens
+    .trim()
+    .replace(/\s+/g, "-");
+};
+
 function SubCategories({
   categoryDetails,
 }: {
@@ -408,15 +418,27 @@ function SubCategories({
           {typeof subCategoryData === "object" &&
             Object.entries(subCategoryData).map(([key, items]) => (
               <div key={key} className={styles.subCategory}>
-                <h3 className={styles.subCategoryTitle}>{key}</h3>
+                <Link
+                  href={`/${categoryDetails.category.toLowerCase()}/${getSlug(
+                    key
+                  )}`}
+                >
+                  <h3 className={styles.subCategoryTitle}>{key}</h3>
+                </Link>
                 {Array.isArray(items) && items.length > 0 && (
-                  <ul className={styles.itemList}>
+                  <div className={styles.itemList}>
                     {items.map((item: string) => (
-                      <li key={item} className={styles.item}>
+                      <Link
+                        href={`/${categoryDetails.category.toLowerCase()}/${getSlug(
+                          item
+                        )}`}
+                        key={item}
+                        className={styles.item}
+                      >
                         {item}
-                      </li>
+                      </Link>
                     ))}
-                  </ul>
+                  </div>
                 )}
               </div>
             ))}
