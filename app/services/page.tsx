@@ -30,8 +30,8 @@ function page() {
           <MainCategoryTemplate
             categoryName="Services"
             subCategories={[
-              "beautyandwellness",
-              "homeservices",
+              "beauty-and-wellness",
+              "home",
               "tech",
               "academic",
               "logistics",
