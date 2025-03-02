@@ -2,19 +2,48 @@
 import React, { useState } from "react";
 import styles from "./page.module.css";
 import MainCategoryTemplate from "@/app/Main/MainCategories/MainCategoryTemplate/MainCategoryTemplate";
-import Item from "@/app/Main/MainCategories/Item/Item";
 import Header from "@/app/Header/Header";
 import { notFound, useParams } from "next/navigation";
 import { Provider } from "react-redux";
 import { store } from "@/app/redux/store";
 import ServiceItems from "./ServiceItems/ServiceItems";
+import { findCategoryData } from "@/app/Main/MainCategories/findCategoryData";
 
-const allowedCategoryRoutes = [
-  "beautyandwellness",
+const mainSubCategories = [
+  "beauty-and-wellness",
   "home",
   "tech",
-  "academic",
+  "academic-services",
   "logistics",
+  "events",
+];
+
+const allowedCategoryRoutes = [
+  "beauty-and-wellness",
+  "home",
+  "tech",
+  "academic-services",
+  "logistics",
+  "events",
+  "hairdressing",
+  "haircuts-and-styling",
+  "manicures-and-pedicures",
+  "massage",
+  "facials",
+  "cleaning",
+  "plumbing-and-electrical",
+  "carpentry",
+  "tech-services",
+  "web-app-development",
+  "graphic-design",
+  "it-support",
+  "repairs",
+  "tutoring",
+  "online-courses",
+  "programs",
+  "logistics",
+  "moving",
+  "delivery",
   "events",
 ];
 
@@ -41,27 +70,20 @@ function page() {
     currentPage * itemsPerPage
   );
 
+  const subCategories = findCategoryData(category, "Services");
+
   return (
     <>
       <Header />
       <section className={styles.page}>
         {allowedCategoryRoutes.includes(category) && (
           <section className={styles.categories}>
-            <MainCategoryTemplate
-              categoryName={
-                category === "home" || category === "academic"
-                  ? category + "services"
-                  : category
-              }
-              subCategories={[
-                "Beauty & Wellness",
-                "Home",
-                "Tech",
-                "Academic",
-                "Logistics",
-                "Events",
-              ]}
-            />
+            {mainSubCategories.includes(category) && (
+              <MainCategoryTemplate
+                categoryName={category}
+                subCategories={subCategories}
+              />
+            )}
           </section>
         )}
         <Provider store={store}>
