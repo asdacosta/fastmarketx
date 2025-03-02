@@ -34,10 +34,10 @@ function page() {
               "groceries",
               "fashion",
               "academic",
-              "homeandkitchen",
-              "beautyandhealth",
+              "home-and-kitchen",
+              "beauty-and-health",
               "sports",
-              "gamesandtoys",
+              "games-and-toys",
               "automotive",
             ]}
           />
