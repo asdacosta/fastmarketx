@@ -63,7 +63,7 @@ function MainCategories() {
         }}
       />
       <MainItems
-        itemsName="Popular Products"
+        itemsName="Most Popular Products"
         itemsQuantity={7}
         url="/products/popular"
       />
@@ -111,7 +111,7 @@ function MainCategories() {
         }}
       />
       <MainItems
-        itemsName="Popular Meals"
+        itemsName="Most Popular Meals"
         itemsQuantity={7}
         category="meal"
         url="/meals/popular"
@@ -159,7 +159,7 @@ function MainCategories() {
         }}
       />
       <MainItems
-        itemsName="Popular Services"
+        itemsName="Most Popular Services"
         itemsQuantity={7}
         category="service"
         url="/services/popular"
@@ -187,7 +187,7 @@ function MainCategories() {
         }}
       />
       <MainItems
-        itemsName="Popular Stores"
+        itemsName="Most Popular Stores"
         itemsQuantity={7}
         url="/products/popular"
       />
