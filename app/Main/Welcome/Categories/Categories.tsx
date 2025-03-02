@@ -91,7 +91,7 @@ function Categories() {
           <span className={styles.item}>Academic</span>
         </Link>
         <Link
-          href="products/homeandkitchen"
+          href="products/home-and-kitchen"
           className={styles.link}
           onMouseEnter={() =>
             setCategoriesNames({
@@ -116,7 +116,7 @@ function Categories() {
           <span className={styles.item}>Home & Kitchen</span>
         </Link>
         <Link
-          href="products/beautyandhealth"
+          href="products/beauty-and-health"
           className={styles.link}
           onMouseEnter={() =>
             setCategoriesNames({
@@ -154,7 +154,7 @@ function Categories() {
           <span className={styles.item}>Sports</span>
         </Link>
         <Link
-          href="products/gamesandtoys"
+          href="products/games-and-toys"
           className={styles.link}
           onMouseEnter={() =>
             setCategoriesNames({
@@ -290,12 +290,12 @@ function Categories() {
           <span className={styles.item}>Native</span>
         </Link>
         <Link
-          href="meals/instantandsnacks"
+          href="meals/instant-and-snacks"
           className={styles.link}
           onMouseEnter={() =>
             setCategoriesNames({
               category: "Meals",
-              subCategory: "Instant",
+              subCategory: "Instant & Snacks",
               active: true,
             })
           }
@@ -309,7 +309,7 @@ function Categories() {
           <span className={styles.item}>Instant & Snacks</span>
         </Link>
         <Link
-          href="meals/frozenfoods"
+          href="meals/frozen-foods"
           className={styles.link}
           onMouseEnter={() =>
             setCategoriesNames({
@@ -328,7 +328,7 @@ function Categories() {
           <span className={styles.item}>Frozen Foods</span>
         </Link>
         <Link
-          href="meals/veganandvegetarian"
+          href="meals/vegan-and-vegetarian"
           className={styles.link}
           // onMouseEnter={() =>
           //   setCategoriesNames({
@@ -347,7 +347,7 @@ function Categories() {
           <span className={styles.item}>Vegan & Vegetarian</span>
         </Link>
         <Link
-          href="meals/mealprep"
+          href="meals/meal-prep-subscriptions"
           className={styles.link}
           // onMouseEnter={() =>
           //   setCategoriesNames({
@@ -388,7 +388,7 @@ function Categories() {
       <section className={styles.services}>
         <h3>Services</h3>
         <Link
-          href="services/beautyandwellness"
+          href="services/beauty-and-wellness"
           className={styles.link}
           onMouseEnter={() =>
             setCategoriesNames({
@@ -445,12 +445,12 @@ function Categories() {
           <span className={styles.item}>Tech</span>
         </Link>
         <Link
-          href="services/academic"
+          href="services/academic-services"
           className={styles.link}
           onMouseEnter={() =>
             setCategoriesNames({
               category: "Services",
-              subCategory: "Academic",
+              subCategory: "Academic Services",
               active: true,
             })
           }
