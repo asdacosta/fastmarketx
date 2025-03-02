@@ -48,9 +48,7 @@ function MainCategoryTemplate({
             return (
               <SwiperSlide key={category}>
                 <Link
-                  href={`/${categoryName}/${
-                    category === "homeservices" ? "home" : category
-                  }`}
+                  href={`/${categoryName}/${category}`}
                   className={styles.item}
                 >
                   <Image
