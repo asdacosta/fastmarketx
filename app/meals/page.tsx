@@ -34,9 +34,9 @@ function page() {
               "bakery",
               "international",
               "native",
-              "instantandsnacks",
-              "frozenfoods",
-              "veganandvegetarian",
+              "instant-and-snacks",
+              "frozen-foods",
+              "vegan-and-vegetarian",
               "mealprep",
             ]}
           />
