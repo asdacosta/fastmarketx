@@ -2,22 +2,143 @@
 import React, { useState } from "react";
 import styles from "./page.module.css";
 import MainCategoryTemplate from "@/app/Main/MainCategories/MainCategoryTemplate/MainCategoryTemplate";
-import Item from "@/app/Main/MainCategories/Item/Item";
 import Header from "@/app/Header/Header";
 import { notFound, useParams } from "next/navigation";
 import { Provider } from "react-redux";
 import { store } from "@/app/redux/store";
 import MealItems from "./MealItems/MealItems";
+import { findCategoryData } from "@/app/Main/MainCategories/findCategoryData";
+
+const mainSubCategories = [
+  "beverages",
+  "bakery",
+  "international",
+  "native",
+  "instant-and-snacks",
+  "frozen-foods",
+  "mealprep",
+  // Beverages
+  "juices-and-smoothies",
+  "grains-and-porridge",
+  "coffee-and-tea",
+  "dairy-and-non-dairy",
+  "native-drinks",
+  // Bakery
+  "breads",
+  "pastries",
+  // International
+  "italian",
+  "american",
+  "grilled-and-bbq-dishes",
+  // Native
+  "complete-dishes",
+  "rice-based-dishes",
+  "corn-based-dishes",
+  "cassava-and-yam-based-dishes",
+  "stews-soups-and-sauces",
+];
 
 const allowedCategoryRoutes = [
   "beverages",
   "bakery",
   "international",
   "native",
-  "instantandsnacks",
-  "frozenfoods",
-  "veganandvegetarian",
-  "mealprep",
+  "instant-and-snacks",
+  "frozen-foods",
+  "vegan-and-vegetarian",
+  "fresh-fruit-juices",
+  "flavored-juices",
+  "smoothie-mixes",
+  "oatmeal",
+  "cornmeal",
+  "millet",
+  "porridge",
+  "tom-brown",
+  "rice-water",
+  "coffee",
+  "tea",
+  "fresh-milk-and-flavored-milk",
+  "soy-milk",
+  "hot-chocolate",
+  "yogurt-drinks",
+  "sobolo",
+  "coconut-water",
+  "palm-wine",
+  "pito",
+  "asaana",
+  "brukina",
+  "lamugin",
+  "breads",
+  "pastries",
+  "other-pastries",
+  "cakes",
+  "cookies",
+  "white-breads",
+  "wheat-breads",
+  "baguettes",
+  "flat-breads",
+  "pies",
+  "spring-rolls",
+  "samosa",
+  "sausage-roll",
+  "tarts",
+  "rock-buns",
+  "other-pastries",
+  "coffee-and-tea",
+  "juices-and-smoothies",
+  "grains-and-porridge",
+  "dairy-and-non-dairy",
+  "native-drinks",
+  "salads",
+  "sandwiches-and-wraps",
+  "soups-and-stews",
+  "meal-kits",
+  "italian",
+  "american",
+  "grilled-and-bbq-dishes",
+  "pizza",
+  "shawarma",
+  "burger",
+  "pasta-noodles-and-spaghetti",
+  "grilled-meat",
+  "grilled-fish",
+  "bbq",
+  "kebab",
+  "meal-prep-subscriptions",
+  "ice-cream",
+  "complete-dishes",
+  "other-complete-dishes",
+  "rice-based-dishes",
+  "corn-based-dishes",
+  "other-corn-based-dishes",
+  "cassava-and-yam-based-dishes",
+  "other-cassava-and-yam-based-dishes",
+  "stews-soups-and-sauces",
+  "fufu-banku-and-soup",
+  "banku-and-tilapia",
+  "kelewele",
+  "beans-and-plantain",
+  "kenkey-and-fish",
+  "yam-ampesi-and-palava-sauce-kontomire-stew",
+  "tuo-zaafi",
+  "jollof-rice",
+  "plain-rice-with-stew",
+  "fried-rice",
+  "waakye",
+  "rice-balls-omotuo",
+  "kenkey",
+  "banku",
+  "other-rice-based-dishes",
+  "fufu",
+  "ampesi",
+  "traditional-food-others",
+  "light-soup",
+  "groundnut-soup",
+  "palm-nut-soup",
+  "shito",
+  "tomato-stew",
+  "palava-sauce",
+  "other-stews-soups-and-sauces",
 ];
 
 const allowedItemsRoutes = ["speedy", "lowcost", "popular", "hotdeals"];
@@ -43,25 +164,20 @@ function page() {
     currentPage * itemsPerPage
   );
 
+  const subCategories = findCategoryData(category, "Meals");
+
   return (
     <>
       <Header />
       <section className={styles.page}>
         {allowedCategoryRoutes.includes(category) && (
           <section className={styles.categories}>
-            <MainCategoryTemplate
-              categoryName={category}
-              subCategories={[
-                "Beverages",
-                "Bakery",
-                "International",
-                "Native",
-                "Instant & Snacks",
-                "Frozen Foods",
-                "Vegan & Vegetarian",
-                "Meal Prep",
-              ]}
-            />
+            {mainSubCategories.includes(category) && (
+              <MainCategoryTemplate
+                categoryName={category}
+                subCategories={subCategories}
+              />
+            )}
           </section>
         )}
         <Provider store={store}>
