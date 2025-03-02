@@ -9,6 +9,7 @@
 .storeName span {
   padding: 0.1rem;
 }
+
 .storeLogo {
   display: flex;
   justify-content: center;
@@ -16,4 +17,8 @@
   width: 1.55rem;
   height: 1.55rem;
   border-radius: 10rem;
+}
+
+.storeLogo svg {
+  fill: black;
 }
