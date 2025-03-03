@@ -1,6 +1,7 @@
 .promotion {
   display: flex;
   flex-direction: column;
+  align-items: center;
   color: var(--color);
   background: var(--background);
   border-radius: var(--big-radius);
@@ -21,7 +22,8 @@
 
 .item {
   flex: 1;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
+  width: 10.5rem;
 }
 
 .item > * {
