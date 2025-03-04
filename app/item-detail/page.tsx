@@ -9,6 +9,8 @@ import { Provider } from "react-redux";
 import { store } from "../redux/store";
 import FAQ from "./FAQ/FAQ";
 import Reviews from "./Reviews/Reviews";
+import FirstMainItems from "./FirstMainItems/FirstMainItems";
+import SecMainItems from "./SecMainItems/SecMainItems";
 
 function page() {
   return (
@@ -24,33 +26,9 @@ function page() {
             </section>
           </section>
           <FAQ />
-          <MainItems
-            category="product"
-            itemsName="Products often bought together with ..."
-            url="/products"
-            itemsQuantity={4}
-          />
-          <MainItems
-            category="product"
-            itemsName="Products bought by same customers"
-            url="/products"
-            itemsQuantity={4}
-          />
-        </Provider>
-        <Reviews />
-        <Provider store={store}>
-          <MainItems
-            category="product"
-            itemsName="Smart Picks for You"
-            url="/products"
-            itemsQuantity={4}
-          />
-          <MainItems
-            category="product"
-            itemsName="More from [shop] store"
-            url="/products"
-            itemsQuantity={4}
-          />
+          <FirstMainItems />
+          <Reviews />
+          <SecMainItems />
         </Provider>
         <button
           className={styles.top}
