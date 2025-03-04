@@ -6,6 +6,7 @@ import { RootState } from "@/app/redux/store";
 
 function ItemImgs() {
   const feedback = useSelector((state: RootState) => state.itemDetail.feedback);
+  const itemData = useSelector((state: RootState) => state.itemDetail.itemData);
 
   return (
     <section className={styles.itemImgs}>
@@ -28,7 +29,7 @@ function ItemImgs() {
           <svg viewBox="0 0 512 512">
             <path d="M307 34.8c-11.5 5.1-19 16.6-19 29.2l0 64-112 0C78.8 128 0 206.8 0 304C0 417.3 81.5 467.9 100.2 478.1c2.5 1.4 5.3 1.9 8.1 1.9c10.9 0 19.7-8.9 19.7-19.7c0-7.5-4.3-14.4-9.8-19.5C108.8 431.9 96 414.4 96 384c0-53 43-96 96-96l96 0 0 64c0 12.6 7.4 24.1 19 29.2s25 3 34.4-5.4l160-144c6.7-6.1 10.6-14.7 10.6-23.8s-3.8-17.7-10.6-23.8l-160-144c-9.4-8.5-22.9-10.6-34.4-5.4z" />
           </svg>
-          <span>Share this product</span>
+          <span>Share this {itemData.categoryName.toLowerCase()}</span>
         </div>
         <div className={styles.shareLinks}>
           <div className={styles.socialLinks}>
@@ -57,7 +58,7 @@ function ItemImgs() {
         <svg viewBox="0 0 448 512">
           <path d="M64 32C64 14.3 49.7 0 32 0S0 14.3 0 32L0 64 0 368 0 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-128 64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4l34.7-13c12.5-4.7 20.8-16.6 20.8-30l0-247.7c0-23-24.2-38-44.8-27.7l-9.6 4.8c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48l0-16z" />
         </svg>
-        <span>Report this product</span>
+        <span>Report this {itemData.categoryName.toLowerCase()}</span>
       </section>
     </section>
   );
