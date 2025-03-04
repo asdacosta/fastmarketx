@@ -38,7 +38,7 @@ const Page: React.FC = () => {
           </div>
         </section>
         <section className={styles.faq}>
-          <h2>FAQ (Frequently Asked Questions)</h2>
+          <h2>Frequently Asked Questions</h2>
           {Object.entries(faqData).map(([categoryTitle, faqs]) => (
             <div key={categoryTitle} className={styles.faqCards}>
               <h3 className={styles.faqCategoryTitle}>{categoryTitle}</h3>
