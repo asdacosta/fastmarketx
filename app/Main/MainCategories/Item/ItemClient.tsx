@@ -12,6 +12,7 @@ import {
 import { RootState } from "@/app/redux/store";
 import { setItemDetailsData } from "@/app/redux/slices/itemDetailSlice";
 import Link from "next/link";
+import { addToWishlist } from "@/app/redux/slices/wishlistSlice";
 
 export interface CartDataState {
   id: string;
@@ -38,10 +39,13 @@ function ItemClient({
 }: ItemProps) {
   const dispatch = useDispatch();
   const cartData = useSelector((state: RootState) => state.cart);
+  const wishList = useSelector((state: RootState) => state.wishlist.items);
 
   const storedItem = cartData.items.find((item) => item.id === itemData.id);
   const { id, name, price, imageUrl, stock, accountName, categoryName } =
     storedItem || itemData;
+
+  const wishItem = wishList.find((item) => item.id === itemData.id);
 
   const [itemId, setItemId] = useState(id);
   const [itemPrice, setItemPrice] = useState(price);
@@ -49,7 +53,7 @@ function ItemClient({
 
   const [addedToCart, setAddedToCart] = useState(!!storedItem || false);
   const [quantity, setQuantity] = useState(storedItem?.quantity || 0);
-  const [addedToWish, setAddedToWish] = useState(false);
+  const [addedToWish, setAddedToWish] = useState(wishItem?.id === id || false);
   const [revealDescription, setRevealDescription] = useState(false);
   const [addedFeedback, setAddedFeedback] = useState("");
   const [toggleFeedback, setToggleFeedback] = useState(false);
@@ -94,6 +98,7 @@ function ItemClient({
   };
 
   const handleAddToWish = () => {
+    dispatch(addToWishlist({ name, id }));
     setAddedToWish((prev) => !prev);
     setAddedFeedback(
       addedToWish ? "Removed from Wishlist" : "Added to Wishlist"
@@ -113,7 +118,17 @@ function ItemClient({
     <Link
       href="/item-detail"
       className={`${styles.item} ${styles[category]}`}
-      onClick={() => {
+      onClick={(e) => {
+        const target = e.target as Element;
+        if (
+          target.closest(`.${styles.wishBox}`) ||
+          target.closest(`.${styles.add}`) ||
+          target.closest(`.${styles.addQuantity}`)
+        ) {
+          e.preventDefault();
+          e.stopPropagation();
+          return;
+        }
         dispatch(
           setItemDetailsData({
             id: itemId,
