@@ -73,7 +73,7 @@
 .categories > button {
   padding: 0.2rem 0.5rem;
   border-radius: var(--radius);
-  background: black;
+  background: var(--background);
   border: 0.1rem solid var(--dark-gold);
 }
 
