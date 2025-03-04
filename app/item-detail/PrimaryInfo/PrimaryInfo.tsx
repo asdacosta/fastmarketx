@@ -9,17 +9,23 @@ import {
   removeFromCart,
   updateQuantity,
 } from "@/app/redux/slices/cartSlice";
+import { addToWishlist } from "@/app/redux/slices/wishlistSlice";
 
 function PrimaryInfo() {
   const dispatch = useDispatch();
   const feedback = useSelector((state: RootState) => state.itemDetail.feedback);
   const itemData = useSelector((state: RootState) => state.itemDetail.itemData);
+  const wishList = useSelector((state: RootState) => state.wishlist.items);
+
+  const wishItem = wishList.find((item) => item.id === itemData.id);
 
   const [addedToCart, setAddedToCart] = useState(
     itemData.quantity > 0 || false
   );
   const [quantity, setQuantity] = useState(itemData.quantity || 0);
-  const [addedToWish, setAddedToWish] = useState(false);
+  const [addedToWish, setAddedToWish] = useState(
+    wishItem?.id === itemData.id || false
+  );
 
   const decrementQuantity = () => {
     if (quantity <= 1) {
@@ -68,6 +74,7 @@ function PrimaryInfo() {
   };
 
   const handleAddToWish = () => {
+    dispatch(addToWishlist({ name: itemData.name, id: itemData.id }));
     setAddedToWish((prev) => !prev);
     dispatch(
       toggleItemDetailFeedback({
