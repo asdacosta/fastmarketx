@@ -1,0 +1,153 @@
+.itemImgs {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.imgsSlide {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 60vh;
+}
+
+.imgInView {
+  flex: 5;
+  border: 0.1rem solid teal;
+  position: relative;
+}
+
+.imgOptions {
+  flex: 1;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.imgOptions > div {
+  flex: 1;
+  border: 0.1rem solid teal;
+}
+
+.share {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.shareText,
+.copyLink,
+.report {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.shareText svg,
+.copyLink svg,
+.report svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.shareText svg {
+  fill: var(--color);
+}
+
+.copyLink svg {
+  fill: black;
+}
+
+.shareLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.socialLinks svg {
+  width: 1.5rem;
+  cursor: pointer;
+}
+
+.socialLinks svg:first-child {
+  fill: rgb(37, 211, 102);
+}
+
+.socialLinks svg:nth-child(2) {
+  fill: rgb(24, 119, 242);
+}
+
+.socialLinks svg:nth-child(3) {
+  fill: rgb(83, 83, 83);
+}
+
+.socialLinks svg:last-child {
+  fill: rgb(193, 53, 132);
+}
+
+.socialLinks svg:hover {
+  fill: var(--color);
+}
+
+.socialLinks {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copyLink {
+  background: var(--dark-gold);
+  width: fit-content;
+  color: black;
+  padding: 0.2rem 0.8rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.report span {
+  font-weight: 600;
+  color: rgb(238, 93, 49);
+}
+
+.report svg {
+  fill: rgb(238, 93, 49);
+}
+
+.addedFeedback {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: black;
+  border-radius: var(--radius);
+  background: var(--dark-gold);
+  padding: 0.3rem;
+  position: absolute;
+  pointer-events: none;
+  white-space: nowrap;
+  opacity: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1;
+  animation: slideUp 1.15s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    bottom: 0;
+    opacity: 0;
+  }
+  20% {
+    bottom: 43%;
+    opacity: 1;
+  }
+  80% {
+    bottom: 43%;
+    opacity: 1;
+  }
+  100% {
+    bottom: 0;
+    opacity: 0;
+  }
+}
