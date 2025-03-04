@@ -1,0 +1,140 @@
+.primaryInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.primaryInfo > h2 {
+  font-size: 1.5rem;
+}
+
+.store {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.store > div:first-child {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 5rem;
+  background: teal;
+}
+
+.priceBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.priceBox > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.reviews {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.4rem;
+}
+
+.starIcons {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.starIcons svg {
+  width: 1rem;
+  fill: var(--dark-pure-gold);
+}
+
+.stars span {
+  color: var(--color);
+  font-size: 0.85rem;
+}
+
+.categories {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.categories > button {
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius);
+  background: black;
+  border: 0.1rem solid var(--dark-gold);
+}
+
+.cartWish {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.cartWish > button {
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  color: black;
+  font-size: 1rem;
+  transition: background var(--speed) ease-in-out;
+}
+
+.add {
+  flex: 3;
+  background: var(--dark-gold);
+}
+
+.add:hover {
+  background: var(--dark-pure-gold);
+}
+
+.addQuantity {
+  flex: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--foreground);
+}
+
+.addQuantity span {
+  color: var(--color);
+  user-select: none;
+}
+
+.addQuantity svg {
+  width: 2rem;
+  fill: var(--dark-pure-gold);
+}
+
+.wish {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: gray;
+}
+
+.wish:hover {
+  background: silver;
+}
+
+.wish svg {
+  width: 1.2rem;
+  fill: var(--dark-gold);
+}
+
+svg.hollowStar {
+  fill: black;
+}
