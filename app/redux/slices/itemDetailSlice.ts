@@ -1,11 +1,23 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { CartItem } from "./cartSlice";
 
 interface itemDetailState {
   feedback: { toggle: boolean; value: string };
+  itemData: CartItem;
 }
 
 const initialState: itemDetailState = {
   feedback: { toggle: false, value: "" },
+  itemData: {
+    id: "",
+    name: "",
+    categoryName: "",
+    accountName: "",
+    imageUrl: "",
+    stock: 0,
+    price: 0,
+    quantity: 0,
+  },
 };
 
 const itemDetailSlice = createSlice({
@@ -14,12 +26,16 @@ const itemDetailSlice = createSlice({
   reducers: {
     toggleItemDetailFeedback: (
       state,
-      action: PayloadAction<itemDetailState>
+      action: PayloadAction<{ toggle: boolean; value: string }>
     ) => {
-      state.feedback = action.payload.feedback;
+      state.feedback = action.payload;
+    },
+    setItemDetailsData: (state, action: PayloadAction<CartItem>) => {
+      state.itemData = action.payload;
     },
   },
 });
 
-export const { toggleItemDetailFeedback } = itemDetailSlice.actions;
+export const { toggleItemDetailFeedback, setItemDetailsData } =
+  itemDetailSlice.actions;
 export default itemDetailSlice.reducer;
