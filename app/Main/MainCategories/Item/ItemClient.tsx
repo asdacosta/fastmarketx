@@ -10,6 +10,8 @@ import {
   updateQuantity,
 } from "@/app/redux/slices/cartSlice";
 import { RootState } from "@/app/redux/store";
+import { setItemDetailsData } from "@/app/redux/slices/itemDetailSlice";
+import Link from "next/link";
 
 export interface CartDataState {
   id: string;
@@ -108,7 +110,24 @@ function ItemClient({
   }, [addedFeedback]);
 
   return (
-    <section className={`${styles.item} ${styles[category]}`}>
+    <Link
+      href="/item-detail"
+      className={`${styles.item} ${styles[category]}`}
+      onClick={() => {
+        dispatch(
+          setItemDetailsData({
+            id: itemId,
+            name: itemName,
+            price: itemPrice,
+            quantity,
+            imageUrl,
+            accountName,
+            categoryName,
+            stock,
+          })
+        );
+      }}
+    >
       <div className={styles.imgBox}>
         <Image
           draggable="false"
@@ -225,7 +244,7 @@ function ItemClient({
           </>
         )}
       </div>
-    </section>
+    </Link>
   );
 }
 
