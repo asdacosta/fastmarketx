@@ -117,7 +117,6 @@
 
 .addedFeedback {
   font-size: 0.85rem;
-  font-weight: 600;
   color: black;
   border-radius: var(--radius);
   background: var(--dark-gold);
