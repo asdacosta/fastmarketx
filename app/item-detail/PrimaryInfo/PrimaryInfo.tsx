@@ -4,46 +4,64 @@ import styles from "./PrimaryInfo.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleItemDetailFeedback } from "@/app/redux/slices/itemDetailSlice";
 import { RootState } from "@/app/redux/store";
+import {
+  addToCart,
+  removeFromCart,
+  updateQuantity,
+} from "@/app/redux/slices/cartSlice";
 
 function PrimaryInfo() {
   const dispatch = useDispatch();
   const feedback = useSelector((state: RootState) => state.itemDetail.feedback);
+  const itemData = useSelector((state: RootState) => state.itemDetail.itemData);
 
-  const [addedToCart, setAddedToCart] = useState(false);
-  const [quantity, setQuantity] = useState(0);
+  const [addedToCart, setAddedToCart] = useState(
+    itemData.quantity > 0 || false
+  );
+  const [quantity, setQuantity] = useState(itemData.quantity || 0);
   const [addedToWish, setAddedToWish] = useState(false);
 
   const decrementQuantity = () => {
     if (quantity <= 1) {
+      dispatch(removeFromCart(itemData.id));
       setQuantity(0);
       setAddedToCart(false);
       dispatch(
-        toggleItemDetailFeedback({
-          feedback: { toggle: true, value: "Removed from Cart" },
-        })
+        toggleItemDetailFeedback({ toggle: true, value: "Removed from Cart" })
       );
     } else {
+      dispatch(updateQuantity({ id: itemData.id, quantity: quantity - 1 }));
       setQuantity((prev) => prev - 1);
     }
   };
 
   const handleAddToCart = () => {
-    setAddedToCart(true);
-    setQuantity(1);
     dispatch(
-      toggleItemDetailFeedback({
-        feedback: { toggle: true, value: "Add to Cart" },
+      addToCart({
+        id: itemData.id,
+        name: itemData.name,
+        price: itemData.price,
+        quantity: 1,
+        imageUrl: itemData.imageUrl,
+        accountName: itemData.accountName,
+        categoryName: itemData.categoryName,
+        stock: itemData.stock,
       })
     );
+    setAddedToCart(true);
+    setQuantity(1);
+    dispatch(toggleItemDetailFeedback({ toggle: true, value: "Add to Cart" }));
   };
 
   const incrementQuantity = () => {
-    if (quantity < 15) {
+    if (quantity < itemData.stock) {
+      dispatch(updateQuantity({ id: itemData.id, quantity: quantity + 1 }));
       setQuantity((prev) => prev + 1);
     } else {
       dispatch(
         toggleItemDetailFeedback({
-          feedback: { toggle: true, value: "No more stock available" },
+          toggle: true,
+          value: "No more stock available",
         })
       );
     }
@@ -53,19 +71,15 @@ function PrimaryInfo() {
     setAddedToWish((prev) => !prev);
     dispatch(
       toggleItemDetailFeedback({
-        feedback: {
-          toggle: true,
-          value: addedToWish ? "Removed from Wishlist" : "Added to Wishlist",
-        },
+        toggle: true,
+        value: addedToWish ? "Removed from Wishlist" : "Added to Wishlist",
       })
     );
   };
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      dispatch(
-        toggleItemDetailFeedback({ feedback: { toggle: false, value: "" } })
-      );
+      dispatch(toggleItemDetailFeedback({ toggle: false, value: "" }));
     }, 1200);
 
     return () => clearTimeout(timer);
@@ -73,17 +87,17 @@ function PrimaryInfo() {
 
   return (
     <section className={styles.primaryInfo}>
-      <h2>Product Name</h2>
+      <h2>{itemData.name}</h2>
       <div className={styles.store}>
         <div></div>
-        <span>Everything some store</span>
+        <span>{itemData.accountName}</span>
       </div>
       <div className={styles.priceBox}>
         <div>
-          <span className={styles.price}>$499.49</span>
+          <span className={styles.price}>${itemData.price}</span>
           <span>You can pay on delivery</span>
         </div>
-        <span>10 Items Left</span>
+        <span>{itemData.stock > 30 ? "30+" : itemData.stock} Items Left</span>
       </div>
       <div className={styles.reviews}>
         <div className={styles.starIcons}>
