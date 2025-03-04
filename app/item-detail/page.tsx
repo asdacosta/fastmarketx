@@ -56,7 +56,7 @@ function page() {
           className={styles.top}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-          Back To Top
+          Back to top
         </button>
       </section>
     </>
