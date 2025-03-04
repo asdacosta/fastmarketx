@@ -1,12 +1,16 @@
 import React from "react";
 import styles from "./Details.module.css";
+import { useSelector } from "react-redux";
+import { RootState } from "@/app/redux/store";
 
 function Details() {
+  const itemData = useSelector((state: RootState) => state.itemDetail.itemData);
+
   return (
     <section className={styles.details}>
-      <h2>Product Details</h2>
+      <h2>{itemData.categoryName} Details</h2>
       <div className={styles.about}>
-        <h3>About Product</h3>
+        <h3>About {itemData.categoryName}</h3>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus
           ipsam, officia sunt odio, quos quas recusandae adipisci natus minima
