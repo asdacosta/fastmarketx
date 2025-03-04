@@ -4,7 +4,6 @@ import Header from "../Header/Header";
 import ItemImgs from "./ItemImgs/ItemImgs";
 import PrimaryInfo from "./PrimaryInfo/PrimaryInfo";
 import Details from "./Details/Details";
-import MainItems from "../Main/MainCategories/MainItems/MainItems";
 import { Provider } from "react-redux";
 import { store } from "../redux/store";
 import FAQ from "./FAQ/FAQ";
