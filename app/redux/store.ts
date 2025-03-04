@@ -9,6 +9,7 @@ import {
 import menuUiSlice from "./slices/MenuUiSlice";
 import storeUiSlice from "./slices/storeUiSlice";
 import updateStoreSlice from "./slices/updateStoreSlice";
+import itemDetailSlice from "./slices/itemDetailSlice";
 
 export const store = configureStore({
   reducer: {
@@ -20,6 +21,7 @@ export const store = configureStore({
     menuUi: menuUiSlice,
     storeUi: storeUiSlice,
     updateStore: updateStoreSlice,
+    itemDetail: itemDetailSlice,
   },
 });
 
