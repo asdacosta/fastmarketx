@@ -3,7 +3,6 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 interface WishlistItem {
   id: string;
   name: string;
-  price: number;
 }
 
 interface WishlistState {
