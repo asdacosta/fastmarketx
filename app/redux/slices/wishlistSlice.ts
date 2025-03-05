@@ -19,7 +19,7 @@ const wishlistSlice = createSlice({
   reducers: {
     addToWishlist: (state, action: PayloadAction<WishlistItem>) => {
       const exists = state.items.some((item) => item.id === action.payload.id);
-      if (exists) state.items.push(action.payload);
+      if (!exists) state.items.push(action.payload);
     },
     removeFromWishlist: (state, action: PayloadAction<String>) => {
       state.items = state.items.filter((item) => item.id !== action.payload);
