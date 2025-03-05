@@ -12,7 +12,10 @@ import {
 import { RootState } from "@/app/redux/store";
 import { setItemDetailsData } from "@/app/redux/slices/itemDetailSlice";
 import Link from "next/link";
-import { addToWishlist } from "@/app/redux/slices/wishlistSlice";
+import {
+  addToWishlist,
+  removeFromWishlist,
+} from "@/app/redux/slices/wishlistSlice";
 
 export interface CartDataState {
   id: string;
@@ -98,7 +101,12 @@ function ItemClient({
   };
 
   const handleAddToWish = () => {
-    dispatch(addToWishlist({ name, id }));
+    if (addedToWish) {
+      dispatch(removeFromWishlist(itemId));
+    } else {
+      dispatch(addToWishlist({ name, id: itemId }));
+    }
+
     setAddedToWish((prev) => !prev);
     setAddedFeedback(
       addedToWish ? "Removed from Wishlist" : "Added to Wishlist"
