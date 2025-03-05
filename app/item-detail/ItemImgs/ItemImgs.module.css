@@ -10,26 +10,39 @@
 
 .imgsSlide {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   gap: 0.5rem;
-  height: 60vh;
+  height: 100%;
 }
 
 .imgInView {
-  flex: 5;
-  border: 0.1rem solid teal;
+  flex: 7;
+  width: 100%;
   position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
 .imgOptions {
   flex: 1;
   display: flex;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
 .imgOptions > div {
   flex: 1;
-  border: 0.1rem solid teal;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  border: 0.1rem solid var(--dark-gold);
+  cursor: pointer;
+  min-width: 3rem;
+}
+
+.imgOptions > div.empty {
+  background: var(--background);
+  cursor: context-menu;
 }
 
 .share {
