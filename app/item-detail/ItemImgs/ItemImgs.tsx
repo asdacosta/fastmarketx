@@ -1,27 +1,61 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./ItemImgs.module.css";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
+import Image from "next/image";
 
 function ItemImgs() {
   const feedback = useSelector((state: RootState) => state.itemDetail.feedback);
   const itemData = useSelector((state: RootState) => state.itemDetail.itemData);
+  const [currentImg, setCurrentImg] = useState("foods.avif");
 
   return (
     <section className={styles.itemImgs}>
       <section className={styles.imgsSlide}>
         <section className={styles.imgInView}>
+          <Image
+            src={`/mainImgs/${currentImg}`}
+            quality={80}
+            draggable="false"
+            alt="Store"
+            fill
+            className={styles.img}
+          />
+
           {feedback.toggle && feedback.value !== "" && (
             <span className={styles.addedFeedback}>{feedback.value}</span>
           )}
         </section>
         <section className={styles.imgOptions}>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          {[
+            "foods.avif",
+            "products.avif",
+            "services.avif",
+            "store.avif",
+            "",
+          ].map((url, index) => {
+            return (
+              <div
+                key={index}
+                className={url ? "" : styles.empty}
+                onMouseEnter={() => {
+                  if (url) setCurrentImg(url);
+                }}
+              >
+                {url && (
+                  <Image
+                    src={`/mainImgs/${url}`}
+                    quality={80}
+                    draggable="false"
+                    alt="Store"
+                    fill
+                    className={styles.img}
+                  />
+                )}
+              </div>
+            );
+          })}
         </section>
       </section>
       <section className={styles.share}>
