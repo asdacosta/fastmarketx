@@ -1,3 +1,10 @@
+.mainPage {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: var(--foreground);
+}
+
 .page {
   display: flex;
   flex-direction: column;
@@ -7,6 +14,7 @@
   color: var(--color);
   font-size: 0.95rem;
   padding-bottom: 5rem;
+  max-width: 100rem;
   position: relative;
 }
 
