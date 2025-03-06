@@ -15,26 +15,28 @@ function page() {
   return (
     <>
       <Header />
-      <section className={styles.page}>
-        <Provider store={store}>
-          <section className={styles.home}>
-            <ItemImgs />
-            <section className={styles.itemInfo}>
-              <PrimaryInfo />
-              <Details />
+      <section className={styles.mainPage}>
+        <section className={styles.page}>
+          <Provider store={store}>
+            <section className={styles.home}>
+              <ItemImgs />
+              <section className={styles.itemInfo}>
+                <PrimaryInfo />
+                <Details />
+              </section>
             </section>
-          </section>
-          <FAQ />
-          <FirstMainItems />
-          <Reviews />
-          <SecMainItems />
-        </Provider>
-        <button
-          className={styles.top}
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        >
-          Back to top
-        </button>
+            <FAQ />
+            <FirstMainItems />
+            <Reviews />
+            <SecMainItems />
+          </Provider>
+          <button
+            className={styles.top}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            Back to top
+          </button>
+        </section>
       </section>
     </>
   );
