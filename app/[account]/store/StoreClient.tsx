@@ -6,11 +6,11 @@ import Dashboard from "./Dashboard/Dashboard";
 import Orders from "./Orders/Orders";
 import Products from "./Products/Products";
 import Ads from "./Ads/Ads";
-import Header from "../Header/Header";
+import Header from "@/app/Header/Header";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../redux/store";
-import { setStoreUi } from "../redux/slices/storeUiSlice";
-import UpdateStore from "../menu/Store/UpdateStore";
+import { RootState } from "@/app/redux/store";
+import { setStoreUi } from "@/app/redux/slices/storeUiSlice";
+import UpdateStore from "@/app/menu/Store/UpdateStore";
 
 function StoreClient() {
   const dispatch = useDispatch();
