@@ -2,13 +2,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 // Form values reducer
 export interface BusinessHoursState {
-  mon: { from: string; to: string; alwaysOpen: boolean };
-  tue: { from: string; to: string; alwaysOpen: boolean };
-  wed: { from: string; to: string; alwaysOpen: boolean };
-  thu: { from: string; to: string; alwaysOpen: boolean };
-  fri: { from: string; to: string; alwaysOpen: boolean };
-  sat: { from: string; to: string; alwaysOpen: boolean };
-  sun: { from: string; to: string; alwaysOpen: boolean };
+  mon: { from: string; to: string; isOpen: boolean };
+  tue: { from: string; to: string; isOpen: boolean };
+  wed: { from: string; to: string; isOpen: boolean };
+  thu: { from: string; to: string; isOpen: boolean };
+  fri: { from: string; to: string; isOpen: boolean };
+  sat: { from: string; to: string; isOpen: boolean };
+  sun: { from: string; to: string; isOpen: boolean };
 }
 
 export interface FormValue {
@@ -32,13 +32,13 @@ const initialState: FormValue = {
   storeType: "products",
   categories: [],
   businessHours: {
-    mon: { from: "", to: "", alwaysOpen: false },
-    tue: { from: "", to: "", alwaysOpen: false },
-    wed: { from: "", to: "", alwaysOpen: false },
-    thu: { from: "", to: "", alwaysOpen: false },
-    fri: { from: "", to: "", alwaysOpen: false },
-    sat: { from: "", to: "", alwaysOpen: false },
-    sun: { from: "", to: "", alwaysOpen: false },
+    mon: { from: "", to: "", isOpen: false },
+    tue: { from: "", to: "", isOpen: false },
+    wed: { from: "", to: "", isOpen: false },
+    thu: { from: "", to: "", isOpen: false },
+    fri: { from: "", to: "", isOpen: false },
+    sat: { from: "", to: "", isOpen: false },
+    sun: { from: "", to: "", isOpen: false },
   },
   location: null,
   banner: null,
@@ -93,8 +93,6 @@ const storeFormValueSlice = createSlice({
     },
   },
 });
-
-// Form state reducer
 
 export interface FormState {
   storeName: boolean;
