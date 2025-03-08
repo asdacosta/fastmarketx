@@ -7,6 +7,7 @@ import { getNextAvailableItem } from "../Main/MainCategories/Item/getNextAvailab
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import WorkingHours from "./WorkingHours/WorkingHours";
+import Location from "../Location/Location";
 
 const categories = ["Electronics", "Groceries", "Fashion", "Home & Kitchen"];
 
@@ -68,6 +69,9 @@ function PageClient() {
               Doloremque illo doloribus quos incidunt vel eveniet commodi quam
               deleniti, totam vero.
             </p>
+          </section>
+          <section className={styles.location}>
+            <Location />
           </section>
           <section className={styles.items}>
             {categories.map((cat) => (
