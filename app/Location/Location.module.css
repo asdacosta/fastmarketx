@@ -1,0 +1,11 @@
+.location {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mapContainer {
+  border-radius: var(--big-radius);
+  overflow: hidden;
+  border: 0.2rem solid var(--dark-gold);
+}
