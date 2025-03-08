@@ -31,10 +31,10 @@ function MainCategories() {
           "groceries",
           "fashion",
           "academic",
-          "homeandkitchen",
-          "beautyandhealth",
+          "home-and-kitchen",
+          "beauty-and-health",
           "sports",
-          "gamesandtoys",
+          "games-and-toys",
           "automotive",
         ]}
       />
@@ -80,10 +80,10 @@ function MainCategories() {
           "bakery",
           "international",
           "native",
-          "instantandsnacks",
-          "frozenfoods",
-          "veganandvegetarian",
-          "mealprep",
+          "instant-and-snacks",
+          "frozen-foods",
+          "vegan-and-vegetarian",
+          "meal-prep",
         ]}
       />
       <MainSubCategories
@@ -126,8 +126,8 @@ function MainCategories() {
       <MainCategoryTemplate
         categoryName="Services"
         subCategories={[
-          "beautyandwellness",
-          "homeservices",
+          "beauty-and-wellness",
+          "home",
           "tech",
           "academic",
           "logistics",
