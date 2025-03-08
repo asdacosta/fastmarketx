@@ -1,5 +1,5 @@
 .page {
-  color: var(--dark-color);
+  color: var(--color);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,6 +49,7 @@
 .body h2 {
   font-size: 1.5rem;
   font-weight: 600;
+  color: var(--color);
 }
 
 .lastSection svg {
