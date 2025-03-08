@@ -10,6 +10,7 @@ import {
   updateQuantity,
 } from "@/app/redux/slices/cartSlice";
 import { addToWishlist } from "@/app/redux/slices/wishlistSlice";
+import Link from "next/link";
 
 function PrimaryInfo() {
   const dispatch = useDispatch();
@@ -95,10 +96,11 @@ function PrimaryInfo() {
   return (
     <section className={styles.primaryInfo}>
       <h2>{itemData.name}</h2>
-      <div className={styles.store}>
+      {/* Dispatch store data  */}
+      <Link href="/store" className={styles.store}>
         <div></div>
         <span>{itemData.accountName}</span>
-      </div>
+      </Link>
       <div className={styles.priceBox}>
         <div>
           <span className={styles.price}>${itemData.price}</span>
