@@ -42,3 +42,17 @@ svg.officialStar {
 .tertiary {
   gap: 1rem;
 }
+
+@media (max-width: 750px) {
+  .primary > a {
+    display: none;
+  }
+
+  .infoTab span {
+    font-size: 0.8rem;
+  }
+
+  .infoTab {
+    padding: 0 0.5rem;
+  }
+}
