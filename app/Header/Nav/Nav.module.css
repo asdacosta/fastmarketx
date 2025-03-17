@@ -42,3 +42,9 @@
 .inputsBox {
   flex: 1;
 }
+
+@media (max-width: 750px) {
+  .nav {
+    padding: 0.5rem;
+  }
+}

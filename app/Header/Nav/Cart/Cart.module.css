@@ -25,3 +25,9 @@
   width: 0.5rem;
   height: 0.5rem;
 }
+
+@media (max-width: 750px) {
+  .cartText {
+    display: none;
+  }
+}

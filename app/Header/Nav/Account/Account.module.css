@@ -20,3 +20,9 @@
 .accountButton span {
   font-size: 1rem;
 }
+
+@media (max-width: 750px) {
+  .account {
+    display: none;
+  }
+}
