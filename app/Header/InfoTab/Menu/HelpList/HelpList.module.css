@@ -1,0 +1,29 @@
+.helpList {
+  background: var(--background);
+  padding-bottom: 0.5rem;
+}
+
+.helpList svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: var(--dark-gold);
+}
+
+.helpList > a,
+.helpList > div {
+  display: flex;
+  gap: 0.3rem;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+}
+
+.helpList > a:hover,
+.helpList > div:hover {
+  background: var(--foreground);
+}
+
+.helpList span {
+  font-size: 0.9rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
