@@ -3,24 +3,11 @@
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  padding: 0.5rem;
-  border-top: 0.2rem solid var(--foreground);
-}
-
-.contactCard:last-child {
-  justify-content: center;
-  cursor: context-menu;
-}
-
-.contactCard > svg {
-  width: 1.7rem;
-  height: 1.7rem;
-  fill: var(--dark-gold);
-}
-
-.contactCard:last-child > svg {
-  fill: rgb(95, 95, 95);
   cursor: pointer;
+}
+
+svg.callIcon {
+  width: 1rem;
 }
 
 .contactCard > p {
@@ -30,21 +17,18 @@
   transition: background var(--speed) ease-in-out;
 }
 
-.contactCard:hover > p {
-  opacity: 0.7;
-}
-
 .modalOverlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5) !important;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10;
+  cursor: context-menu !important;
 }
 
 .modalContent {
