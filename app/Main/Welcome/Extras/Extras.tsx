@@ -17,7 +17,9 @@ function Extras() {
           <span>Frequently Asked Questions</span>
         </p>
       </Link>
-      <Call />
+      <section className={styles.contactCard}>
+        <Call />
+      </section>
       <Link
         href="https://wa.me/message/FRHAZYCIYQ7OO1"
         target="_blank"
