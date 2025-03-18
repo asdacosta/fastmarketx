@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./InfoTab.module.css";
 import Link from "next/link";
@@ -5,10 +6,16 @@ import CampusSelect from "./CampusSelect/CampusSelect";
 import Theme from "./Theme/Theme";
 import SlidingInfo from "./SlidingInfo/SlidingInfo";
 import StoreLogo from "@/app/Main/MainCategories/Item/StoreLogo/StoreLogo";
+import Menu from "./Menu/Menu";
+import { Provider } from "react-redux";
+import { store } from "../../redux/store";
 
 function InfoTab() {
   return (
     <section className={styles.infoTab}>
+      <Provider store={store}>
+        <Menu />
+      </Provider>
       <section className={styles.primary}>
         {/* <Link href="/filter">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
