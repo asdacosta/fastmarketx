@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Menu.module.css";
 import Link from "next/link";
 import { DotLottieReact as Lot, DotLottie } from "@lottiefiles/dotlottie-react";
@@ -13,7 +13,27 @@ function Menu() {
   const [menuOpened, setMenuOpened] = useState(false);
   const [categoriesOpen, setCategoriesOpen] = useState(false);
 
-  const toggleMenu = () => {
+  const anyRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!menuOpened && !menuIcon) return;
+
+    const closeOnClickOutsideButton = (event: MouseEvent) => {
+      if (!anyRef.current?.contains(event.target as Node)) {
+        setMenuOpened(false);
+        menuIcon?.setMode("reverse");
+        menuIcon?.play();
+      }
+    };
+    document.addEventListener("click", closeOnClickOutsideButton);
+
+    return () => {
+      document.removeEventListener("click", closeOnClickOutsideButton);
+    };
+  }, [menuOpened, menuIcon]);
+
+  const toggleMenu = (e: React.MouseEvent) => {
+    e.stopPropagation();
     if (!menuIcon) return;
 
     if (menuOpened) {
@@ -28,7 +48,7 @@ function Menu() {
   };
 
   return (
-    <section className={styles.menu}>
+    <section className={styles.menu} ref={anyRef}>
       <Lot
         className={styles.menuIcon}
         onClick={toggleMenu}
