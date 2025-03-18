@@ -52,7 +52,7 @@
   cursor: context-menu;
 }
 
-.contactCard > svg {
+.contactCard svg {
   width: 1.7rem;
   height: 1.7rem;
   fill: var(--dark-gold);
@@ -89,8 +89,8 @@ svg.tubeIcon:hover {
   transition: opacity var(--speed) ease-in-out;
 }
 
-.contactCard:hover > p {
-  opacity: 0.7;
+.contactCard:hover:not(:last-child) {
+  background: var(--foreground);
 }
 
 .extrasBox {
