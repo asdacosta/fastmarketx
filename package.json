@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@lottiefiles/react-lottie-player": "^3.6.0",
+    "@lottiefiles/dotlottie-react": "^0.13.2",
     "@react-google-maps/api": "^2.20.5",
     "@reduxjs/toolkit": "^2.5.0",
     "date-fns": "^4.1.0",
