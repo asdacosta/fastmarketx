@@ -23,8 +23,11 @@
 }
 
 .brands {
+  align-self: stretch;
   display: grid;
-  grid-template: 18rem / repeat(6, minmax(11rem, 14rem));
+  grid-template: 18rem / repeat(auto-fill, minmax(11rem, 14rem));
+  grid-auto-rows: 18rem;
+  justify-content: center;
   gap: 1rem;
 }
 
