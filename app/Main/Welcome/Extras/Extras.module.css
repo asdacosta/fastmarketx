@@ -99,3 +99,9 @@ svg.tubeIcon:hover {
   flex-direction: column;
   gap: 1.5rem;
 }
+
+@media (max-width: 750px) {
+  .extras {
+    display: none;
+  }
+}
