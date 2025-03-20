@@ -6,9 +6,9 @@
   color: var(--color);
   background: var(--background);
   border-radius: var(--big-radius);
-  width: fit-content;
-  height: 50%;
+  width: 100%;
   padding: 0.5rem;
+  padding-bottom: 0;
 }
 
 .promotion > section {
@@ -28,11 +28,21 @@
 
 .item {
   flex: 1;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   width: 10.5rem;
   height: 20rem;
 }
 
 .item > * {
   width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .promotion {
+    border-radius: 0;
+  }
+
+  .items {
+    gap: 1.5rem;
+  }
 }
