@@ -24,7 +24,7 @@ section.menu {
   opacity: 0;
   box-shadow: 0 0 0.2rem var(--dark-gold);
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 2;
   transition: all var(--speed) ease-in-out;
 }
 
@@ -177,7 +177,7 @@ svg.infoIcon {
   height: 0.85rem;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 1100px) {
   section.menu {
     display: block;
   }
