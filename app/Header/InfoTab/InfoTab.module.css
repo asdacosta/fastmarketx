@@ -43,7 +43,7 @@ svg.officialStar {
   gap: 1rem;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 1100px) {
   .primary > a {
     display: none;
   }
