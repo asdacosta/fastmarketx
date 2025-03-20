@@ -8,7 +8,11 @@ import MainBrands from "./MainBrands/MainBrands";
 function MainCategories() {
   return (
     <section className={styles.mainCategories}>
-      <MainItems itemsName="Trending Products" url="/products/trending" />
+      <MainItems
+        itemsQuantity={7}
+        itemsName="Trending Products"
+        url="/products/trending"
+      />
       <MainItems
         itemsName="Smart Picks for You"
         url="/products/trending"
@@ -54,7 +58,7 @@ function MainCategories() {
             "Snacks & Sweet",
             "Drinks & Beverages",
           ],
-          homeandkitchen: [
+          "home-and-kitchen": [
             "Furniture",
             "Home Decor",
             "Kitchen & Dining",
@@ -137,7 +141,7 @@ function MainCategories() {
       <MainSubCategories
         categoryName="Services"
         subCategoryData={{
-          beautyandwellness: [
+          "beauty-and-wellness": [
             "Hairdressing",
             "Manicures & Pedicures",
             "Haircuts & Styling",
@@ -149,8 +153,8 @@ function MainCategories() {
             "IT support",
             "Repairs",
           ],
-          homeservices: ["Cleaning", "Electrical", "Carpentry", "Plumbing"],
-          academicservices: [
+          home: ["Cleaning", "Electrical", "Carpentry", "Plumbing"],
+          "academic-services": [
             "Tutoring",
             "Online courses",
             "Programs",
