@@ -42,6 +42,9 @@ function MainCategoryTemplate({
           scrollbar={{ draggable: false }}
           loop
           autoplay={{ delay: 3000, disableOnInteraction: false }}
+          breakpoints={{
+            750: { slidesPerView: 3 },
+          }}
           className="mySwiper"
         >
           {subCategories.map((category, index) => {
