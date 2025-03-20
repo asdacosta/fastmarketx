@@ -11,9 +11,7 @@ function CardsBox() {
 
   return (
     <section className={styles.cardsBox}>
-      <section className={styles.ad}>
-        <Ad />
-      </section>
+      <Ad />
       <section className={styles.cards}>
         <Link
           href="/menu"
