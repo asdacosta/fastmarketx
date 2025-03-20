@@ -19,6 +19,7 @@
 .imgBox {
   position: relative;
   flex: 1;
+  min-height: 10rem;
 }
 
 .imgBox::before {
