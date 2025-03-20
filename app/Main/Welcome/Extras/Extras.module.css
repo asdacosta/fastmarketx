@@ -1,8 +1,9 @@
 .extras {
-  align-self: flex-start;
+  align-self: center;
   font-size: 0.9rem;
   display: flex;
   flex-direction: column;
+  min-width: 17rem;
   /* gap: 1rem; */
   /* flex: 1; */
   color: var(--color);
@@ -100,7 +101,7 @@ svg.tubeIcon:hover {
   gap: 1.5rem;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 1100px) {
   .extras {
     display: none;
   }
