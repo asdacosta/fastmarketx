@@ -12,7 +12,7 @@ function Promotion() {
   return (
     <section className={styles.promotion}>
       <section>
-        <h2>Today's Special Offer</h2>
+        <h2>Today's Special Offers</h2>
       </section>
       <section className={styles.items}>
         <section className={styles.item}>
