@@ -28,10 +28,10 @@
 
   display: grid;
   justify-content: center;
-  grid-template: 12rem / repeat(4, minmax(10rem, 15rem));
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 13rem));
+  grid-auto-rows: 12rem;
   max-width: 60rem;
   gap: 2rem;
-  background: var(--background);
   padding: 1rem;
   margin-bottom: 2rem;
   border-radius: var(--big-radius);
@@ -114,4 +114,19 @@
 
 .img {
   object-fit: cover;
+}
+
+@media (max-width: 750px) {
+  .cards {
+    grid-template: repeat(2, 12rem) / repeat(2, minmax(8rem, 12rem));
+    grid-auto-rows: 12rem;
+  }
+
+  .card {
+    border-radius: 50%;
+  }
+
+  .card > span {
+    align-self: center;
+  }
 }
