@@ -14,8 +14,13 @@ function Promotion() {
       <section>
         <h2>Today's Special Offer</h2>
       </section>
-      <section className={styles.item}>
-        <Item itemData={itemData} />
+      <section className={styles.items}>
+        <section className={styles.item}>
+          <Item itemData={itemData} />
+        </section>
+        <section className={styles.item}>
+          <Item itemData={itemData} />
+        </section>
       </section>
     </section>
   );
