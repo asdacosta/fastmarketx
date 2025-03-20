@@ -1,6 +1,6 @@
 .mainSubCategories {
   display: grid;
-  grid-template: repeat(1, 25rem) / repeat(4, minmax(25, 27rem));
+  grid-template: 1fr / repeat(auto-fit, minmax(20rem, 23rem));
   justify-content: center;
   gap: 1rem;
   width: 100%;
