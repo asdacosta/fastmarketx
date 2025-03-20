@@ -18,19 +18,19 @@
 
 .swiper .swiper-button-prev::after,
 .swiper .swiper-button-next::after {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 800;
   background: var(--trans-bg);
   border-radius: 50%;
-  padding: 0.35rem 0.7rem;
+  padding: 0.45rem 0.8rem;
 }
 
 .swiper .swiper-button-prev::after {
-  padding-left: 0.6rem;
+  padding-left: 0.65rem;
 }
 
 .swiper .swiper-button-next::after {
-  padding-right: 0.6rem;
+  padding-right: 0.65rem;
 }
 
 .swiper .swiper-scrollbar {
