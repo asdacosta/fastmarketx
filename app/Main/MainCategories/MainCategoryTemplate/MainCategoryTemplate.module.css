@@ -69,3 +69,13 @@
   text-overflow: ellipsis;
   width: 90%;
 }
+
+@media (max-width: 500px) {
+  .header {
+    padding: 0.5rem 1rem;
+  }
+
+  .categoryItems {
+    padding: 0.7rem 0.5rem;
+  }
+}
