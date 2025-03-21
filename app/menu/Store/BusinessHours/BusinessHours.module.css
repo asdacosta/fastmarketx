@@ -4,6 +4,16 @@
   color: var(--color);
 }
 
+.selection,
+.selection > div {
+  display: flex;
+  align-items: center;
+}
+
+.selection > div {
+  gap: 0.5rem;
+}
+
 .row {
   display: flex;
   align-items: center;
@@ -140,4 +150,11 @@
   text-align: center;
   font-size: 0.9rem;
   font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  .selection {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
