@@ -116,7 +116,7 @@
 
 @media (max-width: 1350px) {
   .cards {
-    grid-template: repeat(2, 11rem) / repeat(2, minmax(8rem, 12rem));
+    grid-template: repeat(2, 11rem) / repeat(2, minmax(8rem, 11.5rem));
     grid-auto-rows: 11rem;
     gap: 2rem;
   }
