@@ -1,7 +1,7 @@
 .inboxMessage {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
   padding: 1rem 0;
   width: 100%;
   border-top: 0.15rem solid var(--foreground);
@@ -58,4 +58,10 @@
 
 .ending > svg:first-child:hover {
   fill: rgb(213, 108, 108);
+}
+
+@media (max-width: 500px) {
+  .message > span:last-child {
+    max-width: 11rem;
+  }
 }
