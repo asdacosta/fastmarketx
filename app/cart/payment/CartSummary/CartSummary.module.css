@@ -64,3 +64,19 @@
   font-size: 1.3rem;
   font-weight: 600;
 }
+
+@media (max-width: 850px) {
+  .cartSummary {
+    width: 100%;
+    max-width: 30rem;
+  }
+
+  .header {
+    padding: 1rem;
+  }
+
+  .subtotal {
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
