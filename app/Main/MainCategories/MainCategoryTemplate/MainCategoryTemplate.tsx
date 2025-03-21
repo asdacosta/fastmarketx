@@ -43,6 +43,7 @@ function MainCategoryTemplate({
           loop
           autoplay={{ delay: 3000, disableOnInteraction: false }}
           breakpoints={{
+            1100: { slidesPerView: 5 },
             750: { slidesPerView: 3 },
           }}
           className="mySwiper"
