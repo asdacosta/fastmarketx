@@ -89,56 +89,62 @@ export default function BusinessHours() {
         <div key={full} className={styles.row}>
           <span className={styles.day}>{full}</span>
 
-          <label className={styles.switch}>
-            <input
-              type="checkbox"
-              checked={businessHours[short]?.isOpen}
-              onChange={() => handleToggle(short)}
-            />
-            <span className={styles.slider}></span>
-          </label>
+          <section className={styles.selection}>
+            <div>
+              <label className={styles.switch}>
+                <input
+                  type="checkbox"
+                  checked={businessHours[short]?.isOpen}
+                  onChange={() => handleToggle(short)}
+                />
+                <span className={styles.slider}></span>
+              </label>
+              <span
+                className={
+                  businessHours[short]?.isOpen
+                    ? styles.openLabel
+                    : styles.closedLabel
+                }
+              >
+                {businessHours[short]?.isOpen ? "Opened" : "Closed"}
+              </span>
+            </div>
 
-          <span
-            className={
-              businessHours[short]?.isOpen
-                ? styles.openLabel
-                : styles.closedLabel
-            }
-          >
-            {businessHours[short]?.isOpen ? "Opened" : "Closed"}
-          </span>
-
-          <select
-            className={`${styles.select} ${
-              !businessHours[short]?.isOpen ? styles.disabled : ""
-            }`}
-            onChange={(e) => handleTimeChange(short, "from", e.target.value)}
-            value={businessHours[short]?.from || ""}
-            disabled={!businessHours[short]?.isOpen}
-          >
-            <option value="">From</option>
-            {timeOptions.map((time) => (
-              <option key={time} value={time}>
-                {time}
-              </option>
-            ))}
-          </select>
-
-          <select
-            className={`${styles.select} ${
-              !businessHours[short]?.isOpen ? styles.disabled : ""
-            }`}
-            onChange={(e) => handleTimeChange(short, "to", e.target.value)}
-            value={businessHours[short]?.to || ""}
-            disabled={!businessHours[short]?.isOpen}
-          >
-            <option value="">To</option>
-            {timeOptions.map((time) => (
-              <option key={time} value={time}>
-                {time}
-              </option>
-            ))}
-          </select>
+            <div>
+              <select
+                className={`${styles.select} ${
+                  !businessHours[short]?.isOpen ? styles.disabled : ""
+                }`}
+                onChange={(e) =>
+                  handleTimeChange(short, "from", e.target.value)
+                }
+                value={businessHours[short]?.from || ""}
+                disabled={!businessHours[short]?.isOpen}
+              >
+                <option value="">From</option>
+                {timeOptions.map((time) => (
+                  <option key={time} value={time}>
+                    {time}
+                  </option>
+                ))}
+              </select>
+              <select
+                className={`${styles.select} ${
+                  !businessHours[short]?.isOpen ? styles.disabled : ""
+                }`}
+                onChange={(e) => handleTimeChange(short, "to", e.target.value)}
+                value={businessHours[short]?.to || ""}
+                disabled={!businessHours[short]?.isOpen}
+              >
+                <option value="">To</option>
+                {timeOptions.map((time) => (
+                  <option key={time} value={time}>
+                    {time}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </section>
         </div>
       ))}
     </div>
