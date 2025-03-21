@@ -35,3 +35,15 @@
   background: var(--background);
   padding: 1rem 1.5rem;
 }
+
+@media (max-width: 500px) {
+  .header {
+    padding: 0.5rem 1rem;
+  }
+
+  .trendItems {
+    gap: 0.5rem;
+    background: var(--background);
+    padding: 1rem 0.5rem;
+  }
+}
