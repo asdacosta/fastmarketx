@@ -36,7 +36,7 @@ function Page() {
                   <span className={styles.customRadio}></span>
                   Pay now (Recommended)
                   <span className={styles.details}>
-                    Pay for delivery fee and items cost now
+                    Pay delivery fee and items cost now
                   </span>
                 </label>
                 <label
@@ -54,7 +54,7 @@ function Page() {
                   <span className={styles.customRadio}></span>
                   Pay on delivery
                   <span className={styles.details}>
-                    Pay for delivery fee now and pay for the items upon delivery
+                    Pay delivery fee now and pay for the items upon delivery
                   </span>
                 </label>
               </div>
