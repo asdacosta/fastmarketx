@@ -15,7 +15,7 @@ const WorkingHours: React.FC<WorkingHoursProps> = ({ hours }) => {
       <table className={styles.table}>
         <thead>
           <tr>
-            <th>Day of Week</th>
+            <th>Day</th>
             <th>Open Hour</th>
             <th>Close Hour</th>
           </tr>
