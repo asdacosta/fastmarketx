@@ -48,3 +48,19 @@
     padding: 0.5rem;
   }
 }
+
+@media (max-width: 500px) {
+  .nav {
+    gap: 0.5rem;
+  }
+
+  .primary,
+  .secondary,
+  .inputsBox {
+    gap: 0.5rem;
+  }
+
+  .logoBox {
+    width: 3rem;
+  }
+}
