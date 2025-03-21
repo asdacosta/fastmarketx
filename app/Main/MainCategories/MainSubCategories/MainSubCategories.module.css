@@ -109,3 +109,10 @@
 .viewAll {
   font-size: 0.85rem;
 }
+
+@media (max-width: 500px) {
+  .items {
+    gap: 0.5rem;
+    padding: 1rem 0.5rem;
+  }
+}
