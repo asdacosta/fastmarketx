@@ -65,3 +65,14 @@
 .active svg {
   fill: var(--dark-gold);
 }
+
+@media (max-width: 500px) {
+  .menuList {
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .listDetails {
+    padding: 2rem 1rem;
+  }
+}
