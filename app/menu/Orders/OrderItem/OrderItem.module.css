@@ -72,7 +72,7 @@
 
 .links {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
 .links > span {
@@ -86,4 +86,16 @@
 
 .links > span:hover {
   background: var(--dark-pure-gold);
+}
+
+@media (max-width: 480px) {
+  .item {
+    display: flex;
+    gap: 0.5rem;
+    padding-right: 0;
+  }
+
+  .links > span {
+    padding: 0.5rem;
+  }
 }
