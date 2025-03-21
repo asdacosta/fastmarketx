@@ -69,3 +69,13 @@
   color: var(--color);
   z-index: 2;
 }
+
+@media (max-width: 500px) {
+  .brands {
+    grid-template: 16rem / repeat(2, minmax(10rem, 13rem));
+    grid-auto-rows: 16rem;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+  }
+}

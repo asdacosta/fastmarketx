@@ -6,3 +6,10 @@
   gap: 2rem;
   padding: 2rem;
 }
+
+@media (max-width: 500px) {
+  .mainCategories {
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+  }
+}
