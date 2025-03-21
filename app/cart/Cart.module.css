@@ -129,3 +129,21 @@
 .payButton svg {
   width: 1.3rem;
 }
+
+@media (max-width: 850px) {
+  .cart {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .shoppingCart,
+  .cartSummary {
+    width: 100%;
+  }
+
+  .shoppingCart {
+    flex: 5;
+  }
+}
