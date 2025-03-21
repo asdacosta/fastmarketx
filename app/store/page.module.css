@@ -157,3 +157,9 @@
   font-weight: 600;
   color: gray;
 }
+
+.workingHours {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
