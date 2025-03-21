@@ -70,3 +70,15 @@
 .regionCity > div {
   flex: 1;
 }
+
+@media (max-width: 850px) {
+  .locationDetails {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .regionCity {
+    flex-direction: column;
+  }
+}
