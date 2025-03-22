@@ -104,7 +104,7 @@ function PrimaryInfo() {
       <div className={styles.priceBox}>
         <div>
           <span className={styles.price}>${itemData.price}</span>
-          <span>You can pay on delivery</span>
+          <span className={styles.payOnDelivery}>You can pay on delivery</span>
         </div>
         <span>{itemData.stock > 30 ? "30+" : itemData.stock} Items Left</span>
       </div>
