@@ -10,7 +10,7 @@
   gap: 1rem;
   background: var(--background);
   border-radius: var(--big-radius);
-  padding: 1rem;
+  padding: 1rem 0.5rem;
 }
 
 .reviewBox h2 {
@@ -172,4 +172,10 @@
   gap: 0.5rem;
   font-size: 0.85rem;
   color: gray;
+}
+
+@media (max-width: 500px) {
+  .ratingsComments {
+    flex-direction: column;
+  }
 }
