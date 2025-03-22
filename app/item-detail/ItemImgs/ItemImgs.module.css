@@ -163,3 +163,11 @@
     opacity: 0;
   }
 }
+
+@media (max-width: 450px) {
+  .itemImgs {
+    position: relative;
+    min-height: 55vh;
+    gap: 1.5rem;
+  }
+}
