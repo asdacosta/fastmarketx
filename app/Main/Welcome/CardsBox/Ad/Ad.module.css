@@ -73,4 +73,8 @@
   .ad {
     padding: 0.5rem;
   }
+
+  .adBox {
+    height: 22rem;
+  }
 }
