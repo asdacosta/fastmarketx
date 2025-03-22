@@ -43,17 +43,24 @@ function MainSubCategories({
           </section>
           <section className={styles.items}>
             {values.map((value, index) => (
-              <div className={styles.item} key={value}>
-                <Image
-                  quality={80}
-                  draggable="false"
-                  src="/mainImgs/products.avif"
-                  alt="Store"
-                  fill
-                  className={styles.img}
-                />
-                <span className={styles.cardName}>{value}</span>
-              </div>
+              <Link
+                key={value}
+                href={`/${categoryName.toLowerCase()}/${value}`}
+              >
+                <div className={styles.item}>
+                  <Image
+                    quality={80}
+                    draggable="false"
+                    src="/mainImgs/products.avif"
+                    alt="Store"
+                    fill
+                    className={styles.img}
+                  />
+                  <span className={styles.cardName}>
+                    {CategoryDetails[value]?.name}
+                  </span>
+                </div>
+              </Link>
             ))}
           </section>
         </section>
