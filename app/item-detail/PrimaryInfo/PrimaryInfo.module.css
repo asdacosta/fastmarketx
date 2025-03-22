@@ -138,3 +138,21 @@
 svg.hollowStar {
   fill: black;
 }
+
+.payOnDelivery {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 500px) {
+  .cartWish {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .cartWish {
+    flex-direction: row;
+    gap: 0.2rem;
+  }
+}
