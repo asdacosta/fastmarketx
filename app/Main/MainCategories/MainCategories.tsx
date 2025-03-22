@@ -45,24 +45,29 @@ function MainCategories() {
       <MainSubCategories
         categoryName="Products"
         subCategoryData={{
-          fashion: ["Clothing", "Footwear", "Accessories", "Bags"],
+          fashion: [
+            "unisex-clothing",
+            "footwear",
+            "fashion-accessories",
+            "bags",
+          ],
           electronics: [
-            "Phones & Accessories",
-            "Computers & Tablets",
-            "Audio & Photography",
-            "Home Appliances",
+            "phone-accessories",
+            "computers-and-tablets",
+            "audio-and-photography",
+            "kitchen-appliances",
           ],
           groceries: [
-            "Fresh Foods",
-            "Kitchen Essentials",
-            "Snacks & Sweet",
-            "Drinks & Beverages",
+            "fresh-goods",
+            "kitchen-essentials",
+            "snacks-and-sweet",
+            "drinks-and-beverages",
           ],
           "home-and-kitchen": [
-            "Furniture",
-            "Home Decor",
-            "Kitchen & Dining",
-            "Bed & Bath",
+            "furniture",
+            "home-decor",
+            "kitchen-and-dining",
+            "bed-and-bath",
           ],
         }}
       />
@@ -94,23 +99,23 @@ function MainCategories() {
         categoryName="Meals"
         subCategoryData={{
           international: [
-            "Pizza",
-            "Shawarma",
-            "Burger",
-            "Pasta, Noodles & Spaghetti",
+            "pizza",
+            "shawarma",
+            "burger",
+            "pasta-noodles-and-spaghetti",
           ],
-          bakery: ["Breads", "Pastries", "Cakes", "Cookies"],
-          instantandsnacks: [
-            "Salads",
-            "Sandwiches & Wraps",
-            "Soups & Stews",
-            "Meal Kits",
+          bakery: ["breads", "pastries", "cakes", "cookies"],
+          "instant-and-snacks": [
+            "salads",
+            "sandwiches-and-wraps",
+            "soups-and-stews",
+            "meal-prep",
           ],
           beverages: [
-            "Coffee & Tea",
-            "Juices & Smoothies",
-            "Grains & Porridge",
-            "Ice Cream",
+            "coffee-and-tea",
+            "juices-and-smoothies",
+            "grains-and-porridge",
+            "ice-cream",
           ],
         }}
       />
@@ -142,23 +147,23 @@ function MainCategories() {
         categoryName="Services"
         subCategoryData={{
           "beauty-and-wellness": [
-            "Hairdressing",
-            "Manicures & Pedicures",
-            "Haircuts & Styling",
-            "Massage",
+            "hairdressing",
+            "manicures-and-pedicures",
+            "haircuts-and-styling",
+            "massage",
           ],
           tech: [
-            "Web/App Development",
-            "Graphic Design",
-            "IT support",
-            "Repairs",
+            "web-app-development",
+            "graphic-design",
+            "it-support",
+            "repairs",
           ],
-          home: ["Cleaning", "Electrical", "Carpentry", "Plumbing"],
+          home: ["cleaning", "electrical", "carpentry", "plumbing"],
           "academic-services": [
-            "Tutoring",
-            "Online courses",
-            "Programs",
-            "Events",
+            "tutoring",
+            "online-courses",
+            "programs",
+            "events",
           ],
         }}
       />
@@ -183,10 +188,10 @@ function MainCategories() {
         categoryName="Stores"
         subCategoryData={{
           Official: [
-            "Cell Phones",
-            "Phone Accessories",
-            "Storage & Memory",
-            "T-Shirts",
+            "cell-phones",
+            "phone-accessories",
+            "storage-and-memory",
+            "t-shirts",
           ],
         }}
       />
