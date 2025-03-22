@@ -9,11 +9,10 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 1rem;
   background: var(--foreground);
   color: var(--color);
   font-size: 0.95rem;
-  padding-bottom: 5rem;
+  padding-bottom: 3rem;
   max-width: 100rem;
   position: relative;
 }
@@ -35,7 +34,7 @@
   flex: 3;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1.5rem;
 }
 
 .top {
@@ -44,4 +43,25 @@
   border-radius: var(--radius);
   background: var(--background);
   color: var(--color);
+}
+
+@media (max-width: 500px) {
+  .page {
+    padding: 0 0.5rem;
+  }
+
+  .home {
+    gap: 0.5rem;
+    padding: 1rem 0;
+  }
+
+  .itemInfo {
+    flex: 2.5;
+  }
+}
+
+@media (max-width: 450px) {
+  .home {
+    flex-direction: column;
+  }
 }
