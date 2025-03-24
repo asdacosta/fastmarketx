@@ -7,6 +7,7 @@ import Header from "@/app/Header/Header";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { getNextAvailableItem } from "../Main/MainCategories/Item/getNextAvailableItem";
+import Footer from "../Footer/Footer";
 
 const itemsCount = new Array(27).fill(1);
 const itemsPerPage = 10;
@@ -78,6 +79,7 @@ function PageClient() {
           </button>
         </section>
       </section>
+      <Footer />
     </>
   );
 }
