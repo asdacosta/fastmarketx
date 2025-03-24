@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import SearchInput from "./SearchInput/SearchInput";
@@ -6,8 +7,11 @@ import NavScrollEffect from "./NavScrollEffect";
 import Account from "./Account/Account";
 import CartClient from "./Cart/CartClient";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 function Nav() {
+  const { theme } = useTheme();
+
   return (
     <>
       <NavScrollEffect />
@@ -17,10 +21,23 @@ function Nav() {
             <section className={styles.logoBox}>
               <Image
                 draggable="false"
-                src="/logo.png"
+                src={`${
+                  theme === "light"
+                    ? "/lightDesktopLogo.png"
+                    : "/desktopLogo.png"
+                }`}
                 alt="Store"
                 fill
-                className={styles.img}
+                className={`${styles.desktopLogo} ${styles.img}`}
+              />
+              <Image
+                draggable="false"
+                src={`${
+                  theme === "light" ? "/lightMobileLogo.png" : "/mobileLogo.png"
+                }`}
+                alt="Store"
+                fill
+                className={`${styles.mobileLogo} ${styles.img}`}
               />
             </section>
           </Link>
