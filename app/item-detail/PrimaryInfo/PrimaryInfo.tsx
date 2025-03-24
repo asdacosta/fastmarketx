@@ -97,7 +97,7 @@ function PrimaryInfo() {
     <section className={styles.primaryInfo}>
       <h2>{itemData.name}</h2>
       {/* Dispatch store data  */}
-      <Link href="/store" className={styles.store}>
+      <Link href="/stores/any" className={styles.store}>
         <div></div>
         <span>{itemData.accountName}</span>
       </Link>
