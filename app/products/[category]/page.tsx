@@ -365,6 +365,7 @@ const allowedItemsRoutes = [
   "lowcost",
   "popular",
   "hotdeals",
+  "new",
 ];
 
 const itemsCount = new Array(27).fill(1);

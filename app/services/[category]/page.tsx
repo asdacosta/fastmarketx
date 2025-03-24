@@ -47,7 +47,7 @@ const allowedCategoryRoutes = [
   "events",
 ];
 
-const allowedItemsRoutes = ["speedy", "lowcost", "popular", "hotdeals"];
+const allowedItemsRoutes = ["speedy", "lowcost", "popular", "hotdeals", "new"];
 
 const itemsCount = new Array(27).fill(1);
 const itemsPerPage = 10;
