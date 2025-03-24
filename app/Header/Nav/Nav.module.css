@@ -43,9 +43,35 @@
   flex: 1;
 }
 
+.logoBox img {
+  display: none;
+}
+
+.logoBox .desktopLogo {
+  display: block;
+}
+
+.logoBox .mobileLogo {
+  display: none;
+}
+
 @media (max-width: 750px) {
   .nav {
     padding: 0.5rem;
+  }
+
+  .logoBox .desktopLogo {
+    display: none;
+  }
+
+  .logoBox .mobileLogo {
+    display: block;
+  }
+
+  .logoBox {
+    position: relative;
+    width: 3rem;
+    height: 2.5rem;
   }
 }
 
