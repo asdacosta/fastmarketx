@@ -11,6 +11,7 @@ import Reviews from "./Reviews/Reviews";
 import FirstMainItems from "./FirstMainItems/FirstMainItems";
 import SecMainItems from "./SecMainItems/SecMainItems";
 import Location from "../Location/Location";
+import Footer from "../Footer/Footer";
 
 function page() {
   return (
@@ -40,6 +41,7 @@ function page() {
           </button>
         </section>
       </section>
+      <Footer />
     </>
   );
 }

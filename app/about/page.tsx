@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import Header from "../Header/Header";
 import FAQItem from "./FAQItem/FAQItem";
 import { faqData } from "./FAQItem/faqData";
+import Footer from "../Footer/Footer";
 
 const Page: React.FC = () => {
   return (
@@ -55,6 +56,7 @@ const Page: React.FC = () => {
           ))}
         </section>
       </section>
+      <Footer />
     </>
   );
 };

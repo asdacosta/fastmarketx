@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import styles from "./page.module.css";
 import Header from "../Header/Header";
 import Link from "next/link";
+import Footer from "../Footer/Footer";
 
 const Page: React.FC = () => {
   const [feedbackType, setFeedbackType] = useState("");
@@ -83,6 +84,7 @@ const Page: React.FC = () => {
           </button>
         </form>
       </section>
+      <Footer />
     </>
   );
 };
