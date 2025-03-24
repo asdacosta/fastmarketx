@@ -9,3 +9,7 @@
 .meals {
   background: var(--dark-orange);
 }
+
+.stores {
+  background: var(--dark-violet);
+}
