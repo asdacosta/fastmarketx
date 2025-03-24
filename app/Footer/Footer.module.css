@@ -1,0 +1,193 @@
+.footer {
+  background-color: var(--background);
+  color: var(--color);
+  padding: 1rem 2rem;
+}
+
+.topSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+.brandSection {
+  flex: 1 1 250px;
+}
+
+.logo {
+  position: relative;
+  width: 6rem;
+  height: 2.5rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 0.3rem var(--dark-gold);
+  overflow: hidden;
+}
+
+.description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.buttonGroup,
+.signGroup {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.buttonGroup > *,
+.signGroup > * {
+  font-size: 1rem;
+  border: none;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all var(--speed);
+}
+
+.buttonGroup > *:hover {
+  opacity: 0.8;
+}
+
+.signGroup > * {
+  background-color: var(--dark-gold);
+  color: black;
+}
+
+.signGroup > *:hover {
+  background-color: var(--dark-pure-gold);
+}
+
+.pdt {
+  background-color: var(--dark-blue);
+}
+
+.meal {
+  background-color: var(--dark-orange);
+}
+
+.service {
+  background-color: var(--dark-green);
+}
+
+.store {
+  background-color: var(--dark-violet);
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.socialLinks svg:first-child {
+  fill: rgb(37, 211, 102);
+}
+
+.socialLinks svg:nth-child(2) {
+  fill: rgb(24, 119, 242);
+}
+
+.socialLinks svg:nth-child(3) {
+  fill: rgb(83, 83, 83);
+}
+
+.socialLinks svg:last-child {
+  fill: rgb(193, 53, 132);
+}
+
+.socialLinks svg:hover {
+  fill: var(--color);
+}
+
+.socialLinks svg {
+  fill: white;
+  width: 1.5rem;
+  cursor: pointer;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.socialLinks svg {
+  width: 1.5rem;
+  cursor: pointer;
+  transition: fill 0.3s;
+}
+
+.socialLinks svg:hover {
+  fill: var(--color);
+}
+
+.linksSection {
+  flex: 2 1 400px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.linkGroup {
+  flex: 1 1 200px;
+}
+
+.linkGroup h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--color);
+  cursor: default;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Since we don't want collapsible behavior, hide toggle icons */
+.toggleIcon {
+  display: none;
+}
+
+.groupContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+}
+
+.groupContent a {
+  text-decoration: none;
+  color: var(--color);
+  font-size: 0.9rem;
+  transition: color var(--speed);
+}
+
+.groupContent a:hover {
+  opacity: 0.8;
+}
+
+.bottomSection {
+  border-top: 1px solid #444;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--color);
+}
+
+/* Mobile Responsive: Remove collapsible rules */
+@media (max-width: 768px) {
+  .topSection {
+    flex-direction: column;
+  }
+
+  .linksSection {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
