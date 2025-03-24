@@ -2,10 +2,12 @@
 import React, { useState } from "react";
 import styles from "./page.module.css";
 import Header from "../Header/Header";
+import Link from "next/link";
 
 const Page: React.FC = () => {
   const [feedbackType, setFeedbackType] = useState("");
   const [message, setMessage] = useState("");
+  const [faqChecked, setFaqChecked] = useState("no");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,6 +36,37 @@ const Page: React.FC = () => {
               <option value="other">Other</option>
             </select>
           </div>
+
+          <div className={styles.faq}>
+            <label>
+              Have you checked <Link href="/about">FAQs</Link>?
+            </label>
+            <div>
+              <div>
+                <input
+                  type="radio"
+                  id="faqYes"
+                  name="faqChecked"
+                  value="yes"
+                  checked={faqChecked === "yes"}
+                  onChange={(e) => setFaqChecked(e.target.value)}
+                />
+                <label htmlFor="faqYes">Yes</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="faqNo"
+                  name="faqChecked"
+                  value="no"
+                  checked={faqChecked === "no"}
+                  onChange={(e) => setFaqChecked(e.target.value)}
+                />
+                <label htmlFor="faqNo">No</label>
+              </div>
+            </div>
+          </div>
+
           <div>
             <label htmlFor="message">Your Message:</label>
             <textarea
