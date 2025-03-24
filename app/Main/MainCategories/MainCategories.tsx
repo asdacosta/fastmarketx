@@ -199,26 +199,40 @@ function MainCategories() {
       />
       <MainCategoryTemplate
         categoryName="Stores"
-        subCategories={["Official"]}
+        subCategories={[
+          "Official",
+          "Next1",
+          "Next2",
+          "Next3",
+          "Next4",
+          "Next5",
+        ]}
       />
-      <MainSubCategories
+      {/* <MainSubCategories
         categoryName="Stores"
         subCategoryData={{
-          Official: [
-            "cell-phones",
-            "phone-accessories",
-            "storage-and-memory",
-            "t-shirts",
+          "beauty-and-wellness": [
+            "hairdressing",
+            "manicures-and-pedicures",
+            "haircuts-and-styling",
+            "massage",
+          ],
+          tech: [
+            "web-app-development",
+            "graphic-design",
+            "it-support",
+            "repairs",
+          ],
+          home: ["cleaning", "electrical", "carpentry", "plumbing"],
+          "academic-services": [
+            "tutoring",
+            "online-courses",
+            "programs",
+            "events",
           ],
         }}
-      />
-      <MainItems
-        itemsName="Most Popular Stores"
-        itemsQuantity={6}
-        url="/products/popular"
-      />
-      <MainItems itemsQuantity={6} itemsName="New Stores" url="/stores/new" />
-      <MainBrands />
+      /> */}
+
       <MainItems
         itemsName="Hot Deals"
         itemsQuantity={6}
