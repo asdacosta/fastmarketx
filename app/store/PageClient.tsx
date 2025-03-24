@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import WorkingHours from "./WorkingHours/WorkingHours";
 import Location from "../Location/Location";
+import Footer from "../Footer/Footer";
 
 const categories = ["Electronics", "Groceries", "Fashion", "Home & Kitchen"];
 
@@ -94,6 +95,7 @@ function PageClient() {
           </section>
         </section>
       </section>
+      <Footer />
     </>
   );
 }
