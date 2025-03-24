@@ -9,23 +9,23 @@ function MainCategories() {
   return (
     <section className={styles.mainCategories}>
       <MainItems
-        itemsQuantity={7}
+        itemsQuantity={6}
         itemsName="Trending Products"
         url="/products/trending"
       />
       <MainItems
         itemsName="Smart Picks for You"
         url="/products/trending"
-        itemsQuantity={7}
+        itemsQuantity={6}
       />
       <MainItems
         itemsName="Speedy Deals"
-        itemsQuantity={7}
+        itemsQuantity={6}
         url="/products/speedy"
       />
       <MainItems
         itemsName="Low Cost"
-        itemsQuantity={7}
+        itemsQuantity={6}
         url="/products/lowcost"
       />
       <MainCategoryTemplate
@@ -73,13 +73,18 @@ function MainCategories() {
       />
       <MainItems
         itemsName="Most Popular Products"
-        itemsQuantity={7}
+        itemsQuantity={6}
         url="/products/popular"
+      />
+      <MainItems
+        itemsQuantity={6}
+        itemsName="New Products"
+        url="/products/new"
       />
       <MainBrands />
       <MainItems
         itemsName="Hot Deals"
-        itemsQuantity={7}
+        itemsQuantity={6}
         url="/products/hotdeals"
       />
       <MainCategoryTemplate
@@ -121,14 +126,20 @@ function MainCategories() {
       />
       <MainItems
         itemsName="Most Popular Meals"
-        itemsQuantity={7}
+        itemsQuantity={6}
         category="meal"
         url="/meals/popular"
+      />
+      <MainItems
+        itemsQuantity={6}
+        category="meal"
+        itemsName="New Meals"
+        url="/meals/new"
       />
       <MainBrands />
       <MainItems
         itemsName="Hot Deals"
-        itemsQuantity={7}
+        itemsQuantity={6}
         category="meal"
         url="/meals/hotdeals"
       />
@@ -169,14 +180,20 @@ function MainCategories() {
       />
       <MainItems
         itemsName="Most Popular Services"
-        itemsQuantity={7}
+        itemsQuantity={6}
         category="service"
         url="/services/popular"
+      />
+      <MainItems
+        itemsQuantity={6}
+        itemsName="New Services"
+        category="service"
+        url="/services/new"
       />
       <MainBrands />
       <MainItems
         itemsName="Hot Deals"
-        itemsQuantity={7}
+        itemsQuantity={6}
         category="service"
         url="/services/hotdeals"
       />
@@ -197,13 +214,14 @@ function MainCategories() {
       />
       <MainItems
         itemsName="Most Popular Stores"
-        itemsQuantity={7}
+        itemsQuantity={6}
         url="/products/popular"
       />
+      <MainItems itemsQuantity={6} itemsName="New Stores" url="/stores/new" />
       <MainBrands />
       <MainItems
         itemsName="Hot Deals"
-        itemsQuantity={7}
+        itemsQuantity={6}
         url="/products/hotdeals"
       />
     </section>
