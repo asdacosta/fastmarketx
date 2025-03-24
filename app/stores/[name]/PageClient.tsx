@@ -1,14 +1,14 @@
 "use client";
 import React from "react";
 import styles from "./page.module.css";
-import Header from "../Header/Header";
-import Item from "../Main/MainCategories/Item/Item";
-import { getNextAvailableItem } from "../Main/MainCategories/Item/getNextAvailableItem";
+import Header from "@/app/Header/Header";
+import Item from "@/app/Main/MainCategories/Item/Item";
+import { getNextAvailableItem } from "@/app/Main/MainCategories/Item/getNextAvailableItem";
 import { useSelector } from "react-redux";
-import { RootState } from "../redux/store";
-import WorkingHours from "./WorkingHours/WorkingHours";
-import Location from "../Location/Location";
-import Footer from "../Footer/Footer";
+import { RootState } from "@/app/redux/store";
+import WorkingHours from "../WorkingHours/WorkingHours";
+import Location from "@/app/Location/Location";
+import Footer from "@/app/Footer/Footer";
 
 const categories = ["Electronics", "Groceries", "Fashion", "Home & Kitchen"];
 
