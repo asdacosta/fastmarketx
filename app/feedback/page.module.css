@@ -67,3 +67,17 @@
 .submitButton:hover {
   background: var(--dark-pure-gold);
 }
+
+.faq > label > a {
+  color: var(--dark-gold);
+}
+
+.faq div {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.faq > div {
+  justify-content: center;
+  gap: 2rem;
+}
