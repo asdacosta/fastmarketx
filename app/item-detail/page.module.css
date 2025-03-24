@@ -12,6 +12,7 @@
   background: var(--foreground);
   color: var(--color);
   font-size: 0.95rem;
+  padding: 0 1rem;
   padding-bottom: 3rem;
   max-width: 100rem;
   position: relative;
@@ -21,7 +22,7 @@
   display: flex;
   gap: 1rem;
   height: 80vh;
-  padding: 1rem;
+  padding: 1rem 0;
   overflow-y: auto;
   scrollbar-width: none;
 }
