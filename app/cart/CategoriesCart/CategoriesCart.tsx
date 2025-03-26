@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./CategoriesCart.module.css";
 import Link from "next/link";
-import Image from "next/image";
 import CartItem from "./CartItem/CartItem";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
