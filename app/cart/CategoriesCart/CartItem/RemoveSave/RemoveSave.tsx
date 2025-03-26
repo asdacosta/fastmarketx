@@ -8,7 +8,7 @@ function RemoveSave({ id }: { id: string }) {
   const dispatch = useDispatch();
 
   const [saved, setSaved] = useState<boolean>(false);
-  const [itemId, setItemId] = useState(id);
+  const itemId = id;
 
   const handleSave = () => setSaved((prev) => !prev);
   const handleRemove = () => dispatch(removeFromCart(itemId));
