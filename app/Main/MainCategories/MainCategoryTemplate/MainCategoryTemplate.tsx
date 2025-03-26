@@ -48,7 +48,7 @@ function MainCategoryTemplate({
           }}
           className="mySwiper"
         >
-          {subCategories.map((category, index) => {
+          {subCategories.map((category) => {
             return (
               <SwiperSlide key={category}>
                 <Link
