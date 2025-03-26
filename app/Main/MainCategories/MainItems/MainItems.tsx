@@ -3,8 +3,6 @@ import React, { JSX } from "react";
 import styles from "./MainItems.module.css";
 import Link from "next/link";
 import Item from "../Item/Item";
-import { CartDataState } from "../Item/ItemClient";
-import { itemsCustomData } from "../Item/ItemsCustomData";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
 import { getNextAvailableItem } from "../Item/getNextAvailableItem";
