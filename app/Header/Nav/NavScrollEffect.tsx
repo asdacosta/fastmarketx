@@ -9,10 +9,7 @@ function NavScrollEffect() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      currentScrollY > lastScrollY && currentScrollY > 100
-        ? setIsHidden(true)
-        : setIsHidden(false);
-
+      setIsHidden(currentScrollY > lastScrollY && currentScrollY > 100);
       setLastScrollY(currentScrollY);
     };
 
