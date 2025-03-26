@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Quicksand, Poppins } from "next/font/google";
+import { Quicksand } from "next/font/google";
 import "./globals.css";
 import "./reset.css";
 import { ThemeProvider } from "next-themes";
@@ -8,12 +8,6 @@ const quicksand = Quicksand({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-quicksand",
-});
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
