@@ -91,7 +91,7 @@ function PrimaryInfo() {
     }, 1200);
 
     return () => clearTimeout(timer);
-  }, [feedback]);
+  }, [feedback, dispatch]);
 
   return (
     <section className={styles.primaryInfo}>
