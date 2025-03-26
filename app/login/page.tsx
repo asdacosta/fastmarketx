@@ -28,7 +28,7 @@ function page() {
           <button>Continue</button>
         </form>
         <section className={styles.loginSection}>
-          <span>Don't have an account?</span>
+          <span>Don&apos;t have an account?</span>
           <Link href="/signup">Sign Up</Link>
         </section>
       </section>
