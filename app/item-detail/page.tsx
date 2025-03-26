@@ -13,7 +13,7 @@ import SecMainItems from "./SecMainItems/SecMainItems";
 import Location from "../Location/Location";
 import Footer from "../Footer/Footer";
 
-function page() {
+function Page() {
   return (
     <>
       <Header />
@@ -46,4 +46,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
