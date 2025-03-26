@@ -13,8 +13,6 @@ function MainSubCategories({
   categoryName,
   subCategoryData,
 }: MainSubCategories) {
-  const items = new Array(4).fill(1);
-
   const categoryClasses: { [key: string]: string } = {
     Products: styles.products,
     Services: styles.services,
@@ -42,7 +40,7 @@ function MainSubCategories({
             </Link>
           </section>
           <section className={styles.items}>
-            {values.map((value, index) => (
+            {values.map((value) => (
               <Link
                 key={value}
                 href={`/${categoryName.toLowerCase()}/${value}`}
