@@ -265,7 +265,7 @@ function InfoFields() {
           Campus (Unlock Universal Store with{" "}
           <span className={styles.premium}>Premium Account</span>)
         </label>
-        <select value={campus} onChange={(e) => setCampus("legon")}>
+        <select value={campus} onChange={() => setCampus("legon")}>
           <option value="universal">Universal</option>
           <option value="legon">Legon</option>
           <option value="knust">KNUST</option>
