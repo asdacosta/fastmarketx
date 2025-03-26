@@ -8,7 +8,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
-import Link from "next/link";
 
 function Ad() {
   const items = new Array(4).fill(1);
