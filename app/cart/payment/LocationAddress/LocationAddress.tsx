@@ -22,14 +22,16 @@ function LocationAddress() {
           console.error("Invalid API response:", data);
           return;
         }
-        const regionList = data.geonames.map((region: any) => ({
-          name: region.name,
-          code: region.adminCode1,
-        }));
+        const regionList = data.geonames.map(
+          (region: { name: string; adminCode1: string }) => ({
+            name: region.name,
+            code: region.adminCode1,
+          })
+        );
         setRegions(regionList);
       })
       .catch((error) => console.error("Error fetching regions:", error));
-  }, []);
+  }, [GEO_NAMES_USERNAME]);
 
   const handleRegionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const regionCode = event.target.value;
@@ -48,7 +50,9 @@ function LocationAddress() {
           setCities([]);
           return;
         }
-        const cityNames = data.geonames.map((city: any) => city.name);
+        const cityNames = data.geonames.map(
+          (city: { name: string }) => city.name
+        );
         setCities(cityNames);
       })
       .catch((error) => {
