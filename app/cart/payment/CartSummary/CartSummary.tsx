@@ -1,13 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import styles from "./CartSummary.module.css";
-import Link from "next/link";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
 
 function CartSummary() {
   const cartData = useSelector((state: RootState) => state.cart);
-  const [deliveryFee, setDeliveryFee] = useState(100);
+  const deliveryFee = 100;
 
   return (
     <section className={styles.cartSummary}>
