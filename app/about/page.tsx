@@ -11,18 +11,18 @@ const Page: React.FC = () => {
       <Header />
       <section className={styles.page}>
         <section className={styles.about}>
-          <h2>How CampusairX Works</h2>
+          <h2>How FastmarketX Works</h2>
           <div className={styles.textBox}>
             <span>
-              CampusairX is a campus-focused online marketplace that connects
-              students and external buyers for trading. Whether you're looking
+              FastmarketX is a campus-focused online marketplace that connects
+              students and external buyers for trading. Whether you are looking
               for products, meals, or services, we provide a reliable and secure
               platform to buy and sell conveniently.
             </span>
             <ul>
               <li>
                 <em>Buying from the Official Store</em>: When you purchase from
-                the official CampusairX store, our team manages communication
+                the official FastmarketX store, our team manages communication
                 and delivery.
               </li>
               <li>
@@ -33,7 +33,7 @@ const Page: React.FC = () => {
               </li>
             </ul>
             <span>
-              CampusairX is built on trust, convenience, and security, making
+              FastmarketX is built on trust, convenience, and security, making
               campus trading simpler, more reliable, and safer.
             </span>
           </div>
