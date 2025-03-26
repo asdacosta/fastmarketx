@@ -4,9 +4,10 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
 import Item from "@/app/Main/MainCategories/Item/Item";
 import { getNextAvailableItem } from "@/app/Main/MainCategories/Item/getNextAvailableItem";
+import { CartDataState } from "@/app/Main/MainCategories/Item/ItemClient";
 
 interface ProductItemsProps {
-  currentItems: any[]; // Update the type as needed
+  currentItems: CartDataState[];
 }
 
 const ProductItems: React.FC<ProductItemsProps> = ({ currentItems }) => {
