@@ -10,7 +10,7 @@ interface ItemTemplateProps {
 }
 
 function ItemTemplate({
-  itemsQuantity,
+  // itemsQuantity,
   extraDetails = [],
   buttons = [],
   price = true,
