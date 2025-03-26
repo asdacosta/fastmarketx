@@ -1,11 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import styles from "./StoreLogo.module.css";
 import { storeIcons } from "../StoreIcons";
 
 function StoreLogo() {
-  const [storeColor, setStoreColor] = useState("rgba(232, 205, 4, 1)");
-  const [storeIconIndex, setStoreIconIndex] = useState(10);
+  const storeColor = "rgba(232, 205, 4, 1)";
+  const storeIconIndex = 10;
 
   return (
     <div className={styles.storeName}>
