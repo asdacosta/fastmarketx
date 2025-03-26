@@ -7,6 +7,7 @@ import {
 import styles from "./Banner.module.css";
 import { MousePointerClick, Upload } from "lucide-react";
 import { RootState } from "@/app/redux/store";
+import Image from "next/image";
 
 const PIXABAY_API_KEY = process.env.NEXT_PUBLIC_PIXABAY_API_KEY || "";
 
@@ -100,7 +101,7 @@ function Banner() {
       {selectedImage && (
         <div className={styles.selectedImageContainer}>
           <p>Selected Image:</p>
-          <img
+          <Image
             src={selectedImage}
             alt="Selected"
             className={styles.selectedImage}
@@ -140,7 +141,7 @@ function Banner() {
                   className={styles.imageItem}
                   onClick={() => handleImageSelect(image.webformatURL)}
                 >
-                  <img
+                  <Image
                     src={image.webformatURL}
                     alt="Search Result"
                     className={styles.image}
