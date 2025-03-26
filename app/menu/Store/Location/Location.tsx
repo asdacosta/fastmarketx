@@ -111,8 +111,8 @@ function Location({ selling = true }: { selling?: boolean }) {
   return (
     <div className={styles.location}>
       <div className={styles.label}>
-        {selling && <span>Location (Where you'll sell from)</span>}
-        <p>Ensure you're present at the location and confirm on the map</p>
+        {selling && <span>Location (Where you&apos;ll sell from)</span>}
+        <p>Ensure you&apos;re present at the location and confirm on the map</p>
       </div>
 
       <button
