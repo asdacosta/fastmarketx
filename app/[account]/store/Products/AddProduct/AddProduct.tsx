@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import styles from "./AddProduct.module.css";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/redux/store";
+import Image from "next/image";
 
 const colors = [
   { name: "Black", hex: "#000000" },
@@ -306,7 +307,7 @@ function AddProduct() {
                 <div className={styles.imagePreviewContainer}>
                   {product.images.map((image, index) => (
                     <div key={index} className={styles.imagePreview}>
-                      <img src={URL.createObjectURL(image)} alt="Product" />
+                      <Image src={URL.createObjectURL(image)} alt="Product" />
                       <button
                         type="button"
                         onClick={() => removeImage(index)}
@@ -324,7 +325,7 @@ function AddProduct() {
               <button
                 type="button"
                 className={styles.cancelBtn}
-                onClick={() => setButtonActive((prev) => false)}
+                onClick={() => setButtonActive(false)}
               >
                 Cancel
               </button>
