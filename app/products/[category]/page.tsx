@@ -371,7 +371,7 @@ const allowedItemsRoutes = [
 const itemsCount = new Array(27).fill(1);
 const itemsPerPage = 10;
 
-function page() {
+function Page() {
   const [currentPage, setCurrentPage] = useState(1);
   const params = useParams();
   const category = params?.category as string;
@@ -445,4 +445,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
