@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setBusinessHoursValue,
@@ -23,7 +23,7 @@ const daysOfWeek: { full: string; short: keyof BusinessHoursState }[] = [
 const generateTimeOptions = () => {
   const times = [];
   for (let hour = 0; hour < 24; hour++) {
-    for (let min of ["00", "30"]) {
+    for (const min of ["00", "30"]) {
       const time = format(new Date(2022, 0, 1, hour, parseInt(min)), "hh:mm a");
       times.push(time);
     }
@@ -42,14 +42,14 @@ export default function BusinessHours() {
     useState<BusinessHoursState>(formFieldsBusHours);
 
   // Check if any day has valid business hours
-  const checkBusinessHours = () => {
+  const checkBusinessHours = useCallback(() => {
     const hasValidHours = Object.values(businessHours).some(
       (day) => day.isOpen && day.from && day.to
     );
 
     dispatch(setFieldState({ field: "businessHours", value: hasValidHours }));
     dispatch(setBusinessHoursValue(businessHours));
-  };
+  }, [businessHours]);
 
   const handleTimeChange = (
     day: keyof BusinessHoursState,
@@ -79,7 +79,7 @@ export default function BusinessHours() {
   // Trigger Redux update whenever businessHours change
   useEffect(() => {
     checkBusinessHours();
-  }, [businessHours]);
+  }, [businessHours, checkBusinessHours]);
 
   return (
     <div className={styles.formGroup}>
