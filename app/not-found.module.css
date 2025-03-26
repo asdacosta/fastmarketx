@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.heading {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.text {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.redirect {
+  font-size: 1.2rem;
+  color: gray;
+  margin-top: 10px;
+}
