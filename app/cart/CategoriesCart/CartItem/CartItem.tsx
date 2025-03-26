@@ -4,11 +4,8 @@ import Image from "next/image";
 import RemoveSave from "./RemoveSave/RemoveSave";
 import ItemQuantity from "./ItemQuantity/ItemQuantity";
 import { CartItem as CartItemType } from "@/app/redux/slices/cartSlice";
-import { useDispatch } from "react-redux";
 
 function CartItem({ item }: { item: CartItemType }) {
-  const dispatch = useDispatch();
-
   return (
     <section className={styles.item}>
       <div>
