@@ -25,8 +25,8 @@ function Footer() {
           </div>
           <p className={styles.description}>
             FastmarketX is a campus-focused online marketplace that connects
-            students and external buyers for trading. Whether you're looking for
-            products, meals, or services, we provide a reliable and secure
+            students and external buyers for trading. Whether you are looking
+            for products, meals, or services, we provide a reliable and secure
             platform to buy and sell conveniently.
           </p>
           <div className={styles.buttonGroup}>
