@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Item.module.css";
 import Image from "next/image";
 import StoreLogo from "./StoreLogo/StoreLogo";
@@ -50,9 +50,9 @@ function ItemClient({
 
   const wishItem = wishList.find((item) => item.id === itemData.id);
 
-  const [itemId, setItemId] = useState(id);
-  const [itemPrice, setItemPrice] = useState(price);
-  const [itemName, setItemName] = useState(name);
+  const itemId = id;
+  const itemPrice = price;
+  const itemName = name;
 
   const [addedToCart, setAddedToCart] = useState(!!storedItem || false);
   const [quantity, setQuantity] = useState(storedItem?.quantity || 0);
@@ -177,8 +177,8 @@ function ItemClient({
               <em>Name:</em> {itemName}
             </span>
             <span>
-              <em>Description:</em> Anything ah anything. Work till we can't no
-              more then we work again and again until we're incapacitated then
+              <em>Description:</em> Anything ah anything. Work till we cant no
+              more then we work again and again until we are incapacitated then
               we work once again. Yeah...
             </span>
           </p>
