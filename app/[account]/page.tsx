@@ -5,7 +5,7 @@ import Header from "../Header/Header";
 
 const allowedAccounts = ["asdacosta"];
 
-function page() {
+function Page() {
   const params = useParams();
   const account = params?.account as string;
 
@@ -19,4 +19,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
