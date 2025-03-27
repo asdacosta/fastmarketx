@@ -41,7 +41,7 @@
 .items {
   flex: 1;
   display: grid;
-  grid-template: repeat(2, 10rem) / repeat(2, minmax(10, 13rem));
+  grid-template: repeat(2, 10rem) / repeat(2, minmax(10rem, 13rem));
   gap: 1rem;
   padding: 1rem;
   position: relative;
