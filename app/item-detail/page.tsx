@@ -10,7 +10,7 @@ import FAQ from "./FAQ/FAQ";
 import Reviews from "./Reviews/Reviews";
 import FirstMainItems from "./FirstMainItems/FirstMainItems";
 import SecMainItems from "./SecMainItems/SecMainItems";
-// import Location from "../Location/Location";
+import Location from "../Location/Location";
 import Footer from "../Footer/Footer";
 
 function Page() {
@@ -24,7 +24,7 @@ function Page() {
               <ItemImgs />
               <section className={styles.itemInfo}>
                 <PrimaryInfo />
-                {/* <Location /> */}
+                <Location />
                 <Details />
               </section>
             </section>
