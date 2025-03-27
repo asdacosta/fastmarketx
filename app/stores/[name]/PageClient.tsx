@@ -9,9 +9,6 @@ import { RootState } from "@/app/redux/store";
 import WorkingHours from "../WorkingHours/WorkingHours";
 import Location from "@/app/Location/Location";
 import Footer from "@/app/Footer/Footer";
-import { useJsApiLoader } from "@react-google-maps/api";
-
-const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
 
 const categories = ["Electronics", "Groceries", "Fashion", "Home & Kitchen"];
 
@@ -27,9 +24,6 @@ const hoursData = [
 
 function PageClient() {
   const cartData = useSelector((state: RootState) => state.cart);
-  const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: GOOGLE_MAPS_API_KEY,
-  });
 
   return (
     <>
@@ -78,7 +72,7 @@ function PageClient() {
             </p>
           </section>
           <section className={styles.location}>
-            <Location isLoaded={isLoaded} />
+            <Location />
           </section>
           <section className={styles.items}>
             {categories.map((cat) => (
