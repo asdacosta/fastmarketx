@@ -125,6 +125,7 @@
 @media (max-width: 1100px) {
   .cards {
     gap: 1rem;
+    grid-template: 11rem / repeat(auto-fit, minmax(8rem, 11.5rem));
   }
 
   .card {
@@ -133,5 +134,11 @@
 
   .card > span {
     align-self: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .cards {
+    grid-template: repeat(2, 11rem) / repeat(2, minmax(8rem, 11.5rem));
   }
 }
