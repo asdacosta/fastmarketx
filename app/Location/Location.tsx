@@ -12,7 +12,7 @@ const defaultCenter = { lat: 6.6731, lng: -1.5654 }; // Default location (KNUST,
 export default function Location() {
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: GOOGLE_MAPS_API_KEY,
-    libraries: ["maps"],
+    libraries: ["places"],
   });
 
   // Get location from Redux store; if not available, use defaultCenter
