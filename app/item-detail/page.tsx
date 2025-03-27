@@ -12,8 +12,15 @@ import FirstMainItems from "./FirstMainItems/FirstMainItems";
 import SecMainItems from "./SecMainItems/SecMainItems";
 import Location from "../Location/Location";
 import Footer from "../Footer/Footer";
+import { useJsApiLoader } from "@react-google-maps/api";
+
+const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "";
 
 function Page() {
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: GOOGLE_MAPS_API_KEY,
+  });
+
   return (
     <>
       <Header />
@@ -24,7 +31,7 @@ function Page() {
               <ItemImgs />
               <section className={styles.itemInfo}>
                 <PrimaryInfo />
-                <Location />
+                <Location isLoaded={isLoaded} />
                 <Details />
               </section>
             </section>
