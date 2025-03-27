@@ -24,7 +24,7 @@ function Page() {
               <ItemImgs />
               <section className={styles.itemInfo}>
                 <PrimaryInfo />
-                <Location />
+                {/* <Location /> */}
                 <Details />
               </section>
             </section>
