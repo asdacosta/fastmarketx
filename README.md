@@ -36,6 +36,7 @@
 **Desktop View:**
 
 <img src="./readme-assets/darkBg.png" alt="Dark desktop view">
+<br><br>
 <img src="./readme-assets/lightBg.png" alt="Light desktop view">
 <br>
 
@@ -47,6 +48,7 @@
 **Mobile View:**
 
 <img src="./readme-assets/darkMobile.png" alt="Dark mobile view">
+<br><br>
 <img src="./readme-assets/lightMobile.png" alt="Light mobile view">
 
 </details>
