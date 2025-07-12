@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
     gender,
     email,
     campus,
-    password: passwordHash,
+    passwordHash,
   });
 
   const token = signToken(newUser._id.toString());
