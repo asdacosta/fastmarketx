@@ -32,17 +32,18 @@ export async function POST(req: NextRequest) {
 
   const token = signToken(newUser._id.toString());
 
-  const cookieStore = await cookies();
-  cookieStore.set("token", token, {
+  const response = NextResponse.json({
+    token,
+    user: { id: newUser._id, email: newUser.email },
+  });
+
+  response.cookies.set("token", token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "strict",
     path: "/",
-    maxAge: 60 * 60 * 24 * 30, // 30 days
+    maxAge: 60 * 60 * 24 * 30,
   });
 
-  return NextResponse.json({
-    token,
-    user: { id: newUser._id, email: newUser.email },
-  });
+  return response;
 }
