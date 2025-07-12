@@ -27,10 +27,19 @@ export async function POST(req: NextRequest) {
     gender,
     email,
     campus,
-    passwordHash,
+    password: passwordHash,
   });
 
   const token = signToken(newUser._id.toString());
+
+  const cookieStore = await cookies();
+  cookieStore.set("token", token, {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "strict",
+    path: "/",
+    maxAge: 60 * 60 * 24 * 30, // 30 days
+  });
 
   return NextResponse.json({
     token,
