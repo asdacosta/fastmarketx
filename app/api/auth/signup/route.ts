@@ -3,7 +3,6 @@ import bcrypt from "bcrypt";
 import { connectDB } from "@/lib/db";
 import { User } from "@/models/User";
 import { signToken } from "@/lib/jwt";
-import { cookies } from "next/headers";
 
 export async function POST(req: NextRequest) {
   await connectDB();
