@@ -14,8 +14,8 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const decoded = verifyToken(token);
-    const user = await User.findById(decoded.userId).select("-password");
+    const { userId } = verifyToken(token);
+    const user = await User.findById(userId).select("-password");
 
     if (!user) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
