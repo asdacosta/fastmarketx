@@ -3,6 +3,7 @@ import bcrypt from "bcrypt";
 import { connectDB } from "@/lib/db";
 import { User } from "@/models/User";
 import { signToken } from "@/lib/jwt";
+import { cookies } from "next/headers";
 
 export async function POST(req: NextRequest) {
   await connectDB();
@@ -14,7 +15,7 @@ export async function POST(req: NextRequest) {
   }
 
   const user = await User.findOne({ email });
-  if (!user)
+  if (user)
     return NextResponse.json(
       { error: "Email already in use" },
       { status: 400 }
@@ -29,7 +30,8 @@ export async function POST(req: NextRequest) {
     passwordHash,
   });
 
-  const token = signToken(user._id.toString());
+  const token = signToken(newUser._id.toString());
+
   return NextResponse.json({
     token,
     user: { id: newUser._id, email: newUser.email },
