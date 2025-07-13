@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const token = signToken(user._id.toString());
+    const token = signToken(user._id.toString(), user.role);
 
     const response = NextResponse.json({
       token,
