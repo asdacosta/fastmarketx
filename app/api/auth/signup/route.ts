@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
     passwordHash,
   });
 
-  const token = signToken(newUser._id.toString());
+  const token = signToken(newUser._id.toString(), newUser.role);
 
   const response = NextResponse.json({
     token,
