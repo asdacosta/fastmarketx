@@ -7,12 +7,16 @@ if (!jwtSecret) {
 
 const JWT_SECRET: string = jwtSecret;
 
-export function signToken(userId: string) {
-  return jwt.sign({ userId }, JWT_SECRET, { expiresIn: "30d" });
+export function signToken(
+  userId: string,
+  role: "customer" | "vendor" | "admin"
+) {
+  return jwt.sign({ userId, role }, JWT_SECRET, { expiresIn: "30d" });
 }
 
 interface JwtPayload {
   userId: string;
+  role: "customer" | "vendor" | "admin";
   iat?: number;
   exp?: number;
 }
