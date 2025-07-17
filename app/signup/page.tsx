@@ -1,12 +1,74 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./page.module.css";
 import FloatingLabel from "./FloatingLabel/FloatingLabel";
 import Image from "next/image";
 import Gender from "./Gender/Gender";
 import Campus from "./Campus/Campus";
+import { useRouter } from "next/navigation";
 
-function page() {
+function Page() {
+  const router = useRouter();
+  const [formData, setFormData] = useState({
+    name: "",
+    gender: "",
+    campus: "",
+    mobileEmail: "",
+    pwd1: "",
+    pwd2: "",
+  });
+  const [error, setError] = useState("");
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const { name, gender, campus, mobileEmail, pwd1, pwd2 } = formData;
+
+    if (pwd1 !== pwd2) {
+      setError("Passwords do not match");
+      return;
+    }
+
+    const isEmail = mobileEmail.includes("@");
+    const payload: any = {
+      name,
+      gender,
+      campus,
+      password: pwd1,
+    };
+
+    if (isEmail) {
+      payload.email = mobileEmail;
+    } else {
+      payload.phone = mobileEmail;
+    }
+
+    try {
+      const res = await fetch("/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error || "Something went wrong");
+      } else {
+        router.push("/");
+      }
+    } catch (err) {
+      setError("Network error");
+    }
+  };
+
   return (
     <main className={styles.page}>
       <section className={styles.header}>
@@ -24,14 +86,37 @@ function page() {
       </section>
       <section className={styles.body}>
         <h2>Create an account</h2>
-        <form>
-          <FloatingLabel name="name" label="Name" />
-          <Gender />
-          <Campus />
-          <FloatingLabel name="mobileEmail" label="Mobile number or Email" />
-          <FloatingLabel name="pwd1" label="Password" />
-          <FloatingLabel name="pwd2" label="Confirm Password" />
-          <button>Continue</button>
+        <form onSubmit={handleSubmit}>
+          <FloatingLabel
+            name="name"
+            label="Name"
+            value={formData.name}
+            onChange={handleChange}
+          />
+          <Gender value={formData.gender} onChange={handleChange} />
+          <Campus value={formData.campus} onChange={handleChange} />
+          <FloatingLabel
+            name="mobileEmail"
+            label="Mobile number or Email"
+            value={formData.mobileEmail}
+            onChange={handleChange}
+          />
+          <FloatingLabel
+            name="pwd1"
+            label="Password"
+            value={formData.pwd1}
+            onChange={handleChange}
+            type="password"
+          />
+          <FloatingLabel
+            name="pwd2"
+            label="Confirm Password"
+            value={formData.pwd2}
+            onChange={handleChange}
+            type="password"
+          />
+          {error && <p className={styles.error}>{error}</p>}
+          <button type="submit">Continue</button>
         </form>
         <section className={styles.loginSection}>
           <span>Already have an account?</span>
@@ -50,4 +135,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;
