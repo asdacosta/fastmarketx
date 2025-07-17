@@ -1,20 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
-import { cookies } from "next/headers";
-import { verifyToken } from "@/lib/jwt";
 import { connectDB } from "@/lib/db";
+import { requireAuth } from "@/lib/auth";
 import { User } from "@/models/User";
 
 export async function GET(req: NextRequest) {
   try {
     await connectDB();
-    const cookieStore = await cookies();
-    const token = cookieStore.get("token")?.value;
 
-    if (!token) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
+    const { userId } = await requireAuth(req);
 
-    const { userId } = verifyToken(token);
     const user = await User.findById(userId).select("-password");
 
     if (!user) {
@@ -24,6 +18,6 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ user });
   } catch (error) {
     console.error("Auth Me Error:", error);
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 }
