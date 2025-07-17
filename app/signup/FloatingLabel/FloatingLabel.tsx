@@ -1,10 +1,35 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./FloatingLabel.module.css";
 
-function FloatingLabel({ name, label }: { name: string; label: string }) {
+type Props = {
+  name: string;
+  label: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  type?: string;
+};
+
+function FloatingLabel({ name, label, value, onChange, type = "text" }: Props) {
+  const [internalValue, setInternalValue] = useState("");
   const [isFocused, setIsFocused] = useState(false);
-  const [value, setValue] = useState("");
+
+  // Keep track of focus when value is controlled externally
+  useEffect(() => {
+    if (value !== undefined) {
+      setIsFocused(value !== "");
+    }
+  }, [value]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (onChange) {
+      onChange(e); // use parent handler
+    } else {
+      setInternalValue(e.target.value); // fallback to internal
+    }
+  };
+
+  const currentValue = value !== undefined ? value : internalValue;
 
   return (
     <div className={styles.inputBox}>
@@ -12,13 +37,13 @@ function FloatingLabel({ name, label }: { name: string; label: string }) {
         {label}
       </label>
       <input
-        type="text"
+        type={type}
         id={name}
         name={name}
-        value={value}
-        onChange={(event) => setValue(event.target.value)}
+        value={currentValue}
+        onChange={handleChange}
         onFocus={() => setIsFocused(true)}
-        onBlur={() => setIsFocused(value !== "")}
+        onBlur={() => setIsFocused(currentValue !== "")}
       />
     </div>
   );
