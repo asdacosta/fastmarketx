@@ -1,13 +1,16 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Campus.module.css";
 
-function Campus() {
-  const [campus, setCampus] = useState("");
+type Props = {
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+};
 
+function Campus({ value, onChange }: Props) {
   return (
     <div className={styles.campus}>
-      <select value={campus} onChange={(e) => setCampus(e.target.value)}>
+      <select name="campus" value={value} onChange={onChange}>
         <option value="" disabled>
           Select campus
         </option>
