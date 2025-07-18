@@ -3,10 +3,15 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./Menu.module.css";
 import Link from "next/link";
 import { DotLottieReact as Lot, DotLottie } from "@lottiefiles/dotlottie-react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setMenu } from "@/app/redux/slices/MenuUiSlice";
 import CategoriesList from "./CategoriesList/CategoriesList";
 import HelpList from "./HelpList/HelpList";
+import { RootState } from "@/app/redux/store";
+import FormattedName from "../../Nav/Account/FormattedName/FormattedName";
+import ConfirmModal from "@/app/ConfirmModal/ConfirmModal";
+import { signOut } from "next-auth/react";
+import { logout } from "@/app/redux/slices/userSlice";
 
 function Menu() {
   const menuDispatch = useDispatch();
@@ -14,8 +19,11 @@ function Menu() {
   const [menuOpened, setMenuOpened] = useState(false);
   const [categoriesOpen, setCategoriesOpen] = useState(false);
   const [helpOpen, setHelpOpen] = useState(false);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
 
+  const dispatch = useDispatch();
   const anyRef = useRef<HTMLDivElement>(null);
+  const user = useSelector((state: RootState) => state.user);
 
   useEffect(() => {
     if (!menuOpened || !menuIcon) return;
@@ -49,6 +57,17 @@ function Menu() {
     menuIcon.play();
   };
 
+  const confirmLogout = async () => {
+    try {
+      dispatch(logout());
+      signOut({ callbackUrl: "/" });
+    } catch (err) {
+      console.error("Logout failed", err);
+    } finally {
+      setShowConfirmModal(false);
+    }
+  };
+
   return (
     <section className={styles.menu} ref={anyRef}>
       <Lot
@@ -60,10 +79,16 @@ function Menu() {
       <section
         className={`${styles.menuList} ${menuOpened ? styles.show : ""}`}
       >
-        <section className={styles.sign}>
-          <Link href="signup">Create Account</Link>
-          <Link href="login">Log In</Link>
-        </section>
+        {user.id ? (
+          <section className={styles.name}>
+            <FormattedName />
+          </section>
+        ) : (
+          <section className={styles.sign}>
+            <Link href="signup">Create Account</Link>
+            <Link href="login">Log In</Link>
+          </section>
+        )}
         <section className={styles.otherList}>
           <section className={styles.categoriesBox}>
             <div
@@ -135,13 +160,22 @@ function Menu() {
             </svg>
             <span>How it works</span>
           </Link>
-          <Link href="logout">
-            <svg role="img" viewBox="0 0 512 512">
-              <path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z" />
-            </svg>
-            <span>Log Out</span>
-          </Link>
+          {user.id && (
+            <Link href="/" onClick={() => setShowConfirmModal(true)}>
+              <svg role="img" viewBox="0 0 512 512">
+                <path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z" />
+              </svg>
+              <span>Log Out</span>
+            </Link>
+          )}
         </section>
+        {showConfirmModal && (
+          <ConfirmModal
+            question="Are you sure you want to log out?"
+            onConfirm={confirmLogout}
+            onCancel={() => setShowConfirmModal(false)}
+          />
+        )}
       </section>
     </section>
   );
