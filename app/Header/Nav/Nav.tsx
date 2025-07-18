@@ -8,6 +8,8 @@ import Account from "./Account/Account";
 import CartClient from "./Cart/CartClient";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { Provider } from "react-redux";
+import { store } from "../../redux/store";
 
 function Nav() {
   const { theme } = useTheme();
@@ -46,7 +48,9 @@ function Nav() {
           </section>
         </section>
         <section className={styles.secondary}>
-          <Account />
+          <Provider store={store}>
+            <Account />
+          </Provider>
           <CartClient />
         </section>
       </nav>
