@@ -54,6 +54,17 @@ svg.chevron {
   transform: rotate(90deg);
 }
 
+.name {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.5rem;
+}
+
+.name span {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 .sign {
   display: flex;
   flex-direction: column;
@@ -100,7 +111,8 @@ svg.chevron {
 .otherList {
   display: flex;
   flex-direction: column;
-  height: 19rem;
+  height: max-content;
+  padding-bottom: 0.5rem;
   overflow-y: auto;
   overflow-x: hidden;
 }
