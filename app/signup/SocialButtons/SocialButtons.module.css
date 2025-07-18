@@ -1,0 +1,29 @@
+.socialButtons {
+  background: var(--background);
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 0.5rem;
+}
+
+.socialButtons svg {
+  fill: var(--color);
+  width: 0.9rem;
+}
+
+.socialButtons > section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  font-size: 1rem;
+  background: var(--foreground);
+  border-radius: var(--radius);
+  transition: opacity var(--speed) ease-in-out;
+}
+
+.socialButtons > section:hover {
+  opacity: 0.8;
+}
