@@ -40,8 +40,8 @@ export async function POST(req: NextRequest) {
       token,
       user: {
         id: user._id,
-        email: user.email,
-        phone: user.phone,
+        email: user.email || null,
+        phone: user.phone || null,
         name: user.name,
       },
     });
