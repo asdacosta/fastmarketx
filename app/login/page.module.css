@@ -9,18 +9,10 @@
   height: 100vh;
 }
 
-.body,
-.lastSection {
+.body {
   background: var(--background);
   padding: 1rem 1.5rem;
-}
-
-.body {
   border-radius: 1rem;
-}
-
-.lastSection {
-  border-radius: 0.5rem;
 }
 
 .body > form {
@@ -49,23 +41,6 @@
 .body h2 {
   font-size: 1.5rem;
   font-weight: 600;
-}
-
-.lastSection svg {
-  fill: var(--color);
-  width: 0.9rem;
-}
-
-.lastSection > section {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-  transition: opacity var(--speed) ease-in-out;
-}
-
-.lastSection > section:hover {
-  opacity: 0.8;
 }
 
 .body {
