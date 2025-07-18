@@ -57,12 +57,22 @@
   display: flex;
   flex-direction: column;
   height: 0;
-  animation: slideDown 0.15s forwards ease-in-out;
+  animation: slideDown1 0.15s forwards ease-in-out;
 }
 
-@keyframes slideDown {
+.otherList.loggedIn {
+  animation: slideDown2 0.15s forwards ease-in-out;
+}
+
+@keyframes slideDown1 {
   to {
-    height: 16rem;
+    height: 8rem;
+  }
+}
+
+@keyframes slideDown2 {
+  to {
+    height: 15.5rem;
   }
 }
 
