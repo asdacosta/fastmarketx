@@ -4,107 +4,134 @@
   gap: 2rem;
   background: var(--foreground);
   min-height: 100vh;
-  padding: 1.5rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  color: var(--color);
 }
 
+/* main column for payment & address */
 .paymentInfo {
   flex: 3;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  max-width: 45rem;
-  color: var(--color);
+  gap: 2.25rem;
+  max-width: 55rem;
+  width: 100%;
 }
 
+/* payment method selection block */
 .paymentMethod {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-}
-
-.methods {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.methods > label {
+  gap: 0.8rem;
   background: var(--background);
-  padding: 1rem;
+  padding: 1em 0.5rem;
   border-radius: var(--radius);
 }
 
-label.active {
-  background: var(--dark-gold);
-  color: black;
+/* text heading */
+.paymentMethod h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
+/* Radio option list uses cards */
+.methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.8rem;
+}
+
+/* each label is a card-style button */
+.methods > label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.7rem;
+  border-radius: var(--big-radius);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  transition: transform 220ms cubic-bezier(0.2, 0.9, 0.3, 1), box-shadow 220ms,
+    border-color 220ms;
+  box-shadow: 0 0.2rem 1rem var(--shadow);
+}
+
+/* label hover */
+.methods > label:hover {
+  transform: translateY(-4px);
+  box-shadow: none;
+}
+
+/* active variant */
+.methods > label.active {
+  border-color: var(--dark-gold);
+  box-shadow: none;
+}
+
+/* reused radio control styles (keeps visual parity with Payment.module.css) */
 .radioLabel {
   display: flex;
   align-items: center;
-  cursor: pointer;
-  position: relative;
+  gap: 0.6rem;
+  width: 100%;
 }
-
 .radioInput {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
 }
-
 .customRadio {
-  width: 1rem;
-  height: 1rem;
-  border: 0.1rem solid #555;
+  width: 1.05rem;
+  height: 1.05rem;
   border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.18);
   display: inline-block;
-  margin-right: 0.5rem;
   position: relative;
+  transition: border-color 220ms, transform 220ms;
 }
-
+.radioInput:checked + .customRadio {
+  border-color: var(--dark-gold);
+  transform: scale(1.03);
+}
 .radioInput:checked + .customRadio::after {
   content: "";
+  display: block;
   width: 0.5rem;
   height: 0.5rem;
-  background: var(--background);
+  background: var(--dark-gold);
   border-radius: 50%;
   position: absolute;
-  top: 50%;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
 }
 
-.radioLabel:not(.active):hover .customRadio {
-  border-color: var(--dark-gold);
-}
-
+/* details below label text */
 .details {
-  position: absolute;
-  font-size: 0.75rem;
-  bottom: 0.15rem;
-  left: 2.5rem;
-  font-style: italic;
-  opacity: 0.8;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
 }
 
+/* responsive */
 @media (max-width: 850px) {
   .page {
     flex-direction: column;
-    align-items: center;
+    padding: 0.5rem;
     gap: 1rem;
-    padding: 1rem 0.5rem;
   }
-
   .paymentInfo {
-    flex-direction: column;
-    gap: 1rem;
+    gap: 1.25rem;
+  }
+  .methods {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-
-@media (max-width: 450px) {
-  .page {
-    display: block;
-  }
-
-  .paymentInfo {
-    margin-bottom: 1rem;
+@media (max-width: 520px) {
+  .methods {
+    grid-template-columns: 1fr;
   }
 }
