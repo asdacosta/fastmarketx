@@ -7,6 +7,7 @@
   --trans-bg: rgba(0, 0, 0, 0.8);
   --foreground: rgb(28, 29, 31);
   --color: rgb(210, 210, 210);
+  --shadow: rgb(210, 210, 210, 0.3);
   --white-black-color: white;
   --input-color: rgb(230, 230, 230);
   --brand-bg: rgba(0, 0, 0, 0.6);
@@ -19,6 +20,7 @@
   --foreground: rgb(232, 234, 237);
   --input-color: rgb(232, 234, 237);
   --color: rgb(20, 20, 20);
+  --shadow: rgb(20, 20, 20, 0.3);
   --white-black-color: black;
   --brand-bg: rgba(255, 255, 255, 0.6);
   --img-cover-display: none;
