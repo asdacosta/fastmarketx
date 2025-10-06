@@ -4,11 +4,12 @@
   position: relative;
 }
 
+/* form */
 .form {
   display: flex;
   align-items: center;
+  position: relative;
 }
-
 .form input,
 .form button {
   font-size: 1rem;
@@ -16,7 +17,6 @@
   height: 2.3rem;
   padding: 0 0.5rem;
 }
-
 .form input {
   background: var(--input-color);
   border-radius: var(--radius) 0 0 var(--radius);
@@ -26,14 +26,17 @@
   padding-left: 2rem;
   flex: 1;
   outline: none;
+  transition: box-shadow 0.18s ease;
 }
-
+.form input:focus {
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.04);
+  border-color: var(--dark-gold);
+}
 .form button {
   background: var(--dark-gold);
   border-radius: 0 var(--radius) var(--radius) 0;
   transition: background var(--speed) ease-in-out;
 }
-
 .form button:hover {
   background: var(--dark-pure-gold);
 }
@@ -48,8 +51,468 @@
   pointer-events: none;
 }
 
+/* dropdown wrapper */
+.dropdownWrap {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  right: 0;
+  z-index: 120;
+  display: flex;
+  justify-content: center;
+  pointer-events: auto;
+  animation: fadeIn 0.18s ease;
+}
+
+/* single box (typing) */
+.singleBox {
+  width: 100%;
+  max-width: 980px;
+  background: var(--brand-bg, linear-gradient(180deg, #fff, #fbfdff));
+  border-radius: 14px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.06);
+  padding: 14px;
+  overflow: hidden;
+  animation: slideDown 0.22s ease;
+}
+
+/* section header */
+.sectionRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.sectionTitle {
+  font-weight: 700;
+  color: var(--color);
+  font-size: 14px;
+}
+.sectionSubtitle {
+  color: #6b7280;
+  font-size: 13px;
+}
+
+/* recent grid (2x2) */
+.recentGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.recentCell {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 0.3rem 0.5rem;
+  border-radius: 8px;
+  background: var(--background);
+  border: 1px solid rgba(11, 22, 40, 0.03);
+  cursor: pointer;
+}
+.recentCell:hover {
+  background: rgba(3, 102, 214, 0.05);
+}
+.recentIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--color);
+}
+.recentText {
+  font-weight: 600;
+  color: var(--color);
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* results list for typed search */
+.resultsList {
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.resultRow {
+  display: flex;
+}
+
+/* grid of 4 boxes (2x2) */
+.gridBoxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 0.3rem;
+  width: 100%;
+  max-width: 980px;
+  animation: slideDown 0.25s ease;
+}
+
+/* one box card (single vertical scroll inside) */
+.boxCard {
+  background: var(--brand-bg);
+  border-radius: var(--big-radius);
+  padding: 0.5rem;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* min-height: 15rem; */
+  transition: transform 0.12s ease, box-shadow 0.15s ease;
+}
+.boxCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.08);
+}
+
+.boxHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.boxHeader svg {
+  width: 1.2rem;
+  fill: var(--dark-gold);
+}
+.boxTitle {
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--color);
+}
+
+/* single vertical scroll container for the whole box */
+.boxScroll {
+  overflow-y: auto;
+  max-height: 14rem; /* adjust to taste; entire box scrolls */
+  padding-right: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* category block inside boxScroll */
+.boxSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.boxSectionTitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  align-self: stretch;
+  color: transparent;
+  cursor: context-menu;
+  animation: gradient-animation 3s linear infinite reverse;
+}
+.boxSectionTitle.Products {
+  background: linear-gradient(
+    120deg,
+    rgb(150, 150, 150) 0%,
+    rgb(150, 150, 150) 35%,
+    rgba(49, 123, 220, 0.85) 50%,
+    rgb(150, 150, 150) 65%,
+    rgb(150, 150, 150) 100%
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+}
+.boxSectionTitle.Meals {
+  background: linear-gradient(
+    120deg,
+    rgb(150, 150, 150) 0%,
+    rgb(150, 150, 150) 35%,
+    rgba(229, 126, 29, 0.85) 50%,
+    rgb(150, 150, 150) 65%,
+    rgb(150, 150, 150) 100%
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+}
+.boxSectionTitle.Services {
+  background: linear-gradient(
+    120deg,
+    rgb(150, 150, 150) 0%,
+    rgb(150, 150, 150) 35%,
+    rgba(43, 224, 169, 0.85) 50%,
+    rgb(150, 150, 150) 65%,
+    rgb(150, 150, 150) 100%
+  );
+  background-size: 200% 200%;
+  background-clip: text;
+}
+
+/* small empty */
+.emptySmall {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.boxItems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+/* card (item) */
+.card {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  border-radius: 0.5rem;
+  padding: 0.35rem;
+  padding-left: 0.55rem;
+  background: var(--background);
+  /* border: 1px solid rgba(11, 22, 40, 0.03); */
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  transition: transform 0.08s ease, box-shadow 0.12s ease;
+  will-change: transform, box-shadow;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.15rem;
+  height: 100%;
+}
+.card.Product::before {
+  background: rgb(49, 123, 220);
+}
+.card.Meal::before {
+  background: rgb(229, 126, 29);
+}
+.card.Service::before {
+  background: rgb(43, 224, 169);
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(6, 12, 30, 0.06);
+}
+
+.cardThumb {
+  width: 1.5rem;
+  height: 1.8rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6f8fb;
+  flex-shrink: 0;
+}
+.cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.cardPlaceholder {
+  width: 56px;
+  height: 56px;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 4px;
+}
+.cardName {
+  font-size: 0.85rem;
+  color: var(--color);
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.boxItem .cardName {
+  max-width: 10rem;
+}
+.resultRow .cardName {
+  max-width: 15rem;
+}
+.cardCategory {
+  font-weight: 700;
+  font-size: 12px;
+  color: #617085;
+  width: 100%;
+  text-align: left;
+}
+.showMore {
+  padding: 0.25rem 1rem;
+  width: fit-content;
+  align-self: center;
+  margin-top: 0.3rem;
+  color: black;
+  font-weight: 500;
+  border-radius: var(--radius);
+  text-align: center;
+  background: var(--dark-gold);
+}
+.showMore:hover {
+  background: var(--dark-pure-gold);
+}
+
+/* scrollbars */
+.resultsList::-webkit-scrollbar,
+.boxScroll::-webkit-scrollbar {
+  width: 0.3rem;
+}
+.resultsList::-webkit-scrollbar-thumb,
+.boxScroll::-webkit-scrollbar-thumb {
+  background: var(--dark-gold);
+  border-radius: 8px;
+}
+
+/* empty state */
+.empty {
+  padding: 16px;
+  color: #9aa3b2;
+  text-align: center;
+}
+
+/* Filter bar (mobile-first) */
+.filterRow {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+/* Button (pill) */
+.filterBtn {
+  display: flex;
+  position: relative; /* for the animated background inside */
+  background: var(--dark-gold);
+  color: black;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  align-items: center;
+  justify-content: center;
+  min-width: 3rem;
+}
+
+/* wrapper for dot + label so label remains above indicator */
+.filterContent {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* tiny colored dot */
+.filterDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* label text */
+.filterLabel {
+  pointer-events: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* animated background indicator (fills most of the button) */
+.filterIndicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius);
+  z-index: 1; /* behind the label/dot (which are z-index:2) */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  pointer-events: none;
+}
+
+/* responsive tweaks for very small screens (if needed) */
+@media (max-width: 360px) {
+  .filterBtn {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+    min-height: 32px;
+  }
+  .filterDot {
+    width: 7px;
+    height: 7px;
+  }
+}
+
+/* animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 100%;
+  }
+}
+
+/* responsive */
+@media (max-width: 400px) {
+  .gridBoxes {
+    grid-template-columns: 1fr;
+  }
+  .boxScroll {
+    max-height: 150px;
+  }
+}
 @media (max-width: 500px) {
   .form input {
     width: 12rem;
+  }
+
+  .boxItem .cardName {
+    max-width: 7.5rem;
+  }
+  .resultRow .cardName {
+    max-width: 13rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .searchInput {
+    position: static;
+  }
+
+  .card {
+    gap: 0.3rem;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    padding-left: 0.45rem;
   }
 }
