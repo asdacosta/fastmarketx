@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import styles from "./page.module.css";
 import Header from "@/app/Header/Header";
 import LocationAddress from "./LocationAddress/LocationAddress";
-import CartSummary from "./CartSummary/CartSummary";
 import Payment from "./Payment/Payment";
 import { Provider } from "react-redux";
 import { store } from "../../redux/store";
@@ -61,7 +60,6 @@ function Page() {
             </div>
             <Payment />
           </section>
-          <CartSummary />
         </Provider>
       </section>
     </>
