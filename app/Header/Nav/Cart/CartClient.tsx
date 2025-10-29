@@ -8,7 +8,7 @@ function CartClient() {
   return (
     <>
       <Provider store={store}>
-        <Cart />
+        <Cart /> 
       </Provider>
     </>
   );
