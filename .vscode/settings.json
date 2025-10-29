@@ -14,5 +14,25 @@
     "Sobolo",
     "telecel",
     "Waakye"
-  ]
+  ],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#f69a82",
+    "activityBar.background": "#f69a82",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#09771f",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#f69a82",
+    "statusBar.background": "#f37452",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#f04e22",
+    "statusBarItem.remoteBackground": "#f37452",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#f37452",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#f3745299",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#f37452"
 }
