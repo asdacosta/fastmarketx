@@ -177,9 +177,9 @@ function ItemClient({
               <em>Name:</em> {itemName}
             </span>
             <span>
-              <em>Description:</em> Anything ah anything. Work till we cant no
-              more then we work again and again until we are incapacitated then
-              we work once again. Yeah...
+              <em>Description:</em> Lorem ipsum dolor, sit amet consectetur
+              adipisicing elit. Accusantium ex blanditiis in. Maxime, et vero
+              error sapiente temporibus!
             </span>
           </p>
         )}
