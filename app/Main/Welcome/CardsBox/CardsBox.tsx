@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import styles from "./CardsBox.module.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,42 +6,170 @@ import Ad from "./Ad/Ad";
 import { useDispatch } from "react-redux";
 import { setMenu } from "@/app/redux/slices/MenuUiSlice";
 
-/**
- * 🎥 Custom hook that plays through all videos sequentially and loops infinitely.
- */
-function useSequentialLoop(videos: string[]) {
+function DoubleBufferedLoop({
+  videos,
+  className = "",
+}: {
+  videos: string[];
+  className?: string;
+}) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const [activeBuffer, setActiveBuffer] = useState<0 | 1>(0);
+  const videoRefs = [
+    useRef<HTMLVideoElement | null>(null),
+    useRef<HTMLVideoElement | null>(null),
+  ];
+  const preloaded = useRef<Record<number, string>>({});
+  const TRANSITION_MS = 600;
 
+  /** Preload a video as a blob but do NOT play it */
+  const preloadVideo = useCallback(
+    async (index: number) => {
+      const src = videos[index];
+      if (!src || preloaded.current[index]) return preloaded.current[index];
+
+      try {
+        const resp = await fetch(src, { cache: "force-cache" });
+        if (!resp.ok) throw new Error(`Failed to fetch ${src}`);
+        const blob = await resp.blob();
+        const url = URL.createObjectURL(blob);
+        preloaded.current[index] = url;
+        return url;
+      } catch (err) {
+        console.error("Video preload failed:", err);
+        return null;
+      }
+    },
+    [videos]
+  );
+
+  /** Load a preloaded blob into a buffer video element */
+  const loadIntoBuffer = useCallback(
+    async (index: number, bufferId: 0 | 1) => {
+      const vidEl = videoRefs[bufferId].current;
+      if (!vidEl) return;
+      const blobUrl = preloaded.current[index] || (await preloadVideo(index));
+      if (blobUrl) {
+        vidEl.src = blobUrl;
+        await vidEl.load();
+      }
+    },
+    [preloadVideo]
+  );
+
+  /** Start playing the current buffer */
+  const playBuffer = useCallback(async (bufferId: 0 | 1) => {
+    const vidEl = videoRefs[bufferId].current;
+    if (!vidEl) return;
+    try {
+      await vidEl.play();
+    } catch (e) {
+      console.warn("Autoplay blocked:", e);
+    }
+  }, []);
+
+  /** On mount: preload first two videos and start playing the first */
   useEffect(() => {
-    const videoEl = videoRef.current;
-    if (!videoEl) return;
+    let cancelled = false;
+    (async () => {
+      await preloadVideo(currentIndex);
+      await loadIntoBuffer(currentIndex, activeBuffer);
+      await preloadVideo((currentIndex + 1) % videos.length);
+      if (!cancelled) await playBuffer(activeBuffer);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [
+    currentIndex,
+    activeBuffer,
+    loadIntoBuffer,
+    preloadVideo,
+    playBuffer,
+    videos.length,
+  ]);
 
-    const handleEnded = () => {
-      // Go to next video or restart at 0 when last one finishes
-      setCurrentIndex((prev) => (prev + 1) % videos.length);
+  /** Handle when current video ends */
+  useEffect(() => {
+    const activeVid = videoRefs[activeBuffer].current;
+    if (!activeVid) return;
+
+    const handleEnded = async () => {
+      const nextIndex = (currentIndex + 1) % videos.length;
+      const nextBuffer: 0 | 1 = activeBuffer === 0 ? 1 : 0;
+
+      // preload + load next video
+      await preloadVideo(nextIndex);
+      await loadIntoBuffer(nextIndex, nextBuffer);
+
+      // Crossfade start
+      setActiveBuffer(nextBuffer);
+      await playBuffer(nextBuffer);
+
+      // Wait for fade duration then switch index
+      setTimeout(() => {
+        setCurrentIndex(nextIndex);
+      }, TRANSITION_MS);
     };
 
-    videoEl.addEventListener("ended", handleEnded);
-    return () => videoEl.removeEventListener("ended", handleEnded);
-  }, [videos.length]);
+    activeVid.addEventListener("ended", handleEnded);
+    return () => activeVid.removeEventListener("ended", handleEnded);
+  }, [
+    activeBuffer,
+    currentIndex,
+    loadIntoBuffer,
+    playBuffer,
+    preloadVideo,
+    videos.length,
+  ]);
 
-  // Update video source only when index changes
+  /** Cleanup all blob URLs */
   useEffect(() => {
-    const videoEl = videoRef.current;
-    if (!videoEl) return;
-    videoEl.src = videos[currentIndex];
-    videoEl.load();
-    videoEl.play().catch(() => {});
-  }, [currentIndex, videos]);
+    return () => {
+      Object.values(preloaded.current).forEach((url) => {
+        try {
+          URL.revokeObjectURL(url);
+        } catch {}
+      });
+      preloaded.current = {};
+    };
+  }, []);
 
-  return { videoRef };
+  return (
+    <div className={`${styles.videoContainer} ${className}`}>
+      <div
+        className={`${styles.videoLayer} ${
+          activeBuffer === 0 ? styles.active : ""
+        }`}
+      >
+        <video
+          ref={videoRefs[0]}
+          muted
+          playsInline
+          preload="auto"
+          className={styles.videoElement}
+        />
+      </div>
+      <div
+        className={`${styles.videoLayer} ${
+          activeBuffer === 1 ? styles.active : ""
+        }`}
+      >
+        <video
+          ref={videoRefs[1]}
+          muted
+          playsInline
+          preload="auto"
+          className={styles.videoElement}
+        />
+      </div>
+    </div>
+  );
 }
 
 function CardsBox() {
   const menuDispatch = useDispatch();
 
-  // 🧩 Define each playlist
   const productsVideos = [
     "/explore-products/ac-fan-tv.mp4",
     "/explore-products/activewear.mp4",
@@ -126,16 +254,10 @@ function CardsBox() {
     "/discover-services/web-dev.mp4",
   ];
 
-  // 🔁 Each section gets its own independent loop
-  const products = useSequentialLoop(productsVideos);
-  const meals = useSequentialLoop(mealsVideos);
-  const services = useSequentialLoop(servicesVideos);
-
   return (
     <section className={styles.cardsBox}>
       <Ad />
       <section className={styles.cards}>
-        {/* Set up a store */}
         <Link
           href="/menu"
           onClick={() => menuDispatch(setMenu("CreateStore"))}
@@ -151,42 +273,18 @@ function CardsBox() {
           <span>Set up a store</span>
         </Link>
 
-        {/* Explore products */}
         <Link href="/products" className={styles.card}>
-          <video
-            ref={products.videoRef}
-            autoPlay
-            muted
-            playsInline
-            preload="auto"
-            className={styles.img}
-          />
+          <DoubleBufferedLoop videos={productsVideos} className={styles.img} />
           <span>Explore products</span>
         </Link>
 
-        {/* Order meals */}
         <Link href="/meals" className={styles.card}>
-          <video
-            ref={meals.videoRef}
-            autoPlay
-            muted
-            playsInline
-            preload="auto"
-            className={styles.img}
-          />
+          <DoubleBufferedLoop videos={mealsVideos} className={styles.img} />
           <span>Order meals</span>
         </Link>
 
-        {/* Discover services */}
         <Link href="/services" className={styles.card}>
-          <video
-            ref={services.videoRef}
-            autoPlay
-            muted
-            playsInline
-            preload="auto"
-            className={styles.img}
-          />
+          <DoubleBufferedLoop videos={servicesVideos} className={styles.img} />
           <span>Discover services</span>
         </Link>
       </section>
