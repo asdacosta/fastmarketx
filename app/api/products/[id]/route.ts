@@ -3,16 +3,26 @@ import { connectDB } from "@/lib/db";
 import { Item } from "@/models/Item";
 import { requireAuth } from "@/lib/auth";
 
+// ✅ Helper to extract dynamic route params
+async function getParams<T>(context: { params: Promise<T> }): Promise<T> {
+  return await context.params;
+}
+
+/**
+ * PUT /api/products/[id]
+ * Update a product (requires ownership or admin role)
+ */
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> } // ✅ async params
 ) {
   try {
+    const { id } = await getParams(context);
     await connectDB();
 
     const user = await requireAuth(req);
 
-    const item = await Item.findById(params.id);
+    const item = await Item.findById(id);
     if (!item) {
       return NextResponse.json({ error: "Product not found" }, { status: 404 });
     }
@@ -28,21 +38,26 @@ export async function PUT(
     return NextResponse.json({ product: item });
   } catch (err) {
     if (err instanceof Response) return err;
-    console.error("PUT error:", err);
+    console.error("PUT /products/[id] error:", err);
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
 
+/**
+ * DELETE /api/products/[id]
+ * Delete a product (requires ownership or admin role)
+ */
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> }
 ) {
   try {
+    const { id } = await getParams(context);
     await connectDB();
 
     const user = await requireAuth(req);
 
-    const item = await Item.findById(params.id);
+    const item = await Item.findById(id);
     if (!item) {
       return NextResponse.json({ error: "Product not found" }, { status: 404 });
     }
@@ -55,7 +70,7 @@ export async function DELETE(
     return NextResponse.json({ message: "Deleted" });
   } catch (err) {
     if (err instanceof Response) return err;
-    console.error("DELETE error:", err);
+    console.error("DELETE /products/[id] error:", err);
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
