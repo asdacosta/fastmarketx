@@ -155,24 +155,21 @@ export default function Payment({ change = false }: { change?: boolean }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [applePayAvailable]);
 
-  const getChannelsFor = useCallback(
-    (method: MethodId) => {
-      switch (method) {
-        case "card":
-          return ["card"];
-        case "mobile_money":
-          return ["mobile_money"];
-        case "apple_pay":
-          return ["apple_pay"];
-        case "bank":
-          // keep mapping to ghipps for GHS (your server maps/accepts ghipps)
-          return ["bank_transfer"];
-        default:
-          return undefined;
-      }
-    },
-    [currency]
-  );
+  const getChannelsFor = useCallback((method: MethodId) => {
+    switch (method) {
+      case "card":
+        return ["card"];
+      case "mobile_money":
+        return ["mobile_money"];
+      case "apple_pay":
+        return ["apple_pay"];
+      case "bank":
+        // keep mapping to ghipps for GHS (your server maps/accepts ghipps)
+        return ["bank_transfer"];
+      default:
+        return undefined;
+    }
+  }, []);
 
   const moveSelection = useCallback(
     (dir: -1 | 1) => {
