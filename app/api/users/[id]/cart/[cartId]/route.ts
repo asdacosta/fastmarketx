@@ -2,11 +2,22 @@ import { NextRequest, NextResponse } from "next/server";
 import { requireAuth } from "@/lib/auth";
 import { Cart } from "@/models/Cart";
 
-// Updates the quantity of a cart item
+/**
+ * Helper: unwraps the async params
+ */
+async function getParams<T>(context: { params: Promise<T> }): Promise<T> {
+  return await context.params;
+}
+
+/**
+ * PUT /api/users/[id]/cart/[cartId]
+ * Updates the quantity of a cart item
+ */
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { cartId: string } }
+  context: { params: Promise<{ id: string; cartId: string }> } // ✅ must be Promise
 ) {
+  const { cartId } = await getParams(context); // ✅ unwrap params
   const { userId } = await requireAuth(request);
   const { quantity } = await request.json();
 
@@ -18,7 +29,7 @@ export async function PUT(
   }
 
   const updated = await Cart.findOneAndUpdate(
-    { _id: params.cartId, userId },
+    { _id: cartId, userId },
     { quantity },
     { new: true }
   );
@@ -33,17 +44,18 @@ export async function PUT(
   return NextResponse.json(updated);
 }
 
-// Removes a cart item
+/**
+ * DELETE /api/users/[id]/cart/[cartId]
+ * Removes a cart item
+ */
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { cartId: string } }
+  context: { params: Promise<{ id: string; cartId: string }> } // ✅ Promise type
 ) {
+  const { cartId } = await getParams(context);
   const { userId } = await requireAuth(request);
 
-  const deleted = await Cart.findOneAndDelete({
-    _id: params.cartId,
-    userId,
-  });
+  const deleted = await Cart.findOneAndDelete({ _id: cartId, userId });
 
   if (!deleted) {
     return NextResponse.json(
