@@ -51,11 +51,10 @@ export async function POST(req: Request) {
   // handle relevant events (quickly)
   const event = payload?.event;
   if (event === "charge.success" || event === "transaction.success") {
-    const txn = payload.data;
+    // const txn = payload.data;
     // TODO: update order in DB (idempotent) using txn.reference, txn.amount, txn.currency etc.
     // Example:
     // await markOrderPaid(txn.reference, txn.amount, txn.currency, txn.gateway_response)
-
     // Important: perform idempotent updates so repeated webhook retries don't double-count
   }
 
