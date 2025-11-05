@@ -38,7 +38,8 @@
     "react-redux": "^9.2.0",
     "recharts": "^2.15.1",
     "swiper": "^11.2.1",
-    "typed.js": "^2.1.0"
+    "typed.js": "^2.1.0",
+    "vercel": "^48.8.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
