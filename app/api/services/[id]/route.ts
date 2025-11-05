@@ -3,16 +3,26 @@ import { connectDB } from "@/lib/db";
 import { Item } from "@/models/Item";
 import { requireAuth } from "@/lib/auth";
 
+// ✅ Helper to unwrap async params
+async function getParams<T>(context: { params: Promise<T> }): Promise<T> {
+  return await context.params;
+}
+
+/**
+ * PUT /api/services/[id]
+ * Update a service (requires ownership or admin)
+ */
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> } // ✅ Use async params type
 ) {
   try {
+    const { id } = await getParams(context);
     await connectDB();
 
     const user = await requireAuth(req);
 
-    const item = await Item.findById(params.id);
+    const item = await Item.findById(id);
     if (!item) {
       return NextResponse.json({ error: "Service not found" }, { status: 404 });
     }
@@ -25,24 +35,29 @@ export async function PUT(
     Object.assign(item, updates);
     await item.save();
 
-    return NextResponse.json({ Service: item });
+    return NextResponse.json({ service: item });
   } catch (err) {
     if (err instanceof Response) return err;
-    console.error("PUT error:", err);
+    console.error("PUT /services/[id] error:", err);
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
 
+/**
+ * DELETE /api/services/[id]
+ * Delete a service (requires ownership or admin)
+ */
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> } // ✅ Fix here too
 ) {
   try {
+    const { id } = await getParams(context);
     await connectDB();
 
     const user = await requireAuth(req);
 
-    const item = await Item.findById(params.id);
+    const item = await Item.findById(id);
     if (!item) {
       return NextResponse.json({ error: "Service not found" }, { status: 404 });
     }
@@ -55,7 +70,7 @@ export async function DELETE(
     return NextResponse.json({ message: "Deleted" });
   } catch (err) {
     if (err instanceof Response) return err;
-    console.error("DELETE error:", err);
+    console.error("DELETE /services/[id] error:", err);
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
