@@ -49,7 +49,7 @@ export default function BusinessHours() {
 
     dispatch(setFieldState({ field: "businessHours", value: hasValidHours }));
     dispatch(setBusinessHoursValue(businessHours));
-  }, [businessHours]);
+  }, [businessHours, dispatch]);
 
   const handleTimeChange = (
     day: keyof BusinessHoursState,
