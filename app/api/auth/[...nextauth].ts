@@ -25,7 +25,7 @@ export const authOptions: NextAuthOptions = {
       console.log("✅ SignIn Callback:", { user, account, profile });
       return true;
     },
-    async redirect({ url, baseUrl }) {
+    async redirect({ url: _url, baseUrl }) {
       return baseUrl;
     },
   },
