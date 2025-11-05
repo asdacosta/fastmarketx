@@ -10,12 +10,17 @@ interface TokenPayload {
   exp: number;
 }
 
+/**
+ * POST /api/auth/reset-pwd/[token]
+ * Resets a user’s password using a token
+ */
 export async function POST(
   req: NextRequest,
-  { params }: { params: { token: string } }
+  context: { params: Promise<{ token: string }> } // ✅ async params
 ) {
   await connectDB();
-  const { token } = params;
+
+  const { token } = await context.params; // ✅ await to extract token
   const { newPassword } = await req.json();
 
   if (!token || !newPassword) {
@@ -27,6 +32,7 @@ export async function POST(
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET!) as TokenPayload;
+
     const user = await User.findById(decoded.userId);
     if (!user) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
@@ -36,7 +42,8 @@ export async function POST(
     await user.save();
 
     return NextResponse.json({ message: "Password has been reset" });
-  } catch (err) {
+  } catch (error) {
+    console.error("POST /auth/reset-pwd/[token] error:", error);
     return NextResponse.json(
       { error: "Invalid or expired token" },
       { status: 400 }
