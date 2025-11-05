@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 import { getSlug } from "../Welcome/CardsBox/SubCategories/SubCategories";
 import { categoriesData } from "./categoriesData";
 
