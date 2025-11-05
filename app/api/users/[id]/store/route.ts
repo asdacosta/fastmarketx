@@ -3,14 +3,17 @@ import { Store } from "@/models/Store";
 import { requireAuth } from "@/lib/auth";
 import { connectDB } from "@/lib/db";
 
-// Create store
+// ✅ Utility helper to unwrap async route params (Next.js 15+)
+async function getParams<T>(context: { params: Promise<T> }): Promise<T> {
+  return await context.params;
+}
 
+// ✅ Create a new store (no params)
 export async function POST(request: NextRequest) {
   try {
     await connectDB();
 
     const user = await requireAuth(request);
-
     const { name, address } = await request.json();
 
     if (!name) {
@@ -37,16 +40,17 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Updates a store’s info
+// ✅ Update a user's store
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { storeId: string } }
+  context: { params: Promise<{ id: string }> } // ✅ fixed here
 ) {
   try {
     await connectDB();
+    const { id } = await getParams(context);
     const user = await requireAuth(request);
 
-    const store = await Store.findById(params.storeId);
+    const store = await Store.findById(id);
     if (!store) {
       return NextResponse.json({ error: "Store not found" }, { status: 404 });
     }
@@ -56,32 +60,29 @@ export async function PUT(
     }
 
     const updates = await request.json();
-    const updatedStore = await Store.findByIdAndUpdate(
-      params.storeId,
-      updates,
-      {
-        new: true,
-      }
-    );
+    const updatedStore = await Store.findByIdAndUpdate(id, updates, {
+      new: true,
+    });
 
     return NextResponse.json(updatedStore);
   } catch (err) {
     if (err instanceof Response) return err;
-    console.error("PUT /api/stores/[id] error:", err);
+    console.error("PUT /api/users/[id]/store error:", err);
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
 
-// Deletes a store
+// ✅ Delete a user's store
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { storeId: string } }
+  context: { params: Promise<{ id: string }> } // ✅ fixed here
 ) {
   try {
     await connectDB();
+    const { id } = await getParams(context);
     const user = await requireAuth(request);
 
-    const store = await Store.findById(params.storeId);
+    const store = await Store.findById(id);
     if (!store) {
       return NextResponse.json({ error: "Store not found" }, { status: 404 });
     }
@@ -90,11 +91,11 @@ export async function DELETE(
       return NextResponse.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    await Store.findByIdAndDelete(params.storeId);
+    await Store.findByIdAndDelete(id);
     return NextResponse.json({ message: "Store deleted" });
   } catch (err) {
     if (err instanceof Response) return err;
-    console.error("DELETE /api/stores/[id] error:", err);
+    console.error("DELETE /api/users/[id]/store error:", err);
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
