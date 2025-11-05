@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 import React from "react";
 import styles from "./MealItems.module.css";
 import { useSelector } from "react-redux";
